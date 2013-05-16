@@ -44,4 +44,23 @@ describe "Static pages" do
     it { should have_content("Contact Us") }
     it { should have_title(full_title('Contact Us')) }
   end
+
+  it "should have the right link on the layout" do
+    visit root_path
+    click_link 'About Us'
+    expect(page).to have_title(full_title('About Us'))
+    click_link 'Contact Us'
+    expect(page).to have_title(full_title('Contact Us'))
+    click_link 'Home'
+    expect(page).to have_title(full_title(''))
+    click_link 'Help'
+    expect(page).to have_title(full_title('Help'))
+    click_link "How It Work's"
+    expect(page).to have_title(full_title('How It Works'))    
+    click_link "Helpon"
+    expect(page).to have_title(full_title(''))    
+    # click_link "Helpon"  Remember to use this test 01:21 lesson 5 movie. 
+    # click_link "Whatever on the next page"
+    # expect(page).to have_title(full_title('Any thing u expected'))    
+  end
 end
