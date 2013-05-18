@@ -1,0 +1,58 @@
+<article>
+  <header>
+    <h1><%= @deal.name %></h1>
+  </header>
+  <p>
+      <%= truncate(@deal.blurb, length: 40, separator: '') %>
+  </p>
+  <h3>Regular Price</h3>
+  <p>
+    <%= @deal.regular_price %>
+  </p>
+  <h3>Maximum Discount</h3>
+  <p>
+    <%= @deal.max_discount %>
+  </p>
+  <h3>Maximum Threshold</h3>
+  <p>
+    <%= @deal.max_threshold %>
+  </p>
+  <h3>Intial Discount</h3>
+  <p>
+    <%= @deal.initial_discount %>
+  </p>
+  <h3>Approved</h3>
+  <p>
+    <%= @deal.approved %>
+  </p>
+  <h3>Deal Date</h3>
+  <p>
+    <%= @deal.deal_date %>
+  </p>
+  <h3>Deal Blurb</h3>
+  <p>
+    <%= @deal.blurb %>
+  </p>
+  <h3>Deal Blurb Title</h3>
+  <p>
+    <%= @deal.blurb_title %>
+  </p>
+  <h3>Deal Type</h3>
+  <p>
+    <%= @deal.deal_type %>
+  </p>
+  <h3>Tipping Point</h3>
+  <p>
+    <%= @deal.tipping_point %>
+  </p>
+  <h3>End Date</h3>
+  <p>
+    <%= @deal.end_date %>
+  </p>
+  <h3>Photo File Name</h3>
+  <p>
+    <%= @deal.photo_file_name %>
+  </p>
+</article>
+
+<%= link_to "List All Deals", deals_path %>

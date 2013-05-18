@@ -1,0 +1,1695 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Dea",
+				"Deals"
+			],
+			[
+				"deal",
+				"deal_url"
+			],
+			[
+				"page",
+				"page"
+			],
+			[
+				"det",
+				"details"
+			],
+			[
+				"na",
+				"Nevigating"
+			],
+			[
+				"dea",
+				"deals"
+			],
+			[
+				"Na",
+				"Nevigation"
+			],
+			[
+				"ti",
+				"Tipping"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"ar",
+				"article	Tag"
+			],
+			[
+				"He",
+				"Helpon"
+			],
+			[
+				"Ho",
+				"how_it_works_path"
+			],
+			[
+				"H",
+				"Help"
+			],
+			[
+				"pa",
+				"page"
+			],
+			[
+				"ho",
+				"how_it_works"
+			],
+			[
+				"te",
+				"list-style-type"
+			],
+			[
+				"eve",
+				"events"
+			],
+			[
+				"b",
+				"blurb"
+			],
+			[
+				"re",
+				"regular_price"
+			],
+			[
+				"it",
+				"it	it (does something)"
+			],
+			[
+				"in",
+				"include"
+			],
+			[
+				"w",
+				"Work"
+			],
+			[
+				"W",
+				"Works"
+			],
+			[
+				"fo",
+				"font-family"
+			],
+			[
+				"li",
+				"link"
+			],
+			[
+				"ma",
+				"margin-top"
+			],
+			[
+				"bo",
+				"border"
+			],
+			[
+				"si",
+				"sideBar"
+			],
+			[
+				"bor",
+				"border-radius"
+			],
+			[
+				"f",
+				"footer"
+			],
+			[
+				"main",
+				"mainContent"
+			],
+			[
+				"di",
+				"div"
+			],
+			[
+				"sho",
+				"should"
+			],
+			[
+				"be",
+				"before"
+			],
+			[
+				"vi",
+				"via"
+			],
+			[
+				"i",
+				"inline-block"
+			],
+			[
+				"ba",
+				"background"
+			],
+			[
+				"ha",
+				"have_title"
+			],
+			[
+				"h",
+				"home"
+			],
+			[
+				"D",
+				"Deal"
+			],
+			[
+				"ex",
+				"exp	expect"
+			],
+			[
+				"sh",
+				"shh	should have"
+			],
+			[
+				"st",
+				"static_pages"
+			],
+			[
+				"A",
+				"About"
+			],
+			[
+				"p",
+				"pg"
+			],
+			[
+				"yo",
+				"You"
+			],
+			[
+				"a",
+				"alert"
+			],
+			[
+				"fu",
+				"fun	Function"
+			],
+			[
+				"do",
+				"dog"
+			],
+			[
+				"if",
+				"ife	if … else … end"
+			],
+			[
+				"mo",
+				"movie_listing"
+			],
+			[
+				"C",
+				"Cucumber"
+			],
+			[
+				"g",
+				"greeting"
+			],
+			[
+				"gre",
+				"greeter"
+			],
+			[
+				"gree",
+				"greeting"
+			],
+			[
+				"P",
+				"Player"
+			],
+			[
+				"S",
+				"stock"
+			],
+			[
+				"nam",
+				"name"
+			],
+			[
+				"pl",
+				"player1"
+			],
+			[
+				"ch",
+				"charity1"
+			],
+			[
+				"su",
+				"sum"
+			],
+			[
+				"ra",
+				"raiz"
+			],
+			[
+				"char",
+				"charity"
+			],
+			[
+				"hea",
+				"health"
+			],
+			[
+				"U",
+				"tUNHCR"
+			],
+			[
+				"a_",
+				"a_raiz"
+			],
+			[
+				"la",
+				"larry"
+			],
+			[
+				"cli",
+				"click_link"
+			],
+			[
+				"we",
+				"welcome"
+			],
+			[
+				"Y",
+				"You"
+			],
+			[
+				"ticket",
+				"tickets"
+			],
+			[
+				"find",
+				"find_user"
+			],
+			[
+				"att",
+				"attr_accessible"
+			],
+			[
+				"E",
+				"Engine"
+			],
+			[
+				"create",
+				"create"
+			],
+			[
+				"pro",
+				"project"
+			],
+			[
+				"pr",
+				"new_project_path"
+			],
+			[
+				"fill",
+				"fill	fill_in \"id_or_name_or_label\", :with => \"value\""
+			],
+			[
+				"shou",
+				"should"
+			],
+			[
+				"desc",
+				"description"
+			],
+			[
+				"foo",
+				"food"
+			],
+			[
+				"Pro",
+				"Project"
+			],
+			[
+				"des",
+				"des	describe \"description\" do … end"
+			],
+			[
+				"have",
+				"have_selector"
+			],
+			[
+				"shoul",
+				"should_not"
+			],
+			[
+				"asse",
+				"assert_no_link_for"
+			],
+			[
+				"ca",
+				"cannot"
+			],
+			[
+				"sce",
+				"scenario"
+			],
+			[
+				"with",
+				"within"
+			],
+			[
+				"user",
+				"user_path"
+			],
+			[
+				"hav",
+				"have_link"
+			],
+			[
+				"del",
+				"delete"
+			],
+			[
+				"ad",
+				"admin"
+			],
+			[
+				"User",
+				"Users"
+			],
+			[
+				"Si",
+				"signout"
+			],
+			[
+				"up",
+				"update"
+			],
+			[
+				"lin",
+				"link_to"
+			],
+			[
+				"vis",
+				"visit"
+			],
+			[
+				"user_",
+				"user_with_same_email"
+			],
+			[
+				"de",
+				"des	describe \"description\" do … end"
+			],
+			[
+				"tr",
+				"true"
+			],
+			[
+				"pre",
+				"persent"
+			],
+			[
+				"descri",
+				"description"
+			],
+			[
+				"wi",
+				"within"
+			],
+			[
+				"ac",
+				"action_mailer"
+			],
+			[
+				"T",
+				"Ticket"
+			],
+			[
+				"fla",
+				"flash	flash[…]"
+			],
+			[
+				"el",
+				"else"
+			],
+			[
+				"ta",
+				"Tasks"
+			],
+			[
+				"gr",
+				"group"
+			],
+			[
+				"Co",
+				"Contact"
+			],
+			[
+				"sc",
+				"sce	scenario \"should description\" do"
+			],
+			[
+				"Des",
+				"description"
+			],
+			[
+				"fi",
+				"fill"
+			],
+			[
+				"le",
+				"length"
+			],
+			[
+				"def",
+				"def	def … end"
+			],
+			[
+				"context",
+				"contextExpression"
+			],
+			[
+				"conte",
+				"context"
+			],
+			[
+				"n",
+				"number"
+			],
+			[
+				"ini",
+				"initial_helth"
+			],
+			[
+				"bl",
+				"blam"
+			],
+			[
+				"pla",
+				"Players"
+			],
+			[
+				"ge",
+				"game"
+			],
+			[
+				"cla",
+				"cla	class .. end"
+			],
+			[
+				"s",
+				"score"
+			],
+			[
+				"so",
+				"song"
+			],
+			[
+				"w00",
+				"w00t"
+			],
+			[
+				"bla",
+				"blam"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "require 'spec_helper'\n\ndescribe \"Deal pages\" do\n  describe \"(index/deals)\" do\n    describe \"Viewing the list of deals\" do\n      it \"shows the deals\" do\n\n        deal1 = Deal.create(name: 'My Deal',\n                regular_price: 20.00, \n                initial_discount: 10,\n                max_discount: 15 ,\n                max_threshold: 20 ,\n                approved: 'Yes',\n                deal_date: 20.days.from_now,\n                photo_file_name: 'rails.png',\n                blurb_title: 'Come and Enjoy',\n                blurb: 'Come and Enjoy the beutiful whether of Seattle.',\n                deal_type: 'Hotel',\n                tipping_point: 100,\n                end_date: 60.days.from_now )\n\n        deal2 = Deal.create(name:\"Bar Deal\",\n                regular_price:10.00, \n                initial_discount:10 ,\n                max_discount:25 ,\n                max_threshold:30 ,\n                approved:\"Yes\",\n                deal_date:25.days.from_now,\n                photo_file_name:\"rails.png\",\n                blurb_title:\"Come and Enjoy\",\n                blurb:\"Come and Enjoy the beutiful whether of Portland.\",\n                deal_type:\"Hotel\",\n                tipping_point:200,\n                end_date:40.days.from_now) \n\n        deal3 = Deal.create(name:\"Bar Deal\",\n                regular_price:10.00, \n                initial_discount:10 ,\n                max_discount:25 ,\n                max_threshold:30 ,\n                approved: true,\n                deal_date:25.days.from_now,\n                photo_file_name:\"rails.png\",\n                blurb_title:\"Come and Enjoy\",\n                blurb:\"Come and Enjoy the beutiful whether of Portland.\",\n                deal_type:\"Hotel\",\n                tipping_point:200,\n                end_date:40.days.from_now)                   \n\n      visit deals_url\n\n      expect(page).to have_text('3 Deals')\n      expect(page).to have_text(deal1.name)\n      expect(page).to have_text(deal2.name)\n      expect(page).to have_text(deal3.name)\n\n      expect(page).to have_text(deal1.regular_price)\n      expect(page).to have_text(deal1.initial_discount)\n      expect(page).to have_text(deal1.max_discount)\n      expect(page).to have_text(deal1.max_threshold)\n      expect(page).to have_text(deal1.approved)\n      expect(page).to have_text(deal1.deal_date)\n      expect(page).to have_text(deal1.photo_file_name)\n      expect(page).to have_text(deal1.blurb_title)\n      expect(page).to have_text(deal1.blurb)\n      expect(page).to have_text(deal1.deal_type)\n      expect(page).to have_text(deal1.tipping_point)\n      expect(page).to have_text(deal1.end_date)\n      end\n    end\n  end\n  \n  describe \"(show/deals)\" do\n    describe \"Viewing an individual deal\" do\n      it \"shows the deal's details\" do\n        deal = Deal.create(name:\"Book Deal\",\n                regular_price:20.00, \n                initial_discount:10 ,\n                max_discount:25 ,\n                max_threshold:30 ,\n                approved: true,\n                deal_date:25.days.from_now,\n                photo_file_name:\"rails.png\",\n                blurb_title:\"Come and Enjoy\",\n                blurb:\"Come and Enjoy the beutiful whether of Portland.\",\n                deal_type:\"Hotel\",\n                tipping_point:200,\n                end_date:45.days.from_now)\n\n        visit deal_url(deal)\n\n        expect(page).to have_text(deal.regular_price)\n        expect(page).to have_text(deal.initial_discount)\n        expect(page).to have_text(deal.max_discount)\n        expect(page).to have_text(deal.max_threshold)\n        expect(page).to have_text(deal.approved)\n        expect(page).to have_text(deal.deal_date)\n        expect(page).to have_text(deal.photo_file_name)\n        expect(page).to have_text(deal.blurb_title)\n        expect(page).to have_text(deal.blurb)\n        expect(page).to have_text(deal.deal_type)\n        expect(page).to have_text(deal.tipping_point)\n        expect(page).to have_text(deal.end_date)\n      end\n    end    \n  end\n\n  describe \"Nevigation\" do\n    describe \"Nevigating deals\" do\n      it \"allows navigation from the detail page to the listing page\" do\n        deal = Deal.create(name:\"Book Deal\",\n                regular_price:20.00, \n                initial_discount:10 ,\n                max_discount:25 ,\n                max_threshold:30 ,\n                approved: true,\n                deal_date:25.days.from_now,\n                photo_file_name:\"rails.png\",\n                blurb_title:\"Come and Enjoy\",\n                blurb:\"Come And Enjoy the beutiful whether of Portland.\",\n                deal_type:\"Hotel\",\n                tipping_point:200,\n                end_date:45.days.from_now)\n\n        visit deal_url(deal)\n        click_link All Deals\n        \n        expect(current_path).to eq(deals_path)\n      end\n    end\n  end\n\n\n\n\n\n\n\n\n\n\n\nend",
+			"file": "spec/requests/deal_pages_spec.rb",
+			"file_size": 4833,
+			"file_write_time": 1368836166000000,
+			"settings":
+			{
+				"buffer_size": 4830,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/deals_controller.rb",
+			"settings":
+			{
+				"buffer_size": 147,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "config/routes.rb",
+			"settings":
+			{
+				"buffer_size": 1776,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/deals/show.html.erb",
+			"settings":
+			{
+				"buffer_size": 881,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/deals/index.html.erb",
+			"settings":
+			{
+				"buffer_size": 1247,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/Ruby/Ruby.sublime-build",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"pc",
+				"Package Control: Add Channel"
+			],
+			[
+				"ru",
+				"Set Syntax: Ruby"
+			],
+			[
+				"ra",
+				"Set Syntax: HTML (Rails)"
+			],
+			[
+				"p",
+				"Package Control: Install Package"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
+			[
+				"ht",
+				"Set Syntax: HTML"
+			],
+			[
+				"rai",
+				"Set Syntax: HTML (Rails)"
+			],
+			[
+				"cs",
+				"Set Syntax: CSS"
+			],
+			[
+				"ja",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"enco",
+				"StringEncode: Base64 Decode"
+			],
+			[
+				"rs",
+				"Set Syntax: RSpec"
+			],
+			[
+				"r",
+				"Set Syntax: RSpec"
+			],
+			[
+				"js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"rail",
+				"Simple Rails Navigator: List controllers"
+			],
+			[
+				"git ",
+				"Git: Diff All"
+			],
+			[
+				"gi t",
+				"Git: Status"
+			],
+			[
+				"hr",
+				"Set Syntax: HTML (Rails)"
+			],
+			[
+				"ERB",
+				"Snippet: end (ERB)"
+			],
+			[
+				"Disco",
+				"Package Control: Discover Packages"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"R",
+				"RubyTest: Run Single Test"
+			],
+			[
+				"rspe",
+				"Set Syntax: RSpec"
+			],
+			[
+				"i",
+				"Package Control: Install Package"
+			],
+			[
+				"gi",
+				"Git Status Files: Opens all the files in a git repository that are listed by git status."
+			],
+			[
+				"",
+				"GitHub: Copy Gist to Clipboard"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"htm",
+				"Set Syntax: HTML (Rails)"
+			],
+			[
+				"ruby",
+				"Set Syntax: Ruby"
+			],
+			[
+				"scss",
+				"Set Syntax: CSS"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"h",
+				"Set Syntax: HTML (Erlang)"
+			]
+		],
+		"width": 711.0
+	},
+	"console":
+	{
+		"height": 378.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/deals/index.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/assets/stylesheets/application.css",
+		"/Users/zekarias/Desktop/char_help/helpon/spec/requests/deal_pages_spec.rb",
+		"/Users/zekarias/Desktop/char_help/helpon/config/routes.rb",
+		"/Users/zekarias/Desktop/char_help/helpon/spec/requests/static_pages_spec.rb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/helpers/application_helper.rb",
+		"/Users/zekarias/Desktop/char_help/helpon/spec/helpers/application_helper_spec.rb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/layouts/_header.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/layouts/_footer.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/Gemfile",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/static_pages/help.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/layouts/application.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/static_pages/home.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/static_pages/about.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/static_pages/how_it_works.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/layouts/_sidebar.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/layouts/_shim.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/static_pages/contact.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/controllers/static_pages_controller.rb",
+		"/Users/zekarias/Desktop/char_help/helpon/spec/spec_helper.rb",
+		"/Users/zekarias/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/zekarias/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/zekarias/Desktop/char_help/helpon/README.md",
+		"/Users/zekarias/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/zekarias/rails_project2/helpon/app/views/layouts/application.html.erb",
+		"/Users/zekarias/rails_project2/helpon/db/schema.rb",
+		"/Users/zekarias/rails_project2/helpon/db/migrate/20130513003020_create_deals.rb",
+		"/Users/zekarias/rails_project2/helpon/app/models/deal.rb",
+		"/Users/zekarias/git_explore/try/dealone/Gemfile",
+		"/Users/zekarias/git_explore/try/dealone/spec/spec_helper.rb",
+		"/Users/zekarias/git_explore/events_zico/deals/spec/spec_helper.rb",
+		"/Users/zekarias/git_explore/events_zico/events/db/test.sqlite3",
+		"/Users/zekarias/git_explore/events_zico/events/spec/spec_helper.rb",
+		"/Users/zekarias/rails_project2/helpon/app/views/deals/index.html.erb",
+		"/Users/zekarias/rails_project2/helpon/app/controllers/deals_controller.rb",
+		"/Users/zekarias/rails_project2/helpon/config/routes.rb",
+		"/Users/zekarias/rails_project2/helpon/app/views/layouts/_header.html.erb",
+		"/Users/zekarias/rails_project2/helpon/spec/requests/static_pages_spec.rb",
+		"/Users/zekarias/rails_project2/helpon/app/helpers/application_helper.rb",
+		"/Users/zekarias/rails_project2/helpon/spec/helpers/application_helper_spec.rb",
+		"/Users/zekarias/rails_project2/helpon/spec/support/utilities.rb",
+		"/Users/zekarias/rails_project2/helpon/app/views/layouts/_footer.html.erb",
+		"/Users/zekarias/rails_project2/helpon/app/views/deals/new.html.erb",
+		"/Users/zekarias/rails_project2/helpon/app/views/static_pages/about.html.erb",
+		"/Users/zekarias/rails_project2/helpon/spec/helpers/application_helper.rb",
+		"/Users/zekarias/rails_project2/helpon/app/views/static_pages/work.html.erb",
+		"/Users/zekarias/rails_project2/helpon/spec/requests/deal_pages_spec.rb",
+		"/Users/zekarias/rails_project2/helpon/app/controllers/static_pages_controller.rb",
+		"/Users/zekarias/rails_project2/helpon/app/assets/stylesheets/layouts.css.scss",
+		"/Users/zekarias/rails_project2/helpon/app/views/static_pages/deal.html.erb",
+		"/Users/zekarias/rails_project2/helpon/_footer.html.erb",
+		"/Users/zekarias/rails_project2/helpon/app/views/static_pages/home.html.erb",
+		"/Users/zekarias/rails_project2/helpon/Gemfile",
+		"/Users/zekarias/rails_project2/helpon/config/application.rb",
+		"/Users/zekarias/rails_project2/helpon/config/initializers/secret_token.rb",
+		"/Users/zekarias/rails_project2/helpon/app/views/static_pages/contact.html.erb",
+		"/Users/zekarias/rails_project2/helpon/app/views/static_pages/help.html.erb",
+		"/Users/zekarias/rails_project2/helpon/config/environments/production.rb",
+		"/Users/zekarias/rails_project2/helpon/config/environments/test.rb",
+		"/Users/zekarias/rails_project2/helpon/config/environments/development.rb",
+		"/Users/zekarias/rails_project2/helpon/README.md",
+		"/Users/zekarias/rails_project2/helpon/spec/spec_helper.rb",
+		"/Users/zekarias/rails_project2/helpon/Guardfile",
+		"/Users/zekarias/rails_project2/helpon/.gitignore",
+		"/Users/zekarias/rails_project2/helpon/config/initializers/better_errors.rb",
+		"/Users/zekarias/rails_project2/helpon/config/database.yml",
+		"/Users/zekarias/git_explore/SugarSave/db/schema.rb",
+		"/Users/zekarias/Desktop/JavaScript/note.txt",
+		"/Users/zekarias/Library/Application Support/Sublime Text 2/Packages/User/JSON.sublime-settings",
+		"/Users/zekarias/charity/help_on/config/database.yml",
+		"/Users/zekarias/charity/help_on/Gemfile",
+		"/Users/zekarias/Desktop/Ruby Programing/charity.rb",
+		"/Users/zekarias/Desktop/Ruby Programing/rubyy_class.rb",
+		"/Users/zekarias/Desktop/cource/zwb/app/assets/stylesheets/application.css",
+		"/Users/zekarias/Desktop/cource/zwb/app/views/layouts/application.html.erb",
+		"/Users/zekarias/Desktop/cource/zwb/Gemfile",
+		"/Users/zekarias/Desktop/cource/zwb/app/models/membership.rb",
+		"/Users/zekarias/Desktop/cource/zwb/app/controllers/stocks_controller.rb",
+		"/Users/zekarias/Desktop/cource/zwb/app/views/stocks/index.html.erb",
+		"/Users/zekarias/Desktop/cource/zwb/app/assets/stylesheets/bootstrap_and_overrides.css.less",
+		"/Users/zekarias/Desktop/cource/zwb/app/views/earnings/_form.html.erb",
+		"/Users/zekarias/Desktop/cource/zwb/app/views/users/show.html.erb",
+		"/Users/zekarias/Desktop/cource/zwb/app/views/users/new.html.erb",
+		"/Users/zekarias/Desktop/cource/zwb/app/views/users/edit.html.erb",
+		"/Users/zekarias/Desktop/cource/zwb/app/views/password_resets/edit.html.erb",
+		"/Users/zekarias/Desktop/cource/zwb/app/views/sessions/new.html.erb",
+		"/Users/zekarias/Desktop/cource/zwb/app/views/discount_cash_flows/_form.html.erb",
+		"/Users/zekarias/Desktop/cource/zwb/app/views/discount_cash_flows/show.html.erb",
+		"/Users/zekarias/Desktop/cource/zwb/spec/requests/pages_spec.rb",
+		"/Users/zekarias/Desktop/cource/zwb/app/views/shared/_error_messages.html.erb",
+		"/Users/zekarias/Desktop/cource/zwb/app/views/stocks/_form.html.erb",
+		"/Users/zekarias/Desktop/cource/zwb/app/views/earnings/new.html.erb",
+		"/Users/zekarias/Desktop/cource/zwb/app/views/projected_earnings/show.html.erb",
+		"/Users/zekarias/Desktop/cource/zwb/app/views/stocks/show.html.erb",
+		"/Users/zekarias/Desktop/cource/zwb/app/views/stocks/new.html.erb",
+		"/Users/zekarias/Desktop/cource/zwb/app/views/stocks/edit.html.erb",
+		"/Users/zekarias/Desktop/cource/zwb/app/views/portfolios/new.html.erb",
+		"/Users/zekarias/Desktop/cource/zwb/app/views/projected_earnings/_form.html.erb",
+		"/Users/zekarias/Desktop/cource/zwb/app/views/earnings/edit.html.erb",
+		"/Users/zekarias/Boot/blog2/app/assets/stylesheets/bootstrap_and_overrides.css.less",
+		"/Users/zekarias/Desktop/cource/zwb/db/schema.rb",
+		"/tmp/subl stdin U5vqpj.txt",
+		"/tmp/subl stdin 5EkNsx.txt",
+		"/Users/zekarias/Desktop/cource/zwb/app/controllers/portfolios_controller.rb",
+		"/Users/zekarias/Desktop/cource/zwb/spec/spec_helper.rb",
+		"/Users/zekarias/Desktop/cource/zwb/config/routes.rb",
+		"/Users/zekarias/Desktop/cource/zwb/spec/requests/user_pages_spec.rb",
+		"/Users/zekarias/Desktop/cource/zwb/app/views/portfolios/show.html.erb",
+		"/Users/zekarias/Desktop/cource/zwb/app/views/layouts/_header.html.erb",
+		"/Users/zekarias/Desktop/cource/zwb/config/database.yml",
+		"/Users/zekarias/Desktop/Ruby Programing/try.rb",
+		"/Users/zekarias/Desktop/Hessen/depot/app/assets/stylesheets/application.css",
+		"/Users/zekarias/Desktop/Hessen/depot/config/routes.rb",
+		"/Users/zekarias/Desktop/Hessen/depot/app/models/product.rb",
+		"/Users/zekarias/Desktop/Hessen/depot/config/initializers/session_store.rb",
+		"/Users/zekarias/rails_course/ticketee/app/controllers/files_controller.rb",
+		"/Users/zekarias/Desktop/Kevin/my_app/app/views/say/hello.html.erb",
+		"/Users/zekarias/Desktop/Kevin/my_app/app/views/say/index.html.erb",
+		"/Users/zekarias/Desktop/Kevin/my_app/app/views/say/good_buy.html.erb",
+		"/Users/zekarias/Desktop/Kevin/my_app/app/controllers/say_controller.rb",
+		"/Users/zekarias/Desktop/Kevin/my_app/config/routes.rb",
+		"/Users/zekarias/Desktop/Kevin/my_app/app/views/layouts/index.html.erb",
+		"/Users/zekarias/charity/help_on/app/views/layouts/_header.html.erb",
+		"/Users/zekarias/charity/help_on/.gitignore",
+		"/Users/zekarias/charity/help_on/spec/spec_helper.rb",
+		"/Users/zekarias/charity/help_on/spec/requests/pages_spec.rb",
+		"/Users/zekarias/charity/help_on/app/views/layouts/application.html.erb",
+		"/Users/zekarias/rails_course/ticketee/config/locales/devise.en.yml"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/Users/zekarias/rails_project/help_on/app/assets/stylesheets",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"All Deals",
+			"'All Deals'",
+			"All Deals",
+			"Help",
+			"visit",
+			"  ",
+			"root_path",
+			"t.",
+			"\"",
+			"'\n",
+			"\n",
+			"content\n",
+			"  get \"static_pages/help\"\n",
+			"eager",
+			"end",
+			"td",
+			"center",
+			".center",
+			"p",
+			"can",
+			"%>",
+			">",
+			"content",
+			"back",
+			"back_pal",
+			"back",
+			"content",
+			"  	\n",
+			"create",
+			"create\n",
+			"\n",
+			"create",
+			"notice ",
+			"def to_s",
+			"puts name1 + '\\'s '   + 'heath is '  + health1.to_s\n",
+			"segno",
+			"puts animal1.make_noise",
+			"logo",
+			"john",
+			"logo",
+			"Sign in",
+			"button",
+			"relationships_controller_spec.rb:8:",
+			"sign_in",
+			"micropost feed",
+			"follow_form",
+			"Unfollow",
+			"sign up now",
+			"model_name",
+			"'shared/error_messages'",
+			"auth",
+			"Sign in",
+			"FactoryGirl.create",
+			"factory.create",
+			"header",
+			"\n</",
+			"%>\n",
+			"do",
+			"work's",
+			"content "
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"end",
+			"h1",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "spec/requests/deal_pages_spec.rb",
+					"settings":
+					{
+						"buffer_size": 4830,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4726,
+								4726
+							]
+						],
+						"settings":
+						{
+							"encoding_helper_confidence": 1.0,
+							"encoding_helper_encoding": "UTF-8",
+							"encoding_helper_encoding_sublime": "UTF-8",
+							"syntax": "Packages/User/RSpec.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 27.0,
+						"translation.y": 2901.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 1,
+					"file": "app/controllers/deals_controller.rb",
+					"settings":
+					{
+						"buffer_size": 147,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								131,
+								131
+							]
+						],
+						"settings":
+						{
+							"encoding_helper_confidence": 1.0,
+							"encoding_helper_encoding": "UTF-8",
+							"encoding_helper_encoding_sublime": "UTF-8",
+							"syntax": "Packages/Rails/Ruby on Rails.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "config/routes.rb",
+					"settings":
+					{
+						"buffer_size": 1776,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								145,
+								145
+							]
+						],
+						"settings":
+						{
+							"encoding_helper_confidence": 1.0,
+							"encoding_helper_encoding": "UTF-8",
+							"encoding_helper_encoding_sublime": "UTF-8",
+							"syntax": "Packages/Rails/Ruby on Rails.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/views/deals/show.html.erb",
+					"settings":
+					{
+						"buffer_size": 881,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								825,
+								825
+							]
+						],
+						"settings":
+						{
+							"encoding_helper_confidence": 0.0,
+							"encoding_helper_encoding": "Unknown",
+							"encoding_helper_encoding_sublime": "UTF-8",
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/views/deals/index.html.erb",
+					"settings":
+					{
+						"buffer_size": 1247,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1223,
+								1223
+							]
+						],
+						"settings":
+						{
+							"encoding_helper_confidence": 1.0,
+							"encoding_helper_encoding": "UTF-8",
+							"encoding_helper_encoding_sublime": "UTF-8",
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 30.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.431041112875,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 301.0
+	},
+	"output.git":
+	{
+		"height": 124.0
+	},
+	"output.tests":
+	{
+		"height": 254.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"i",
+				"app/views/deals/index.html.erb"
+			],
+			[
+				"ro",
+				"config/routes.rb"
+			],
+			[
+				"css",
+				"app/assets/stylesheets/application.css"
+			],
+			[
+				"in",
+				"app/views/deals/index.html.erb"
+			],
+			[
+				"ds",
+				"spec/requests/deal_pages_spec.rb"
+			],
+			[
+				"dc",
+				"app/controllers/deals_controller.rb"
+			],
+			[
+				"application_helper_spec.rb",
+				"spec/helpers/application_helper_spec.rb"
+			],
+			[
+				"foo",
+				"app/views/layouts/_footer.html.erb"
+			],
+			[
+				"hea",
+				"app/views/layouts/_header.html.erb"
+			],
+			[
+				"ge",
+				"Gemfile"
+			],
+			[
+				"rs",
+				"spec/requests/static_pages_spec.rb"
+			],
+			[
+				"heade",
+				"app/views/layouts/_header.html.erb"
+			],
+			[
+				"app",
+				"app/views/layouts/application.html.erb"
+			],
+			[
+				"aph",
+				"app/helpers/application_helper.rb"
+			],
+			[
+				"ho",
+				"app/views/static_pages/home.html.erb"
+			],
+			[
+				"h",
+				"app/views/static_pages/help.html.erb"
+			],
+			[
+				"route",
+				"config/routes.rb"
+			],
+			[
+				"sc",
+				"app/controllers/static_pages_controller.rb"
+			],
+			[
+				"he",
+				"app/views/static_pages/help.html.erb"
+			],
+			[
+				"spec/spec_helper.rb",
+				"spec/spec_helper.rb"
+			],
+			[
+				"gem",
+				"Gemfile"
+			],
+			[
+				"y",
+				"config/database.yml"
+			],
+			[
+				"m",
+				"app/models/deal.rb"
+			],
+			[
+				"rsd",
+				"spec/requests/deal_pages_spec.rb"
+			],
+			[
+				"spe",
+				"spec/spec_helper.rb"
+			],
+			[
+				"mod",
+				"app/models/deal.rb"
+			],
+			[
+				"ac",
+				"app/controllers/application_controller.rb"
+			],
+			[
+				"ind",
+				"app/views/deals/index.html.erb"
+			],
+			[
+				"de",
+				"app/controllers/deals_controller.rb"
+			],
+			[
+				"dealscontroller",
+				"app/controllers/deals_controller.rb"
+			],
+			[
+				"uti",
+				"spec/support/utilities.rb"
+			],
+			[
+				"ah",
+				"app/helpers/application_helper.rb"
+			],
+			[
+				"application_he",
+				"app/helpers/application_helper.rb"
+			],
+			[
+				"head",
+				"app/views/layouts/_header.html.erb"
+			],
+			[
+				"spc",
+				"app/controllers/static_pages_controller.rb"
+			],
+			[
+				"dea",
+				"app/views/static_pages/deal.html.erb"
+			],
+			[
+				"abou",
+				"app/views/static_pages/about.html.erb"
+			],
+			[
+				"cs",
+				"app/assets/stylesheets/layouts.css.scss"
+			],
+			[
+				"ap",
+				"app/views/layouts/application.html.erb"
+			],
+			[
+				"rou",
+				"config/routes.rb"
+			],
+			[
+				"rspe",
+				"spec/requests/static_pages_spec.rb"
+			],
+			[
+				"_",
+				"_footer.html.erb"
+			],
+			[
+				"apl",
+				"app/views/layouts/application.html.erb"
+			],
+			[
+				"co",
+				"app/views/static_pages/contact.html.erb"
+			],
+			[
+				"ab",
+				"app/views/static_pages/about.html.erb"
+			],
+			[
+				"r",
+				"config/routes.rb"
+			],
+			[
+				"abo",
+				"app/views/static_pages/about.html.erb"
+			],
+			[
+				"con",
+				"app/controllers/static_pages_controller.rb"
+			],
+			[
+				"sps",
+				"spec/requests/static_pages_spec.rb"
+			],
+			[
+				"hom",
+				"app/views/static_pages/home.html.erb"
+			],
+			[
+				"gu",
+				"Guardfile"
+			],
+			[
+				"git",
+				".gitignore"
+			],
+			[
+				"g",
+				"Gemfile"
+			],
+			[
+				"controler",
+				"app/controllers/users_controller.rb"
+			],
+			[
+				"db",
+				"config/database.yml"
+			],
+			[
+				"pc",
+				"app/controllers/pages_controller.rb"
+			],
+			[
+				"creating",
+				"spec/integration/creating_tickets_spec.rb"
+			],
+			[
+				"fi",
+				"app/controllers/files_controller.rb"
+			],
+			[
+				"",
+				"app/models/asset.rb"
+			],
+			[
+				"as",
+				"app/models/asset.rb"
+			],
+			[
+				"ass",
+				"app/models/asset.rb"
+			],
+			[
+				"integration/viewing_stocks_spec.rb",
+				"spec/integration/viewing_stocks_spec.rb"
+			],
+			[
+				"spec/requests/pages_spec.rb",
+				"spec/requests/pages_spec.rb"
+			],
+			[
+				"app/controllers/tickets_controller.rb",
+				"app/controllers/tickets_controller.rb"
+			],
+			[
+				"spec/integration/admin/assigning_permissions_spec.rb",
+				"spec/integration/admin/assigning_permissions_spec.rb"
+			],
+			[
+				"spec/integration/deleting_tickets_spec.rb",
+				"spec/integration/deleting_tickets_spec.rb"
+			],
+			[
+				"create_assets.rb",
+				"db/migrate/20130228054859_create_assets.rb"
+			],
+			[
+				"db/migrate",
+				"db/migrate/20130120133529_create_projects.rb"
+			],
+			[
+				"app/models/user.rb",
+				"app/models/user.rb"
+			],
+			[
+				"spec/controllers/tickets_controller_spec.rb",
+				"spec/controllers/tickets_controller_spec.rb"
+			],
+			[
+				"config/routes.rb",
+				"config/routes.rb"
+			],
+			[
+				"spec/controllers/users_controller_spec.rb",
+				"spec/controllers/users_controller_spec.rb"
+			],
+			[
+				"spec/integration/viewing_projects_spec.rb",
+				"spec/integration/viewing_projects_spec.rb"
+			],
+			[
+				"app/views/users/confirmation.html.erb",
+				"app/views/users/confirmation.html.erb"
+			],
+			[
+				"spec/integration/signing_up_spec.rb",
+				"spec/integration/signing_up_spec.rb"
+			],
+			[
+				"reg",
+				"app/controllers/registrations_controller.rb"
+			],
+			[
+				"spec/integration/hidden_links_spec.rb",
+				"spec/integration/hidden_links_spec.rb"
+			],
+			[
+				"per",
+				"app/models/permmission.rb"
+			],
+			[
+				"controllers/admin/users_controller.rb",
+				"app/controllers/admin/users_controller.rb"
+			],
+			[
+				"spec/integration/admin/deleting_users_spec.rb",
+				"spec/integration/admin/deleting_users_spec.rb"
+			],
+			[
+				"app/controllers/admin/users_controller.rb",
+				"app/controllers/admin/users_controller.rb"
+			],
+			[
+				"app/views/admin/users/show.html.erb",
+				"app/views/admin/users/show.html.erb"
+			],
+			[
+				"iad",
+				"spec/integration/admin/deleting_users_spec.rb"
+			],
+			[
+				"spec/integration/admin/editing_users_spec.rb",
+				"spec/integration/admin/editing_users_spec.rb"
+			],
+			[
+				"fo",
+				"app/views/admin/users/_form.html.erb"
+			],
+			[
+				"spec/integration/admin/creating_users_spec.rb",
+				"spec/integration/admin/creating_users_spec.rb"
+			],
+			[
+				"app/views/admin/base/index.html.erb",
+				"app/views/admin/base/index.html.erb"
+			],
+			[
+				"admin",
+				"db/migrate/20130218235653_add_admin_to_users.rb"
+			],
+			[
+				"app/views/admin/users/index.html.erb",
+				"app/views/admin/users/index.html.erb"
+			],
+			[
+				"app/co",
+				"app/controllers/admin/users_controller.rb"
+			],
+			[
+				"app/coap",
+				"app/controllers/application_controller.rb"
+			],
+			[
+				"app/he",
+				"app/helpers/admin/users_helper.rb"
+			],
+			[
+				"controllers/admin/users_controller_spec.rb",
+				"spec/controllers/admin/users_controller_spec.rb"
+			],
+			[
+				"users_controller_spec.rb",
+				"spec/controllers/admin/users_controller_spec.rb"
+			],
+			[
+				"config/routes.r",
+				"config/routes.rb"
+			],
+			[
+				"views/admin/users/index.html.erb",
+				"app/views/admin/users/index.html.erb"
+			],
+			[
+				"helpers/admin/users_helper.rb",
+				"app/helpers/admin/users_helper.rb"
+			],
+			[
+				"/admin/base_controller.r",
+				"app/controllers/admin/base_controller.rb"
+			],
+			[
+				"spec/integration/admin/creating_users_spec",
+				"spec/integration/admin/creating_users_spec.rb"
+			],
+			[
+				"app/controllers/application_controller.rb",
+				"app/controllers/application_controller.rb"
+			],
+			[
+				"app/controllers/projects_controller.rb",
+				"app/controllers/projects_controller.rb"
+			],
+			[
+				"app/views/projects/index.html.erb",
+				"app/views/projects/index.html.erb"
+			],
+			[
+				"spec/integration/admin",
+				"spec/integration/admin/creating_users_spec.rb"
+			],
+			[
+				"cet",
+				"config/environments/test.rb"
+			],
+			[
+				"mo",
+				"db/migrate/20130220203441_create_projects.rb"
+			],
+			[
+				"prc",
+				"app/controllers/projects_controller.rb"
+			],
+			[
+				"fa",
+				"spec/factories.rb"
+			],
+			[
+				"new",
+				"app/views/projects/new.html.erb"
+			],
+			[
+				"app/views/layouts/application.html.erb",
+				"app/views/layouts/application.html.erb"
+			],
+			[
+				"lah",
+				"app/views/layouts/application.html.erb"
+			],
+			[
+				"crea",
+				"db/migrate/20130220203441_create_projects.rb"
+			],
+			[
+				"pm",
+				"config/initializers/wrap_parameters.rb"
+			],
+			[
+				"add_index_to_projects_title.rb",
+				"db/migrate/20130221005543_add_index_to_projects_title.rb"
+			],
+			[
+				"pro",
+				"app/models/project.rb"
+			],
+			[
+				"pros",
+				"spec/models/project_spec.rb"
+			],
+			[
+				"aphe",
+				"spec/helpers/application_helper_spec.rb"
+			],
+			[
+				"prone",
+				"app/views/projects/new.html.erb"
+			],
+			[
+				"pp",
+				"spec/requests/project_pages_spec.rb"
+			],
+			[
+				"app/controllers/admin/base_controller.rb",
+				"app/controllers/admin/base_controller.rb"
+			],
+			[
+				"sicus",
+				"spec/integration/admin/creating_user_spec.rb"
+			],
+			[
+				"spec/controllers/admin/users_controller_spec.rb",
+				"spec/controllers/admin/users_controller_spec.rb"
+			],
+			[
+				"app/views/projects/show.html.erb",
+				"app/views/projects/show.html.erb"
+			],
+			[
+				"app/helpers/application_helper.rb",
+				"app/helpers/application_helper.rb"
+			],
+			[
+				"cop",
+				"spec/support/copybara_helper.rb"
+			],
+			[
+				"hi",
+				"spec/integration/hidden_links_spec.rb"
+			],
+			[
+				"spec/integration/editing_projects_spec.rb",
+				"spec/integration/editing_projects_spec.rb"
+			],
+			[
+				"pec/integration/deleting_projects_spec.rb",
+				"spec/integration/deleting_projects_spec.rb"
+			],
+			[
+				"spec/controllers/projects_controller.rb",
+				"spec/controllers/projects_controller_spec.rb"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 258.0,
+	"status_bar_visible": true
+}
