@@ -1,53 +1,17 @@
 require 'spec_helper'
 
-describe "Deal pages" do
+describe "Deals page" do
   describe "(index/deals)" do
     describe "Viewing the list of deals" do
       it "shows the deals" do
 
-        deal1 = Deal.create(name: 'My Deal',
-                regular_price: 20.00, 
-                initial_discount: 10,
-                max_discount: 15 ,
-                max_threshold: 20 ,
-                approved: 'Yes',
-                deal_date: 20.days.from_now,
-                photo_file_name: 'rails.png',
-                blurb_title: 'Come and Enjoy',
-                blurb: 'Come and Enjoy the beutiful whether of Seattle.',
-                deal_type: 'Hotel',
-                tipping_point: 100,
-                end_date: 60.days.from_now )
+        deal1 = Deal.create(deal_attributes)
 
-        deal2 = Deal.create(name:"Bar Deal",
-                regular_price:10.00, 
-                initial_discount:10 ,
-                max_discount:25 ,
-                max_threshold:30 ,
-                approved:"Yes",
-                deal_date:25.days.from_now,
-                photo_file_name:"rails.png",
-                blurb_title:"Come and Enjoy",
-                blurb:"Come and Enjoy the beutiful whether of Portland.",
-                deal_type:"Hotel",
-                tipping_point:200,
-                end_date:40.days.from_now) 
+        deal2 = Deal.create(deal_attributes(name: "Snack Bar")) 
 
-        deal3 = Deal.create(name:"Bar Deal",
-                regular_price:10.00, 
-                initial_discount:10 ,
-                max_discount:25 ,
-                max_threshold:30 ,
-                approved: true,
-                deal_date:25.days.from_now,
-                photo_file_name:"rails.png",
-                blurb_title:"Come and Enjoy",
-                blurb:"Come and Enjoy the beutiful whether of Portland.",
-                deal_type:"Hotel",
-                tipping_point:200,
-                end_date:40.days.from_now)                   
+        deal3 = Deal.create(deal_attributes(name: "Hotel")) 
 
-      visit deals_url
+      visit root_path
 
       expect(page).to have_text('3 Deals')
       expect(page).to have_text(deal1.name)
@@ -90,6 +54,9 @@ describe "Deal pages" do
         expect(page).to have_text(deal.tipping_point)
         expect(page).to have_text(deal.end_date)
       end
+
+      it "shows regular_price"
+      it "shows initial_price"
     end    
   end
 
@@ -103,14 +70,14 @@ describe "Deal pages" do
 
         click_link "List All Deals"
         
-        expect(current_path).to eq(deals_path)
+        expect(current_path).to eq(root_path)
       end
 
       it "allows navigation from the listing page to the detail pa" do
 
         deal = Deal.create(deal_attributes)
 
-        visit deals_url
+        visit root_path
 
         click_link deal.name
 

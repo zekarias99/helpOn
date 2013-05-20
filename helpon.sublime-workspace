@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"deal_",
+				"deals_path"
+			],
+			[
+				"dea",
+				"deal"
+			],
+			[
+				"na",
+				"name"
+			],
+			[
+				"deals_",
+				"deals_url"
+			],
+			[
 				"Dea",
 				"Deals"
 			],
@@ -18,14 +34,6 @@
 			[
 				"det",
 				"details"
-			],
-			[
-				"na",
-				"Nevigating"
-			],
-			[
-				"dea",
-				"deals"
 			],
 			[
 				"Na",
@@ -506,43 +514,24 @@
 			[
 				"so",
 				"song"
-			],
-			[
-				"w00",
-				"w00t"
-			],
-			[
-				"bla",
-				"blam"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"contents": "require 'spec_helper'\n\ndescribe \"Deal pages\" do\n  describe \"(index/deals)\" do\n    describe \"Viewing the list of deals\" do\n      it \"shows the deals\" do\n\n        deal1 = Deal.create(name: 'My Deal',\n                regular_price: 20.00, \n                initial_discount: 10,\n                max_discount: 15 ,\n                max_threshold: 20 ,\n                approved: 'Yes',\n                deal_date: 20.days.from_now,\n                photo_file_name: 'rails.png',\n                blurb_title: 'Come and Enjoy',\n                blurb: 'Come and Enjoy the beutiful whether of Seattle.',\n                deal_type: 'Hotel',\n                tipping_point: 100,\n                end_date: 60.days.from_now )\n\n        deal2 = Deal.create(name:\"Bar Deal\",\n                regular_price:10.00, \n                initial_discount:10 ,\n                max_discount:25 ,\n                max_threshold:30 ,\n                approved:\"Yes\",\n                deal_date:25.days.from_now,\n                photo_file_name:\"rails.png\",\n                blurb_title:\"Come and Enjoy\",\n                blurb:\"Come and Enjoy the beutiful whether of Portland.\",\n                deal_type:\"Hotel\",\n                tipping_point:200,\n                end_date:40.days.from_now) \n\n        deal3 = Deal.create(name:\"Bar Deal\",\n                regular_price:10.00, \n                initial_discount:10 ,\n                max_discount:25 ,\n                max_threshold:30 ,\n                approved: true,\n                deal_date:25.days.from_now,\n                photo_file_name:\"rails.png\",\n                blurb_title:\"Come and Enjoy\",\n                blurb:\"Come and Enjoy the beutiful whether of Portland.\",\n                deal_type:\"Hotel\",\n                tipping_point:200,\n                end_date:40.days.from_now)                   \n\n      visit deals_url\n\n      expect(page).to have_text('3 Deals')\n      expect(page).to have_text(deal1.name)\n      expect(page).to have_text(deal2.name)\n      expect(page).to have_text(deal3.name)\n\n      expect(page).to have_text(deal1.regular_price)\n      expect(page).to have_text(deal1.initial_discount)\n      expect(page).to have_text(deal1.max_discount)\n      expect(page).to have_text(deal1.max_threshold)\n      expect(page).to have_text(deal1.approved)\n      expect(page).to have_text(deal1.deal_date)\n      expect(page).to have_text(deal1.photo_file_name)\n      expect(page).to have_text(deal1.blurb_title)\n      expect(page).to have_text(deal1.blurb)\n      expect(page).to have_text(deal1.deal_type)\n      expect(page).to have_text(deal1.tipping_point)\n      expect(page).to have_text(deal1.end_date)\n      end\n    end\n  end\n  \n  describe \"(show/deals)\" do\n    describe \"Viewing an individual deal\" do\n      it \"shows the deal's details\" do\n        deal = Deal.create(name:\"Book Deal\",\n                regular_price:20.00, \n                initial_discount:10 ,\n                max_discount:25 ,\n                max_threshold:30 ,\n                approved: true,\n                deal_date:25.days.from_now,\n                photo_file_name:\"rails.png\",\n                blurb_title:\"Come and Enjoy\",\n                blurb:\"Come and Enjoy the beutiful whether of Portland.\",\n                deal_type:\"Hotel\",\n                tipping_point:200,\n                end_date:45.days.from_now)\n\n        visit deal_url(deal)\n\n        expect(page).to have_text(deal.regular_price)\n        expect(page).to have_text(deal.initial_discount)\n        expect(page).to have_text(deal.max_discount)\n        expect(page).to have_text(deal.max_threshold)\n        expect(page).to have_text(deal.approved)\n        expect(page).to have_text(deal.deal_date)\n        expect(page).to have_text(deal.photo_file_name)\n        expect(page).to have_text(deal.blurb_title)\n        expect(page).to have_text(deal.blurb)\n        expect(page).to have_text(deal.deal_type)\n        expect(page).to have_text(deal.tipping_point)\n        expect(page).to have_text(deal.end_date)\n      end\n    end    \n  end\n\n  describe \"Nevigation\" do\n    describe \"Nevigating deals\" do\n      it \"allows navigation from the detail page to the listing page\" do\n        deal = Deal.create(name:\"Book Deal\",\n                regular_price:20.00, \n                initial_discount:10 ,\n                max_discount:25 ,\n                max_threshold:30 ,\n                approved: true,\n                deal_date:25.days.from_now,\n                photo_file_name:\"rails.png\",\n                blurb_title:\"Come and Enjoy\",\n                blurb:\"Come And Enjoy the beutiful whether of Portland.\",\n                deal_type:\"Hotel\",\n                tipping_point:200,\n                end_date:45.days.from_now)\n\n        visit deal_url(deal)\n        click_link All Deals\n        \n        expect(current_path).to eq(deals_path)\n      end\n    end\n  end\n\n\n\n\n\n\n\n\n\n\n\nend",
 			"file": "spec/requests/deal_pages_spec.rb",
-			"file_size": 4833,
-			"file_write_time": 1368836166000000,
 			"settings":
 			{
-				"buffer_size": 4830,
+				"buffer_size": 4063,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/controllers/deals_controller.rb",
+			"file": "spec/support/attributes.rb",
 			"settings":
 			{
-				"buffer_size": 147,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "config/routes.rb",
-			"settings":
-			{
-				"buffer_size": 1776,
+				"buffer_size": 489,
 				"line_ending": "Unix"
 			}
 		},
@@ -550,7 +539,7 @@
 			"file": "app/views/deals/show.html.erb",
 			"settings":
 			{
-				"buffer_size": 881,
+				"buffer_size": 991,
 				"line_ending": "Unix"
 			}
 		},
@@ -558,7 +547,7 @@
 			"file": "app/views/deals/index.html.erb",
 			"settings":
 			{
-				"buffer_size": 1247,
+				"buffer_size": 1359,
 				"line_ending": "Unix"
 			}
 		}
@@ -566,7 +555,7 @@
 	"build_system": "Packages/Ruby/Ruby.sublime-build",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 267.0,
 		"selected_items":
 		[
 			[
@@ -698,7 +687,7 @@
 				"Set Syntax: HTML (Erlang)"
 			]
 		],
-		"width": 711.0
+		"width": 473.0
 	},
 	"console":
 	{
@@ -715,10 +704,12 @@
 	},
 	"file_history":
 	[
+		"/Users/zekarias/Desktop/char_help/helpon/app/controllers/deals_controller.rb",
+		"/Users/zekarias/Desktop/char_help/helpon/config/routes.rb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/deals/show.html.erb",
 		"/Users/zekarias/Desktop/char_help/helpon/app/views/deals/index.html.erb",
 		"/Users/zekarias/Desktop/char_help/helpon/app/assets/stylesheets/application.css",
 		"/Users/zekarias/Desktop/char_help/helpon/spec/requests/deal_pages_spec.rb",
-		"/Users/zekarias/Desktop/char_help/helpon/config/routes.rb",
 		"/Users/zekarias/Desktop/char_help/helpon/spec/requests/static_pages_spec.rb",
 		"/Users/zekarias/Desktop/char_help/helpon/app/helpers/application_helper.rb",
 		"/Users/zekarias/Desktop/char_help/helpon/spec/helpers/application_helper_spec.rb",
@@ -840,9 +831,7 @@
 		"/Users/zekarias/charity/help_on/app/views/layouts/_header.html.erb",
 		"/Users/zekarias/charity/help_on/.gitignore",
 		"/Users/zekarias/charity/help_on/spec/spec_helper.rb",
-		"/Users/zekarias/charity/help_on/spec/requests/pages_spec.rb",
-		"/Users/zekarias/charity/help_on/app/views/layouts/application.html.erb",
-		"/Users/zekarias/rails_course/ticketee/config/locales/devise.en.yml"
+		"/Users/zekarias/charity/help_on/spec/requests/pages_spec.rb"
 	],
 	"find":
 	{
@@ -862,6 +851,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"blurb_t",
 			"All Deals",
 			"'All Deals'",
 			"All Deals",
@@ -950,15 +940,15 @@
 					"file": "spec/requests/deal_pages_spec.rb",
 					"settings":
 					{
-						"buffer_size": 4830,
+						"buffer_size": 4063,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4726,
-								4726
+								159,
+								159
 							]
 						],
 						"settings":
@@ -970,8 +960,8 @@
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 27.0,
-						"translation.y": 2901.0,
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -979,83 +969,23 @@
 			]
 		},
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 1,
-					"file": "app/controllers/deals_controller.rb",
+					"file": "spec/support/attributes.rb",
 					"settings":
 					{
-						"buffer_size": 147,
+						"buffer_size": 489,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								131,
-								131
-							]
-						],
-						"settings":
-						{
-							"encoding_helper_confidence": 1.0,
-							"encoding_helper_encoding": "UTF-8",
-							"encoding_helper_encoding_sublime": "UTF-8",
-							"syntax": "Packages/Rails/Ruby on Rails.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "config/routes.rb",
-					"settings":
-					{
-						"buffer_size": 1776,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								145,
-								145
-							]
-						],
-						"settings":
-						{
-							"encoding_helper_confidence": 1.0,
-							"encoding_helper_encoding": "UTF-8",
-							"encoding_helper_encoding_sublime": "UTF-8",
-							"syntax": "Packages/Rails/Ruby on Rails.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/views/deals/show.html.erb",
-					"settings":
-					{
-						"buffer_size": 881,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								825,
-								825
+								86,
+								86
 							]
 						],
 						"settings":
@@ -1063,28 +993,28 @@
 							"encoding_helper_confidence": 0.0,
 							"encoding_helper_encoding": "Unknown",
 							"encoding_helper_encoding_sublime": "UTF-8",
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+							"syntax": "Packages/Rails/Ruby on Rails.tmLanguage"
 						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.x": 1.0,
+						"translation.y": 48.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "app/views/deals/index.html.erb",
+					"buffer": 2,
+					"file": "app/views/deals/show.html.erb",
 					"settings":
 					{
-						"buffer_size": 1247,
+						"buffer_size": 991,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1223,
-								1223
+								663,
+								663
 							]
 						],
 						"settings":
@@ -1092,10 +1022,43 @@
 							"encoding_helper_confidence": 1.0,
 							"encoding_helper_encoding": "UTF-8",
 							"encoding_helper_encoding_sublime": "UTF-8",
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 653.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/views/deals/index.html.erb",
+					"settings":
+					{
+						"buffer_size": 1359,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								842,
+								842
+							]
+						],
+						"settings":
+						{
+							"encoding_helper_confidence": 1.0,
+							"encoding_helper_encoding": "UTF-8",
+							"encoding_helper_encoding_sublime": "UTF-8",
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 498.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1131,7 +1094,7 @@
 		"cols":
 		[
 			0.0,
-			0.431041112875,
+			0.582405587701,
 			1.0
 		],
 		"rows":
@@ -1143,7 +1106,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 301.0
+		"height": 307.0
 	},
 	"output.git":
 	{
@@ -1164,6 +1127,18 @@
 		"selected_items":
 		[
 			[
+				"in",
+				"app/views/deals/index.html.erb"
+			],
+			[
+				"sho",
+				"app/views/deals/show.html.erb"
+			],
+			[
+				"att",
+				"spec/support/attributes.rb"
+			],
+			[
 				"i",
 				"app/views/deals/index.html.erb"
 			],
@@ -1174,10 +1149,6 @@
 			[
 				"css",
 				"app/assets/stylesheets/application.css"
-			],
-			[
-				"in",
-				"app/views/deals/index.html.erb"
 			],
 			[
 				"ds",
@@ -1666,14 +1637,6 @@
 			[
 				"spec/integration/editing_projects_spec.rb",
 				"spec/integration/editing_projects_spec.rb"
-			],
-			[
-				"pec/integration/deleting_projects_spec.rb",
-				"spec/integration/deleting_projects_spec.rb"
-			],
-			[
-				"spec/controllers/projects_controller.rb",
-				"spec/controllers/projects_controller_spec.rb"
 			]
 		],
 		"width": 0.0

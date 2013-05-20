@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
+    @deals = Deal.order(:name)
   end
 
   def help
