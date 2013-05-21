@@ -28,6 +28,12 @@ class DealsController < ApplicationController
     redirect_to @deal
   end
 
+  def destroy
+    @deal = Deal.find(params[:id])
+    @deal.destroy
+    redirect_to root_path
+  end
+
   private
    def deal_params 
     params.require(:deal).

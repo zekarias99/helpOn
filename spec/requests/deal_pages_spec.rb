@@ -145,4 +145,19 @@ describe "Deals page" do
       end
     end
   end
+
+  describe "Delete" do
+    describe "Deleting a deal" do
+      it "destroys the deal and shows the deal listing the deleted deal" do
+        deal = Deal.create(deal_attributes)
+
+        visit deal_path(deal)
+
+        click_link 'Delete'
+
+        expect(current_path).to eq(root_path)
+        expect(page).not_to have_text(deal.name)
+      end
+    end
+  end
 end

@@ -57,7 +57,10 @@
 
 <%= link_to "List All Deals", root_path %> |
 
-<%= link_to "Edit", edit_deal_path(@deal) %>
+<%= link_to "Edit", edit_deal_path(@deal) %> |
+
+<%= link_to "Delete", deal_path(@deal), method: :delete, 
+        data: { confirm: 'Are you sure?'} %> 
 
 <p>
 
