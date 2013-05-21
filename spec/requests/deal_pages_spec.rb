@@ -85,4 +85,36 @@ describe "Deals page" do
       end
     end
   end
+
+  describe "Eddit" do
+    describe "Editing a deal" do  
+      it "updates the deal and shows the deal's updated details" do
+        deal = Deal.create(deal_attributes)
+        
+        visit deal_url(deal)
+        
+        click_link 'Edit'
+        
+        expect(current_path).to eq(edit_deal_path(deal))
+            
+        expect(find_field('Blurb').value).to eq(deal.blurb)
+
+        fill_in "Name", with: "Updated Cafe Recer"
+        fill_in "Blurb", with: "Come and Enjoy the sunny day of Seattle"
+        fill_in "Deal type", with: "Restourant"
+        fill_in "Regular price", with: 10.00
+        fill_in "Initial discount", with: 100.00
+        fill_in "Max discount", with: 40.00
+        fill_in "Max threshold", with: 60.00
+        fill_in "Tipping point", with: 70
+        fill_in "Approved", with: "Yes"
+
+        click_button 'Update Deal'
+
+        expect(current_path).to eq(deal_path(deal))
+
+        expect(page).to have_text('Updated Cafe Recer')
+      end  
+    end    
+  end
 end
