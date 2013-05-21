@@ -1,4 +1,7 @@
 <h1>Deal of the Day</h1>
+
+<%= link_to "Add New Deal", new_deal_path  %>
+
 <h1><%= pluralize(@deals.size, 'Deal') %></h1>
 <% @deals.each do |deal| %>
   <article>
@@ -60,4 +63,5 @@
     </table>
   </article>
 <% end %>
+
 

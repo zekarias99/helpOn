@@ -117,4 +117,32 @@ describe "Deals page" do
       end  
     end    
   end
+
+  describe "Create" do
+    describe "Creating a new deal" do
+      it "should save the deal and & shows the new deal's details" do
+        visit root_path
+
+        click_link 'Add New Deal'
+
+        expect(current_path).to eq(new_deal_path)
+
+        fill_in "Name", with: "New Deal Name"
+        fill_in "Blurb", with: "Come and Enjoy the sunny day of Seattle"
+        fill_in "Deal type", with: "Restourant"
+        fill_in "Regular price", with: 10.00
+        fill_in "Initial discount", with: 100.00
+        fill_in "Max discount", with: 40.00
+        fill_in "Max threshold", with: 60.00
+        fill_in "Tipping point", with: 70
+        fill_in "Approved", with: "Yes"
+      
+        click_button 'Create Deal'
+
+        expect(current_path).to eq(deal_path(Deal.last))
+
+        expect(page).to have_text('New Deal Name')
+      end
+    end
+  end
 end

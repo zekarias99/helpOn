@@ -1,8 +1,10 @@
 Helpon::Application.routes.draw do
   root  'static_pages#home'
-  get   'deals/:id' =>  'deals#show', as: 'deal'
-  get   'deals/:id/edit' =>  'deals#edit', as: 'edit_deal'
-  patch 'deals/:id' =>  'deals#update'
+
+  resources :deals
+  # get   'deals/:id' =>  'deals#show', as: 'deal'
+  # get   'deals/:id/edit' =>  'deals#edit', as: 'edit_deal'
+  # patch 'deals/:id' =>  'deals#update'
   match 'help',         to: 'static_pages#help',    via: 'get'
   match 'about',        to: 'static_pages#about',   via: 'get'
   match 'contact',      to: 'static_pages#contact', via: 'get' 
