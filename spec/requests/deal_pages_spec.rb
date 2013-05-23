@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "Deals page" do
+describe Deal do
   describe "(index/deals)" do
     describe "Viewing the list of deals" do
       it "shows the deals" do
@@ -114,6 +114,7 @@ describe "Deals page" do
         expect(current_path).to eq(deal_path(deal))
 
         expect(page).to have_text('Updated Cafe Recer')
+        expect(page).to have_text('Deal successfully updated!')
       end  
     end    
   end
@@ -142,6 +143,7 @@ describe "Deals page" do
         expect(current_path).to eq(deal_path(Deal.last))
 
         expect(page).to have_text('New Deal Name')
+        expect(page).to have_content('Deal has been created.')
       end
     end
   end
@@ -157,6 +159,7 @@ describe "Deals page" do
 
         expect(current_path).to eq(root_path)
         expect(page).not_to have_text(deal.name)
+        expect(page).to have_text("Deal successfully deleted!")
       end
     end
   end

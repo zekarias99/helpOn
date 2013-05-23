@@ -18,20 +18,28 @@ class DealsController < ApplicationController
 
   def create
     @deal = Deal.new(deal_params)
-    @deal.save
-    redirect_to @deal
+      if @deal.save
+        flash[:notice] = "Deal has been created."
+        redirect_to @deal
+      else
+        render :new
+    end
   end
 
   def update
     @deal = Deal.find(params[:id])
-    @deal.update(deal_params)
-    redirect_to @deal
+    if @deal.update(deal_params)
+      flash[:notice] = "Deal successfully updated!"
+      redirect_to @deal
+    else
+      render :edit
+    end
   end
 
   def destroy
     @deal = Deal.find(params[:id])
     @deal.destroy
-    redirect_to root_path
+    redirect_to root_path, alert: 'Deal successfully deleted!'
   end
 
   private
