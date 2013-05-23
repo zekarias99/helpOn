@@ -4,12 +4,20 @@
 		"selected_items":
 		[
 			[
-				"deal_",
-				"deals_path"
+				"dea",
+				"deals"
 			],
 			[
-				"dea",
-				"deal"
+				"Dea",
+				"Deal"
+			],
+			[
+				"De",
+				"Delete"
+			],
+			[
+				"deal_",
+				"deals_path"
 			],
 			[
 				"na",
@@ -18,10 +26,6 @@
 			[
 				"deals_",
 				"deals_url"
-			],
-			[
-				"Dea",
-				"Deals"
 			],
 			[
 				"deal",
@@ -510,10 +514,6 @@
 			[
 				"s",
 				"score"
-			],
-			[
-				"so",
-				"song"
 			]
 		]
 	},
@@ -523,15 +523,23 @@
 			"file": "spec/requests/deal_pages_spec.rb",
 			"settings":
 			{
-				"buffer_size": 4063,
+				"buffer_size": 4890,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "spec/support/attributes.rb",
+			"file": "app/controllers/deals_controller.rb",
 			"settings":
 			{
-				"buffer_size": 489,
+				"buffer_size": 752,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/deal.rb",
+			"settings":
+			{
+				"buffer_size": 36,
 				"line_ending": "Unix"
 			}
 		},
@@ -539,7 +547,7 @@
 			"file": "app/views/deals/show.html.erb",
 			"settings":
 			{
-				"buffer_size": 991,
+				"buffer_size": 1157,
 				"line_ending": "Unix"
 			}
 		},
@@ -547,7 +555,15 @@
 			"file": "app/views/deals/index.html.erb",
 			"settings":
 			{
-				"buffer_size": 1359,
+				"buffer_size": 70,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/static_pages/home.html.erb",
+			"settings":
+			{
+				"buffer_size": 1529,
 				"line_ending": "Unix"
 			}
 		}
@@ -704,6 +720,7 @@
 	},
 	"file_history":
 	[
+		"/Users/zekarias/Desktop/char_help/helpon/spec/support/attributes.rb",
 		"/Users/zekarias/Desktop/char_help/helpon/app/controllers/deals_controller.rb",
 		"/Users/zekarias/Desktop/char_help/helpon/config/routes.rb",
 		"/Users/zekarias/Desktop/char_help/helpon/app/views/deals/show.html.erb",
@@ -830,8 +847,7 @@
 		"/Users/zekarias/Desktop/Kevin/my_app/app/views/layouts/index.html.erb",
 		"/Users/zekarias/charity/help_on/app/views/layouts/_header.html.erb",
 		"/Users/zekarias/charity/help_on/.gitignore",
-		"/Users/zekarias/charity/help_on/spec/spec_helper.rb",
-		"/Users/zekarias/charity/help_on/spec/requests/pages_spec.rb"
+		"/Users/zekarias/charity/help_on/spec/spec_helper.rb"
 	],
 	"find":
 	{
@@ -839,7 +855,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 108.0,
 		"where_history":
 		[
 			"/Users/zekarias/rails_project/help_on/app/assets/stylesheets",
@@ -851,6 +867,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			".order",
+			"order",
 			"blurb_t",
 			"All Deals",
 			"'All Deals'",
@@ -932,7 +950,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -940,15 +958,28 @@
 					"file": "spec/requests/deal_pages_spec.rb",
 					"settings":
 					{
-						"buffer_size": 4063,
+						"buffer_size": 4890,
 						"regions":
 						{
+							"bookmarks":
+							{
+								"flags": 144,
+								"icon": "bookmark",
+								"regions":
+								[
+									[
+										408,
+										374
+									]
+								],
+								"scope": "bookmarks"
+							}
 						},
 						"selection":
 						[
 							[
-								159,
-								159
+								4737,
+								4737
 							]
 						],
 						"settings":
@@ -960,6 +991,66 @@
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
+						"translation.x": 5.0,
+						"translation.y": 3582.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/controllers/deals_controller.rb",
+					"settings":
+					{
+						"buffer_size": 752,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								56,
+								56
+							]
+						],
+						"settings":
+						{
+							"encoding_helper_confidence": 1.0,
+							"encoding_helper_encoding": "UTF-8",
+							"encoding_helper_encoding_sublime": "UTF-8",
+							"syntax": "Packages/Rails/Ruby on Rails.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/models/deal.rb",
+					"settings":
+					{
+						"buffer_size": 36,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								31,
+								31
+							]
+						],
+						"settings":
+						{
+							"encoding_helper_confidence": 1.0,
+							"encoding_helper_encoding": "UTF-8",
+							"encoding_helper_encoding_sublime": "UTF-8",
+							"syntax": "Packages/Rails/Ruby on Rails.tmLanguage"
+						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
@@ -969,52 +1060,23 @@
 			]
 		},
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
-					"buffer": 1,
-					"file": "spec/support/attributes.rb",
-					"settings":
-					{
-						"buffer_size": 489,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								86,
-								86
-							]
-						],
-						"settings":
-						{
-							"encoding_helper_confidence": 0.0,
-							"encoding_helper_encoding": "Unknown",
-							"encoding_helper_encoding_sublime": "UTF-8",
-							"syntax": "Packages/Rails/Ruby on Rails.tmLanguage"
-						},
-						"translation.x": 1.0,
-						"translation.y": 48.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
+					"buffer": 3,
 					"file": "app/views/deals/show.html.erb",
 					"settings":
 					{
-						"buffer_size": 991,
+						"buffer_size": 1157,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								663,
-								663
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1027,25 +1089,25 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 653.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
 					"file": "app/views/deals/index.html.erb",
 					"settings":
 					{
-						"buffer_size": 1359,
+						"buffer_size": 70,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								842,
-								842
+								70,
+								70
 							]
 						],
 						"settings":
@@ -1058,7 +1120,38 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 498.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/views/static_pages/home.html.erb",
+					"settings":
+					{
+						"buffer_size": 1529,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"encoding_helper_confidence": 1.0,
+							"encoding_helper_encoding": "UTF-8",
+							"encoding_helper_encoding_sublime": "UTF-8",
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1094,7 +1187,7 @@
 		"cols":
 		[
 			0.0,
-			0.582405587701,
+			0.48070098216,
 			1.0
 		],
 		"rows":
@@ -1106,7 +1199,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 307.0
+		"height": 236.0
 	},
 	"output.git":
 	{
@@ -1126,6 +1219,18 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"dr",
+				"app/models/deal.rb"
+			],
+			[
+				"dc",
+				"app/controllers/deals_controller.rb"
+			],
+			[
+				"ho",
+				"app/views/static_pages/home.html.erb"
+			],
 			[
 				"in",
 				"app/views/deals/index.html.erb"
@@ -1153,10 +1258,6 @@
 			[
 				"ds",
 				"spec/requests/deal_pages_spec.rb"
-			],
-			[
-				"dc",
-				"app/controllers/deals_controller.rb"
 			],
 			[
 				"application_helper_spec.rb",
@@ -1189,10 +1290,6 @@
 			[
 				"aph",
 				"app/helpers/application_helper.rb"
-			],
-			[
-				"ho",
-				"app/views/static_pages/home.html.erb"
 			],
 			[
 				"h",
@@ -1633,10 +1730,6 @@
 			[
 				"hi",
 				"spec/integration/hidden_links_spec.rb"
-			],
-			[
-				"spec/integration/editing_projects_spec.rb",
-				"spec/integration/editing_projects_spec.rb"
 			]
 		],
 		"width": 0.0

@@ -5,7 +5,7 @@ describe "Deals page" do
     describe "Viewing the list of deals" do
       it "shows the deals" do
 
-        deal1 = Deal.create(deal_attributes)
+        deal1 = Deal.create(deal_attributes(name: 'Spa Deal'))
 
         deal2 = Deal.create(deal_attributes(name: "Snack Bar")) 
 
@@ -13,7 +13,7 @@ describe "Deals page" do
 
       visit root_path
 
-      expect(page).to have_text('3 Deals')
+      expect(page).to have_text('Deals')
       expect(page).to have_text(deal1.name)
       expect(page).to have_text(deal2.name)
       expect(page).to have_text(deal3.name)
@@ -75,7 +75,7 @@ describe "Deals page" do
 
       it "allows navigation from the listing page to the detail pa" do
 
-        deal = Deal.create(deal_attributes)
+        deal = Deal.create(deal_attributes(name: "Nevigation"))
 
         visit root_path
 
@@ -149,7 +149,7 @@ describe "Deals page" do
   describe "Delete" do
     describe "Deleting a deal" do
       it "destroys the deal and shows the deal listing the deleted deal" do
-        deal = Deal.create(deal_attributes)
+        deal = Deal.create(deal_attributes(name: 'Delete'))
 
         visit deal_path(deal)
 

@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
-  def home
-    @deals = Deal.order(:name)
+  def home 
+    @deals = Deal.featured_date
   end
 
   def help

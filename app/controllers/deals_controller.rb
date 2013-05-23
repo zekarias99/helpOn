@@ -5,7 +5,7 @@ class DealsController < ApplicationController
   end
 
   def index 
-    @deals = Deal.all
+    @deals = Deal.featured_date
   end
 
   def show
