@@ -45,7 +45,8 @@ class DealsController < ApplicationController
   private
    def deal_params 
     params.require(:deal).
-    permit(:name, :blurb, :max_threshold, :max_discount, :deal_type, 
-      :regular_price, :initial_discount, :tipping_point, :deal_date, :approved)
+    permit(:name, :blurb_title, :blurb, :deal_type, :photo_file_name, 
+          :regular_price, :initial_discount, :max_discount, :max_threshold, 
+          :tipping_point, :deal_date, :end_date, :approved)
   end
 end
