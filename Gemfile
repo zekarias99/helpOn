@@ -5,6 +5,7 @@ gem 'rails', '4.0.0.rc1'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.1.2'
 gem "simple_form"
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 group :development, :test do
   gem 'sqlite3', '1.3.7'
