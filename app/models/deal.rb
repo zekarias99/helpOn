@@ -9,11 +9,12 @@ class Deal < ActiveRecord::Base
   validates :regular_price, :initial_discount, :max_threshold, :max_discount, 
              numericality: { greater_than_or_equal_to: 0.01 }
 
- validates :photo_file_name, allow_blank: true, format: 
+  validates :photo_file_name, allow_blank: true, format: 
            {with: /\w+.(gif|jpg|png)\z/i,
             message: "must reference a GIF, JPG, or PNG image" }
+  has_many :fine_prints, :dependent => :destroy
 
-DEAL_TYPE = %w[Flat Slider Tipping]
+  DEAL_TYPE = %w[Flat Slider Tipping]
             
   def self.featured_date
     where("deal_date >= ?", Time.now).order("deal_date")

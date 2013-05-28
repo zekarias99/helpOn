@@ -1,0 +1,5 @@
+<p><%= @fine_print.description %></p>
+
+<%= link_to "List All Fine Prints", fine_prints_path %> 
+ <%= link_to "Delete", fine_print_path(@fine_print), method: :delete, 
+        data: { confirm: 'Are you sure?'} %>

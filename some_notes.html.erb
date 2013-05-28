@@ -13,30 +13,5 @@
  :approved
 
 
- describe "accepts properly formatted image file names" do
-    it "should be valid" do
-    file_names = %w[e.png event.png event.jpg event.gif EVENT.GIF]
-    file_names.each do |accepted_file_name|
-        @deal.photo_file_name = accepted_file_name
-        expect(@deal).to be_valid
-      end      
-    end
-  end
-
-
-
- it "accepts properly formatted image file names" do
-
-    expect(project.valid?).to be_false
-    expect(project.errors[:image_file_name].any?).to be_false
-  end
-end
-
-it "rejects improperly formatted image file names" do
-  file_names = %w[event .jpg .png .gif event.pdf event.doc]
-  file_names.each do |file_name|
-    project = Project.new(image_file_name: file_name)
-
-    expect(project.valid?).to be_false
-    expect(project.errors[:image_file_name].any?).to be_true
-  end
+rails generate controller FinePrints  --no-test-framework
+rails generate model FinePrint description:string deal_id:integer

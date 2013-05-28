@@ -16,4 +16,11 @@ def deal_attributes(overrides ={})
   }.merge(overrides)
 end
 
+def fine_print_attributes(overrides = {})
+    {
+      description: "Expires in 1 year May buy multiple. Must register by the... "
+    }
+end
+
+
 # Remember to add some deal attributes as needed
