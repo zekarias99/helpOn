@@ -12,7 +12,9 @@ class Deal < ActiveRecord::Base
   validates :photo_file_name, allow_blank: true, format: 
            {with: /\w+.(gif|jpg|png)\z/i,
             message: "must reference a GIF, JPG, or PNG image" }
+            
   has_many :fine_prints, :dependent => :destroy
+  has_many :highlights, :dependent => :destroy
 
   DEAL_TYPE = %w[Flat Slider Tipping]
             

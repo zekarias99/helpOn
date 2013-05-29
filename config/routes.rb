@@ -1,7 +1,7 @@
 Helpon::Application.routes.draw do
   root  'static_pages#home'
 
-  resources :deals, :fine_prints
+  resources :deals, :fine_prints, :highlights
   # get   'deals/:id' =>  'deals#show', as: 'deal'
   # get   'deals/:id/edit' =>  'deals#edit', as: 'edit_deal'
   # patch 'deals/:id' =>  'deals#update'

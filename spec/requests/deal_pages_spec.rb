@@ -91,7 +91,7 @@ describe Deal do
       it "updates the deal and shows the deal's updated details" do
         deal = Deal.create(deal_attributes)
         
-        visit deal_url(deal)
+        visit deal_path(deal)
         
         click_link 'Edit'
         

@@ -44,7 +44,7 @@ class FinePrintsController < ApplicationController
 
   private
    def fine_print_params 
-    params.require(:fine_print).permit(:description)
+    params.require(:fine_print).permit(:description, :deal_id)
   end
 end
 

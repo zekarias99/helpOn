@@ -18,9 +18,18 @@ end
 
 def fine_print_attributes(overrides = {})
     {
-      description: "Expires in 1 year May buy multiple. Must register by the... "
+      description: "Expires in 1 year May buy multiple. Must register by the... ", 
+      deal_id: 12
     }
 end
+
+def highlight_attributes(overrides = {})
+    {
+      description: "Nice place to be come and enjoy the sunny day of seattle ", 
+      deal_id: 12
+    }
+end
+
 
 
 # Remember to add some deal attributes as needed

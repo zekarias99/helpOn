@@ -1,0 +1,14 @@
+<p>
+  <strong>Description:</strong>
+  <%= @highlight.description %>
+</p>
+<p>
+  <strong>Deal:</strong>
+  <%= @highlight.deal_id %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_highlight_path(@highlight) %> |
+  <%= link_to "Delete", @highlight, method: :delete, data: { confirm: 'Are you sure?'} %> |
+  <%= link_to "View All", highlights_path %>
+</p>

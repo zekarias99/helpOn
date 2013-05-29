@@ -86,6 +86,7 @@ describe "Fine print" do
   describe "Create" do
     describe "Creating a new fine print" do
       it "should save the fine print and & shows the new fine print's details" do
+
         visit fine_prints_path
 
         click_link 'Add New Fine Print'
@@ -93,6 +94,8 @@ describe "Fine print" do
         expect(current_path).to eq(new_fine_print_path)
 
         fill_in "Description", with: "It may be vary "
+
+        fill_in "Deal", with: 42
       
         click_button "Create Fine print"
 
