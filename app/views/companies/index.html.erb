@@ -1,0 +1,21 @@
+
+<table id="tablelist">
+  <tr>
+    <th>Company</th>
+    <th>City</th>
+    <th>State</th>
+  </tr>
+  <% for company in @companies %>
+    <tr>
+      <td><%= company.business_name %></td>
+      <td><%= company.business_name %></td>
+      <td><%= company.state %></td>
+      <td><%= link_to "Delete", company, method: :delete, 
+        data: { confirm: 'Are you sure?'} %></td>
+      <td><%= link_to "Show", company %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p class="links"><%= link_to "New Company", new_company_path %></p>
+

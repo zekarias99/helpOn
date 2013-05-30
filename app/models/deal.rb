@@ -12,17 +12,29 @@ class Deal < ActiveRecord::Base
   validates :photo_file_name, allow_blank: true, format: 
            {with: /\w+.(gif|jpg|png)\z/i,
             message: "must reference a GIF, JPG, or PNG image" }
-            
+
+  belongs_to :company
+
   has_many :fine_prints, :dependent => :destroy
   has_many :highlights, :dependent => :destroy
 
-  DEAL_TYPE = %w[Flat Slider Tipping]
             
   def self.featured_date
     where("deal_date >= ?", Time.now).order("deal_date")
   end
+  
+  after_update :remove_empty_fine_prints
+  after_update :remove_empty_highlights
 
- def order_count
+  def remove_empty_fine_prints
+    fine_prints.delete fine_prints.select{ |fine_print| fine_print.description.blank?}
+  end
+  
+  def remove_empty_highlights
+    highlights.delete highlights.select{ |highlight| highlight.description.blank?}
+  end
+
+  def order_count
     counted = 25
     if self.deal_type == 'Slider'
       counted < self.max_threshold ? counted : self.max_threshold

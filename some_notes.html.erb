@@ -1,21 +1,36 @@
- :name 
- :blurb_title 
- :blurb
- :deal_type 
- :photo_file_name
- :regular_price 
- :initial_discount
- :max_discount 
- :max_threshold 
- :tipping_point 
- :deal_date 
- :end_date 
- :approved
+:business_name
+:email_address
+:first_name
+:last_name
+:address_1
+:address_2
+:city_id
+:state
+:zip
+:country
+:phone
+:website
+:pick_a_category
+:where_do_you_want_your_helpon_to_run
+:review_links
+:tell_us_a_little_bit_about_your_business
 
 
-rails generate controller Highlights  --no-test-framework
-rails generate model Highlight description:string deal_id:integer
 
-highlights 
+
+
+
+
+
+
+
+rails generate controller Companies  --no-test-framework
+rails generate model Company description:string deal_id:integer
+rails generate integration_test company_pages
+
+
+Take a look in this code <td><%= company.city.business_name %></td>
+write a test to cauch the to an prepared e-mail.
+I don't think the city_id is good in charities form.
 
 

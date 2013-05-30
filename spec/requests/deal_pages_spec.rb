@@ -66,9 +66,9 @@ describe Deal do
 
         deal = Deal.create(deal_attributes)
 
-        visit deal_url(deal)
+        visit deal_path(deal)
 
-        click_link "List All Deals"
+        click_link "List All Deals "
         
         expect(current_path).to eq(root_path)
       end
