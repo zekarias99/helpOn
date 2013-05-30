@@ -1,6 +1,6 @@
 <%= form_for(@fine_print) do |f| %>
 
-<%= render "shared/errors_fine_print" %>
+<%= render "shared/errors_fine" %>
   <p>
     <%= f.label :description %><br />
     <%=  f.text_area :description, cols:60, row: 10 %> <br/>
@@ -11,8 +11,3 @@
   </p>
   <p><%= f.submit %> | <%=  link_to "Cancel", fine_prints_path %> </p>
 <% end %>
-
-<p>
-  <%= link_to "Show", @fine_print %> |
-  <%= link_to "List All Fine Prints", fine_prints_path %>
-</p>

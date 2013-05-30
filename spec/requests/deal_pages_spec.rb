@@ -136,7 +136,7 @@ describe Deal do
         fill_in "Max discount", with: 40.00
         fill_in "Max threshold", with: 60.00
         fill_in "Tipping point", with: 70
-        fill_in "Approved", with: "Yes"
+        page.check('Approved')
       
         click_button 'Create Deal'
 

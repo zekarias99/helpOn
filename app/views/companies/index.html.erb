@@ -5,9 +5,8 @@
     <th>City</th>
     <th>State</th>
   </tr>
-  <% for company in @companies %>
+  <% @companies.each do |company| %>
     <tr>
-      <td><%= company.business_name %></td>
       <td><%= company.business_name %></td>
       <td><%= company.state %></td>
       <td><%= link_to "Delete", company, method: :delete, 

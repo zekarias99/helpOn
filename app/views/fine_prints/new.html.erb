@@ -1,11 +1,5 @@
-<%= form_for(@fine_print) do |f| %>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
-  </p>
-  <p>
-    <%= f.label :deal_id %><br />
-    <%= f.text_field :deal_id %>
-  </p>
-  <p><%= f.submit %></p>
-<% end %>
+ <h1>New Fine Print</h1>
+
+<%= render 'form' %>
+
+<p><%= link_to "Back to List", fine_prints_path %></p>

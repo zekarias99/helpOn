@@ -1,4 +1,6 @@
 <%= form_for(@highlight) do |f| %>
+
+  <%= render "shared/errors_highlight" %>
   <p>
     <%= f.label :description %><br />
     <%= f.text_field :description %>
