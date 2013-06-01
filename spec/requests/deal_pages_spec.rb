@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Deal do
-  describe "(index/deals)" do
+  describe "(index/deals = deals_url)" do
     describe "Viewing the list of deals" do
       it "shows the deals" do
 
@@ -11,7 +11,7 @@ describe Deal do
 
         deal3 = Deal.create(deal_attributes(name: "Hotel")) 
 
-      visit root_path
+      visit deals_url
 
       expect(page).to have_text('Deals')
       expect(page).to have_text(deal1.name)
@@ -68,16 +68,16 @@ describe Deal do
 
         visit deal_path(deal)
 
-        click_link "List All Deals "
+        click_link "List All Deals"
         
-        expect(current_path).to eq(root_path)
+        expect(current_path).to eq(deals_path)
       end
 
       it "allows navigation from the listing page to the detail pa" do
 
         deal = Deal.create(deal_attributes(name: "Nevigation"))
 
-        visit root_path
+        visit deals_path
 
         click_link deal.name
 
@@ -107,11 +107,10 @@ describe Deal do
         fill_in "Max discount", with: 40.00
         fill_in "Max threshold", with: 60.00
         fill_in "Tipping point", with: 70
-        fill_in "Approved", with: "Yes"
 
         click_button 'Update Deal'
 
-        expect(current_path).to eq(deal_path(deal))
+        expect(current_path).to eq(deals_path)
 
         expect(page).to have_text('Updated Cafe Recer')
         expect(page).to have_text('Deal successfully updated!')
@@ -122,7 +121,7 @@ describe Deal do
   describe "Create" do
     describe "Creating a new deal" do
       it "should save the deal and & shows the new deal's details" do
-        visit root_path
+        visit deals_path
 
         click_link 'Add New Deal'
 
@@ -140,10 +139,7 @@ describe Deal do
       
         click_button 'Create Deal'
 
-        expect(current_path).to eq(deal_path(Deal.last))
-
-        expect(page).to have_text('New Deal Name')
-        expect(page).to have_content('Deal has been created.')
+        expect(current_path).to eq(deals_path)
       end
     end
   end
@@ -157,7 +153,7 @@ describe Deal do
 
         click_link 'Delete'
 
-        expect(current_path).to eq(root_path)
+        expect(current_path).to eq(deals_path)
         expect(page).not_to have_text(deal.name)
         expect(page).to have_text("Deal successfully deleted!")
       end

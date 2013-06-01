@@ -12,6 +12,17 @@ GIT
       spork (>= 1.0rc0)
 
 GIT
+  remote: git://github.com/thoughtbot/paperclip.git
+  revision: f55173018e246f2f8c196474cb85c7288491644c
+  specs:
+    paperclip (3.4.2)
+      activemodel (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.0)
+      mime-types
+
+GIT
   remote: https://github.com/stripe/stripe-ruby
   revision: 2dbc700fc35c9f6191e274febcd283223fce7d9a
   specs:
@@ -64,6 +75,10 @@ GEM
       xpath (>= 2.0.0.beta1)
     childprocess (0.3.6)
       ffi (~> 1.0, >= 1.0.6)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.1)
+      climate_control (>= 0.0.3, < 1.0)
     coderay (1.0.9)
     coffee-rails (4.0.0)
       coffee-script (>= 2.2.0)
@@ -242,6 +257,7 @@ DEPENDENCIES
   jbuilder (= 1.0.1)
   jquery-rails (= 2.2.1)
   meta_request
+  paperclip!
   pg (= 0.14.1)
   rails (= 4.0.0.rc1)
   rspec-rails (= 2.13.1)

@@ -41,11 +41,6 @@ describe Deal do
     it { should_not be_valid }
   end
 
-  describe "when photo_file_name is not present" do
-    before { @deal.photo_file_name = " " }
-    it { should_not be_valid }
-  end
-
   describe "when blurb_title is not present" do
     before { @deal.blurb_title = " " }
     it { should_not be_valid }

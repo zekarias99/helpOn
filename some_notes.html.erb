@@ -15,8 +15,8 @@
 :review_links
 :tell_us_a_little_bit_about_your_business
 
-rails generate controller Companies  --no-test-framework
-rails generate model Company description:string deal_id:integer
+rails generate controller Charities  --no-test-framework
+rails generate model Charity description:string deal_id:integer
 rails generate integration_test company_pages
 
 
@@ -28,17 +28,11 @@ I don't think the city_id is good in charities form.
 Charity name attributes
 ##########################
 
-charity_name:string
-registered_charity_number:string
-first_name:string
-last_name:string
-job_title:string
-email_address:string
-telephone_number:integer
-i_agree_to_the:boolean
-description:text
-charity_photo_file_name:string
-
+charity_name:string registered_charity_number:string first_name:string 
+last_name:string job_title:string email_address:string telephone_number:integer 
+i_agree_to_the:boolean description:text charity_photo_file_name:string 
+address_1:string address_2:string city_id:integer state:string 
+zip:integer country:string website:string pick_a_category:string
 
 
 Take a look an address from the company Model

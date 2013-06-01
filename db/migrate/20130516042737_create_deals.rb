@@ -8,7 +8,6 @@ class CreateDeals < ActiveRecord::Migration
       t.integer :max_threshold
       t.boolean :approved
       t.date :deal_date
-      t.string :photo_file_name
       t.string :blurb_title
       t.text :blurb
       t.string :deal_type

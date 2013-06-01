@@ -11,7 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130529175658) do
+ActiveRecord::Schema.define(version: 20130531234424) do
+
+  create_table "charities", force: true do |t|
+    t.string   "charity_name"
+    t.string   "registered_charity_number"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "job_title"
+    t.string   "email_address"
+    t.integer  "telephone_number"
+    t.boolean  "i_agree_to_the"
+    t.text     "description"
+    t.string   "address_1"
+    t.string   "address_2"
+    t.integer  "city_id"
+    t.string   "state"
+    t.integer  "zip"
+    t.string   "country"
+    t.string   "website"
+    t.string   "pick_a_category"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "companies", force: true do |t|
     t.string   "business_name"
@@ -42,7 +64,6 @@ ActiveRecord::Schema.define(version: 20130529175658) do
     t.integer  "max_threshold"
     t.boolean  "approved"
     t.date     "deal_date"
-    t.string   "photo_file_name"
     t.string   "blurb_title"
     t.text     "blurb"
     t.string   "deal_type"
@@ -50,6 +71,10 @@ ActiveRecord::Schema.define(version: 20130529175658) do
     t.date     "end_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "fine_prints", force: true do |t|

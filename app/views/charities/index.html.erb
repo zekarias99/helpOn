@@ -1,0 +1,19 @@
+<h1>Charities</h1>
+
+<table id="tablelist">
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <% for charity in @charities %>
+    <tr>
+      <td><%= link_to charity.charity_name, edit_charity_path(charity) %></td>
+      <td><%= truncate(charity.description, length: 40, separator: '') %></td>
+      <td><%= link_to "Delete", charity, method: :delete, 
+        data: { confirm: 'Are you sure?'} %></td>
+
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Charity", new_charity_path %></p>

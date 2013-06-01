@@ -51,7 +51,7 @@
   </p>
   <h3>Photo File Name</h3>
   <p>
-    <%= @deal.photo_file_name %>
+  <%= image_tag @deal.photo.url %>
   </p>
 </article>
 
@@ -87,7 +87,7 @@
 
 
 
-<%= link_to "List All Deals", root_path %> |
+<%= link_to "List All Deals", deals_path %> |
 
 <%= link_to "Edit", edit_deal_path(@deal) %> |
 

@@ -7,7 +7,6 @@ def deal_attributes(overrides ={})
     max_threshold:30 ,
     approved: true,
     deal_date:25.days.from_now,
-    photo_file_name:"rails.png",
     blurb_title:"Come and Enjoy",
     blurb:"Come And Enjoy the beutiful whether of Portland.",
     deal_type:"Hotel",
@@ -49,6 +48,28 @@ def company_attributes(overrides = {})
     where_do_you_want_your_helpon_to_run: 'Asmara',
     tell_us_a_little_bit_about_your_business: 'We are one of the best in Beer!'
   }
+end
+
+def charity_attributes(overrides = {})
+    {
+    charity_name:             'Red Cross',
+    registered_charity_number: 4537,
+    first_name:                'Sole',
+    last_name:                 'Hile',
+    job_title:                 'Manager',
+    email_address:             'sole.gmail.com',
+    telephone_number:           23498765,
+    i_agree_to_the:             1,
+    description:               'Help us save life', 
+    address_1:                 'Seattle',
+    address_2:                  12345,
+    city_id:                    2,
+    state:                     'WA',
+    zip:                        23215,
+    country:                   'USA',
+    website:                   'www.red_cross.com',
+    pick_a_category:           'Human right'
+    }
 end
 
 

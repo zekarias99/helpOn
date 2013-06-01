@@ -1,5 +1,9 @@
-
 class Deal < ActiveRecord::Base
+
+  has_attached_file :photo, 
+     :content_type => { :content_type => /\w+.(gif|jpg|png)\z/i },
+     :message => { :message => "must reference a GIF, JPG, or PNG image" }
+
 
   validates :regular_price, :initial_discount, :deal_date, :blurb,
             :max_discount, :max_threshold, :blurb_title, :deal_type,
@@ -9,9 +13,9 @@ class Deal < ActiveRecord::Base
   validates :regular_price, :initial_discount, :max_threshold, :max_discount, 
              numericality: { greater_than_or_equal_to: 0.01 }
 
-  validates :photo_file_name, allow_blank: true, format: 
-           {with: /\w+.(gif|jpg|png)\z/i,
-            message: "must reference a GIF, JPG, or PNG image" }
+  # validates :photo, allow_blank: true, format: 
+  #          {with: /\w+.(gif|jpg|png)\z/i,
+  #           message: "must reference a GIF, JPG, or PNG image" }
 
   belongs_to :company
 
