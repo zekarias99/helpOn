@@ -22,7 +22,7 @@ class CharitiesController < ApplicationController
       flash[:notice] = "Successfully created charity."
       redirect_to @charity
     else
-      render :action => 'new'
+      render  'new'
     end
   end
   
@@ -33,7 +33,7 @@ class CharitiesController < ApplicationController
       flash[:notice] = "Successfully updated charity."
       redirect_to charities_url
     else
-      render :action => 'edit'
+      render  'edit'
     end
   end
   

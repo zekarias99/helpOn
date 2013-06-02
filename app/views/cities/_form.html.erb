@@ -1,0 +1,12 @@
+<%= form_for( @city, :html => { :class => "normal_form" } ) do |f| %>
+<p>
+  <%= f.label :state %> 
+  <%= f.text_field :state %> 
+</p>
+<p>
+  <%= f.label :name %> 
+  <%= f.text_field :name %> 
+</p>
+  <%= f.submit %>
+<% end %>
+
