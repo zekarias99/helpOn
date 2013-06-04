@@ -12,13 +12,11 @@ class CreateCharities < ActiveRecord::Migration
       t.text :description
       t.string :address_1
       t.string :address_2
-      t.integer :city_id
       t.string :state
       t.integer :zip
       t.string :country
       t.string :website
       t.string :pick_a_category
-
       t.timestamps
     end
   end

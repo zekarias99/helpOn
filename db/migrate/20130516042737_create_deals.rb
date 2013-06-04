@@ -13,7 +13,6 @@ class CreateDeals < ActiveRecord::Migration
       t.string :deal_type
       t.integer :tipping_point
       t.date :end_date
-
       t.timestamps
     end
   end

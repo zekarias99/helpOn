@@ -23,6 +23,12 @@ rails generate integration_test company_pages
 Take a look in this code <td><%= company.city.business_name %></td>
 write a test to cauch the to an prepared e-mail.
 I don't think the city_id is good in charities form.
+rails g migration AddMoreFieldsToMovies cast:string director:string duration:string image_file_name:string
+
+rails g migration AddCityIdToStates city_id:integer
+  def self.up
+    add_column :charities, :city_id, :integer
+  end
 
 #########################
 Charity name attributes
@@ -40,6 +46,8 @@ test charity models
 
 Take a look an address from the company Model
 Take a look from the city index
+
+rails generate migration AddUserRefToProducts user:references
 
 
 

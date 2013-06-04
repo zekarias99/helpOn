@@ -45,6 +45,6 @@ class HighlightsController < ApplicationController
 
   private
   def highlight_params
-    params.require(:highlight).permit(:description, :deal_id)
+    params.require(:highlight).permit(:description)
   end
 end

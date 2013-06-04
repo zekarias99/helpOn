@@ -51,7 +51,7 @@ class CharitiesController < ApplicationController
     permit(:charity_name, :registered_charity_number, :first_name, 
            :last_name, :job_title, :email_address, :telephone_number,     
            :i_agree_to_the, :description,
-           :address_1, :address_2, :city_id, :state, :zip, :country,
+           :address_1, :address_2, :state, :zip, :country,
            :website, :pick_a_category )
   end
 end

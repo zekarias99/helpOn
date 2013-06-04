@@ -1,0 +1,19 @@
+<h2>The State</h2>
+
+<%= link_to 'Add New State', new_state_path %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Abbreviation</th>
+  </tr>
+  <% @states.each do |state| %>  
+    <tr>
+      <td><%= state.name %></td>
+      <td><%= state.abbreviation %></td>
+      <td><%= link_to "Show", state %></td>
+      <td><%= link_to "Edit", edit_state_path(state) %></td>
+    </tr>
+  <% end %>
+</table>
+

@@ -1,0 +1,8 @@
+<h1>States#show</h1>
+
+<p><%= @state.name %></p>
+<p><%= @state.abbreviation %></p>
+
+<%= link_to "List All Fine Prints", states_path %> 
+ <%= link_to "Delete", fine_print_path(@state), method: :delete, 
+        data: { confirm: 'Are you sure?'} %>

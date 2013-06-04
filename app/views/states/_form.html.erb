@@ -1,0 +1,12 @@
+<%= form_for(@state) do |f| %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%=  f.text_field :name %> <br/>
+  </p>
+  <p>
+    <%= f.label :abbreviation %><br />
+    <%= f.text_field :abbreviation %>
+  </p>
+  <p><%= f.submit %> | <%=  link_to "Cancel", states_path %> </p>
+<% end %>

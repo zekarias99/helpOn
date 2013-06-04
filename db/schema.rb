@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130602001407) do
+ActiveRecord::Schema.define(version: 20130602011951) do
 
   create_table "charities", force: true do |t|
     t.string   "charity_name"
@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 20130602001407) do
     t.text     "description"
     t.string   "address_1"
     t.string   "address_2"
-    t.integer  "city_id"
     t.string   "state"
     t.integer  "zip"
     t.string   "country"
@@ -37,11 +36,13 @@ ActiveRecord::Schema.define(version: 20130602001407) do
 
   create_table "cities", force: true do |t|
     t.string   "name"
-    t.integer  "state_id"
     t.string   "search_name"
+    t.integer  "state_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "cities", ["state_id"], name: "index_cities_on_state_id"
 
   create_table "companies", force: true do |t|
     t.string   "business_name"
@@ -50,7 +51,6 @@ ActiveRecord::Schema.define(version: 20130602001407) do
     t.string   "last_name"
     t.string   "address_1"
     t.string   "address_2"
-    t.integer  "city_id"
     t.string   "state"
     t.integer  "zip"
     t.string   "country"
@@ -87,14 +87,19 @@ ActiveRecord::Schema.define(version: 20130602001407) do
 
   create_table "fine_prints", force: true do |t|
     t.string   "description"
-    t.integer  "deal_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "highlights", force: true do |t|
     t.string   "description"
-    t.integer  "deal_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "states", force: true do |t|
+    t.string   "name"
+    t.string   "abbreviation"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

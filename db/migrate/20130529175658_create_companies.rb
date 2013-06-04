@@ -7,7 +7,6 @@ class CreateCompanies < ActiveRecord::Migration
       t.string :last_name
       t.string :address_1
       t.string :address_2
-      t.integer :city_id
       t.string :state
       t.integer :zip
       t.string :country
