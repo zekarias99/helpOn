@@ -1,3 +1,7 @@
-<h1>Add New Deal</h1>
+<% provide(:title, 'New Deal') %>
+<h1>New Deal</h1>
+
 
 <%= render 'form' %>
+
+<p class="links"><%= link_to "Back to List", deals_path %></p>

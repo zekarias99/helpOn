@@ -1,3 +1,8 @@
-<h1>Editing <%= @deal.name %></h1>
+<% provide(:title, 'Edit Deal') %>
+<h1>Edit Deal</h1>
 
 <%= render 'form' %>
+
+<p class="links">
+  <%= link_to "View All", deals_path %>
+</p>

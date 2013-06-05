@@ -10,7 +10,7 @@
   <% @fine_prints.each do |fine_print| %>
     <tr>
       <td><%= truncate(fine_print.description, length: 60, separator: ' ') %></td>
-      <td><%= fine_print.deal_id %></td>
+      <td><%= fine_print.deal %></td>
       <td><%= link_to "Show", fine_print %></td>
       <td><%= link_to "Edit", edit_fine_print_path(fine_print) %></td>
     </tr>

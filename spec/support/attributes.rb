@@ -18,14 +18,12 @@ end
 def fine_print_attributes(overrides = {})
   {
     description: "Expires in 1 year May buy multiple. Must register by the... ", 
-    deal_id: 12
   }
 end
 
 def highlight_attributes(overrides = {})
   {
     description: "Nice place to be come and enjoy the sunny day of seattle ", 
-    deal_id: 12
   }
 end
 
@@ -37,7 +35,6 @@ def company_attributes(overrides = {})
     last_name:            'Bar',
     address_1:            '3322 140 th S.t',
     address_2:            'NE Seattle',
-    city_id:               2,
     state:                'Seattle',
     zip:                  '98125',
     country:              'USA',
@@ -63,7 +60,6 @@ def charity_attributes(overrides = {})
     description:               'Help us save life', 
     address_1:                 'Seattle',
     address_2:                  12345,
-    city_id:                    2,
     state:                     'WA',
     zip:                        23215,
     country:                   'USA',

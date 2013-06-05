@@ -33,10 +33,6 @@
     <%= f.text_field :address_2 %>
   </p>
   <p>
-    <%= f.label :city_id %><br />
-    <%= f.text_field :city_id %>
-  </p>
-  <p>
     <%= f.label :state %><br />
     <%= f.text_field :state %>
   </p>
@@ -67,7 +63,7 @@
   </p>
   <p>
     <%= f.label :i_agree_to_the %><br />
-    <%= f.text_field :i_agree_to_the %>
+    <%= f.check_box :i_agree_to_the %>
   </p>
   <p><%= f.submit %>  </p>
 <% end %>

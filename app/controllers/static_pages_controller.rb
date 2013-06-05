@@ -1,6 +1,5 @@
 class StaticPagesController < ApplicationController
   def home 
-    @deals = Deal.featured_date
   end
 
   def help

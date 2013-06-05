@@ -1,4 +1,4 @@
 class FinePrint < ActiveRecord::Base
-  validates :description, :deal_id, presence: true
+  validates :description,  presence: true
   belongs_to :deal
 end

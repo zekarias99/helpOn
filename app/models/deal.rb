@@ -17,15 +17,21 @@ class Deal < ActiveRecord::Base
   #          {with: /\w+.(gif|jpg|png)\z/i,
   #           message: "must reference a GIF, JPG, or PNG image" }
 
+  DEAL_TYPE = %w[Flat Slider Tipping]
+
+  # # accepts_nested_attributes_for :fine_prints, :reject_if => lambda { |a| a[:description].blank? }
+  # accepts_nested_attributes_for :highlights, :reject_if => lambda { |a| a[:description].blank? }
+  
   belongs_to :company
+  belongs_to :city
 
   has_many :fine_prints, :dependent => :destroy
   has_many :highlights, :dependent => :destroy
 
             
-  def self.featured_date
-    where("deal_date >= ?", Time.now).order("deal_date")
-  end
+  # def self.featured_date
+  #   where("deal_date >= ?", Time.now).order("deal_date")
+  # end
   
   after_update :remove_empty_fine_prints
   after_update :remove_empty_highlights

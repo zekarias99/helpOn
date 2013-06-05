@@ -1,60 +1,37 @@
-<%= form_for @deal, :html => { :multipart => true } do |f| %>
-  <%= render "shared/errors" %>
+<%= form_for( @deal, :html => { :multipart => true, :class => "normal_form"} ) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :photo %>
+    <%= f.text_field :photo %>
+    <% unless @deal.photo_file_name.nil? %>
+      <br />
+      <%= image_tag @deal.photo.url %>
+    <% end %>
+    <%= f.label :blurb_title %>
+    <%= f.text_field :blurb_title %>
+    <%= f.label :blurb %>
+    <%= f.text_field :blurb, :input_html => { :class => 'wysiwyg' } %>  
+    <%= f.label :company %>
+    <%= f.select :company, :collection => @companies %>
+    <%= f.label :city %>
+    <%= f.select :city, :collection => @cities, :group_by => :state %>
+    <%= f.label :deal_type %>
+    <%= f.select :deal_type, :collection => Deal::DEAL_TYPE %>
+    <%= f.label :regular_price, :label => 'Price' %>
+    <%= f.text_field :regular_price %>
+    <%= f.label :initial_discount, :label => 'Discount' %>
+    <%= f.text_field :initial_discount %>
+    <%= f.label :max_discount, :label => 'Max Discount' %>
+    <%= f.text_field :max_discount %>
+    <%= f.label :max_threshold, :label => 'Max Threashold' %>
+    <%= f.text_field :max_threshold %>
+    <%= f.label :tipping_point, :label => 'Tipping Point' %>
+    <%= f.text_field :tipping_point %>
+    <%= f.label :deal_date  %>
+    <%= f.text_field :deal_date, :as => :string, :input_html => { :class => 'date_picker' } %>
+    <%= f.label :approved %>
+    <%= f.check_box :approved %>
+  <% end %>
+  
 
-    <p>
-      <%=  f.label :name %> <br/>
-      <%=  f.text_field :name, autofocus: true %> <br/>
-    </p>
-     <p>
-      <%=  f.label :blurb_title %> <br/>
-      <%=  f.text_field :blurb_title %> <br/>
-    </p>
-    <p>
-      <%=  f.label :blurb %> <br/>
-      <%=  f.text_area :blurb, cols:40, row: 10 %> <br/>
-    </p>
 
-    <p>
-      <%=  f.label :deal_type %> <br/>
-      <%=  f.text_field :deal_type %> <br/>
-    </p>
-    <p>
-      <%=  f.label :regular_price %> <br/>
-      <%=  f.number_field :regular_price %> <br/>
-    </p>
-    <p>
-      <%=  f.label :initial_discount %> <br/>
-      <%=  f.number_field :initial_discount %> <br/>
-    </p>
-    <p>
-      <%=  f.label :max_discount %> <br/>
-      <%=  f.number_field :max_discount %> <br/>
-    </p>
-    <p>
-      <%=  f.label :max_threshold %> <br/>
-      <%=  f.number_field :max_threshold %> <br/>
-    </p>
-    <p>
-      <%=  f.label :tipping_point %> <br/>
-      <%=  f.number_field :tipping_point %> <br/>
-    </p>
-    <p>
-      <%=  f.label :deal_date %> <br/>
-      <%=  f.date_field :deal_date %> <br/>
-    </p>
-    <p>
-      <%=  f.label :end_date %> <br/>
-      <%=  f.date_field :end_date %> <br/>
-    </p>
-    <p>
-      <%=  f.file_field :photo %> <br/>
-    </p>
-    <p>
-      <%=  f.check_box :approved %>
-      <%=  f.label :approved %> <br/>
-    </p>
-    <p>
-      <%= f.submit %> |
-      <%=  link_to "Cancel", root_path %> 
-    </p>
-<% end %>

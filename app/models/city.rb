@@ -4,6 +4,8 @@ class City < ActiveRecord::Base
                     :uniqueness => true
                     
   belongs_to :state
+
+  has_many :deals
   
   before_save :create_search_name
   
