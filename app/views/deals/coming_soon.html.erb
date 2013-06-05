@@ -1,11 +1,15 @@
-<% title "Didn't find what you were looking for?" %>
+<% provide(:title, "Takin' it to the streets!") %>
+<h1>Takin' it to the streets!" </h1>
 
 <div id="boxed">
-  <h1 class="centered">Didn't find what you were looking for?</h1>
-  <hr />
   <br />
-  <p class="centered">Check over our current cities and if you don't see what you were looking for, request it. We'd love to hear from you!</p>
+  <h1 class="centered"><u>We're takin' it to the streets!</u></h1>
   <br />
   <br />
-  <%= render :partial => 'shared/city_list' %>
+  <br />
+  <br />
+  <br />
+  <p class="centered larger readable">Looking for HelpOn? We're out in the streets,<br />
+    working with businesses to bring you great local deals!<br />
+    If you want to help, use <%= link_to "this form", new_city_path %> to suggest a deal in your area!</p>
 </div>

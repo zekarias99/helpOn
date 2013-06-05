@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130602011951) do
+ActiveRecord::Schema.define(version: 20130605050239) do
 
   create_table "charities", force: true do |t|
     t.string   "charity_name"
@@ -30,9 +30,12 @@ ActiveRecord::Schema.define(version: 20130602011951) do
     t.string   "country"
     t.string   "website"
     t.string   "pick_a_category"
+    t.integer  "city_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "charities", ["city_id"], name: "index_charities_on_city_id"
 
   create_table "cities", force: true do |t|
     t.string   "name"
@@ -60,9 +63,14 @@ ActiveRecord::Schema.define(version: 20130602011951) do
     t.string   "where_do_you_want_your_helpon_to_run"
     t.string   "review_links"
     t.string   "tell_us_a_little_bit_about_your_business"
+    t.integer  "city_id"
+    t.integer  "deal_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "companies", ["city_id"], name: "index_companies_on_city_id"
+  add_index "companies", ["deal_id"], name: "index_companies_on_deal_id"
 
   create_table "deals", force: true do |t|
     t.string   "name"
@@ -92,12 +100,25 @@ ActiveRecord::Schema.define(version: 20130602011951) do
 
   create_table "fine_prints", force: true do |t|
     t.string   "description"
+    t.integer  "deal_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "fine_prints", ["deal_id"], name: "index_fine_prints_on_deal_id"
+
   create_table "highlights", force: true do |t|
     t.string   "description"
+    t.integer  "deal_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "highlights", ["deal_id"], name: "index_highlights_on_deal_id"
+
+  create_table "locations", force: true do |t|
+    t.string   "name"
+    t.integer  "zip_code"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

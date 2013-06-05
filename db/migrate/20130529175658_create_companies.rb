@@ -16,7 +16,8 @@ class CreateCompanies < ActiveRecord::Migration
       t.string :where_do_you_want_your_helpon_to_run
       t.string :review_links
       t.string :tell_us_a_little_bit_about_your_business
-
+      t.references :city, index: true
+      t.references :deal, index: true
       t.timestamps
     end
   end

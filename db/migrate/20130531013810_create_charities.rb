@@ -17,6 +17,7 @@ class CreateCharities < ActiveRecord::Migration
       t.string :country
       t.string :website
       t.string :pick_a_category
+      t.references :city, index: true      
       t.timestamps
     end
   end

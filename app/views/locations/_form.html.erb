@@ -1,0 +1,10 @@
+<div id="boxed">
+  <%= form_for(@location, :html => { :class => "normal_form" }) do |f| %>
+      <%= f.label :name, :label => "City Name" %>
+      <%= f.text_field :name %>
+      <%= f.label :zip_code, :label => "Zip Code" %>
+      <%= f.text_field :zip_code %>
+    
+    <%= f.submit %>
+  <% end %>
+</div>

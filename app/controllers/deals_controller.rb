@@ -8,10 +8,6 @@ class DealsController < ApplicationController
     @deals = Deal.order("deal_date desc").limit(10).includes(:city)
   end
 
-  # def show
-  #   @deal = Deal.find(params[:id])    
-  # end
-
   
   def show
     if params[:city_name]
@@ -30,12 +26,19 @@ class DealsController < ApplicationController
       if @deal.nil?
         return render :coming_soon
       end
-      
       @charity = Charity.where('city_id = ?', city).where('start_date <= ? and end_date >= ?', today, today).includes(:city).last
-      @tweets = Twitter::Search.new('SugarSaveKnox').per_page(4)
-    else
-      redirect_to root_path
+
+      else
+        redirect_to root_path
+      end
+
+  def preview
+    if params[:id]
+      today = Date.current.strftime("%Y-%m-%d").to_s
+      
+      @deal = Deal.where('id = ?', params[:id]).includes(:city).last
     end
+      render :show
   end
   
   def edit
@@ -70,9 +73,10 @@ class DealsController < ApplicationController
 
   private
    def deal_params 
-    params.require(:deal).
-    permit(:name, :blurb_title, :blurb, :deal_type, :photo, 
+      params.require(:deal).
+      permit(:name, :blurb_title, :blurb, :deal_type, :photo, 
           :regular_price, :initial_discount, :max_discount, :max_threshold, 
           :tipping_point, :deal_date, :end_date, :approved)
+    end
   end
 end

@@ -68,6 +68,12 @@ def charity_attributes(overrides = {})
     }
 end
 
+def city_attributes(overrides = {})
+    {
+      name: 'Seattle',
+    }
+end
+
 
 
 # Remember to add some deal attributes as needed

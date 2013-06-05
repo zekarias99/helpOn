@@ -1,8 +1,9 @@
 <%= form_for( @deal, :html => { :multipart => true, :class => "normal_form"} ) do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>
-    <%= f.label :photo %>
     <%= f.text_field :photo %>
+
+  <%= image_tag @deal.photo.url %>
     <% unless @deal.photo_file_name.nil? %>
       <br />
       <%= image_tag @deal.photo.url %>
@@ -31,6 +32,7 @@
     <%= f.text_field :deal_date, :as => :string, :input_html => { :class => 'date_picker' } %>
     <%= f.label :approved %>
     <%= f.check_box :approved %>
+    <%= f.submit %>
   <% end %>
   
 
