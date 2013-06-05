@@ -70,13 +70,15 @@ ActiveRecord::Schema.define(version: 20130602011951) do
     t.integer  "initial_discount"
     t.integer  "max_discount"
     t.integer  "max_threshold"
-    t.boolean  "approved"
+    t.boolean  "approved",           default: false
     t.date     "deal_date"
     t.string   "blurb_title"
     t.text     "blurb"
     t.string   "deal_type"
     t.integer  "tipping_point"
     t.date     "end_date"
+    t.integer  "city_id"
+    t.integer  "company_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "photo_file_name"
@@ -84,6 +86,9 @@ ActiveRecord::Schema.define(version: 20130602011951) do
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
   end
+
+  add_index "deals", ["city_id"], name: "index_deals_on_city_id"
+  add_index "deals", ["company_id"], name: "index_deals_on_company_id"
 
   create_table "fine_prints", force: true do |t|
     t.string   "description"
