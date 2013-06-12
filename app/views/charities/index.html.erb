@@ -12,6 +12,7 @@
       <td><%= truncate(charity.description, length: 40, separator: '') %></td>
       <td><%= link_to "Delete", charity, method: :delete, 
         data: { confirm: 'Are you sure?'} %></td>
+      <td><%= link_to "Show", charity %></td>
 
     </tr>
   <% end %>
