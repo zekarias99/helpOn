@@ -15,35 +15,35 @@ describe "Charity Pages" do
     end
   end
 
-  describe "(show/charity = charity_url(charity))" do
+  describe "(show/charities_path" do
     describe "Viewing an individual charity" do
       it "shows the charities details" do
 
         un = Charity.create(charity_attributes)
-        visit chatity_url(un)
-        expect(page).to have_text(un.business_name)
+        visit charities_url
+        expect(page).to have_text(un.charity_name)
       end
 
       it "shows the charities details" do
 
         un = Charity.create(charity_attributes)
 
-        visit charities_path
+        visit charities_url
 
         click_link 'Show'
 
-        expect(page).to have_text(un.business_name)
+        expect(page).to have_text(un.charity_name)
       end
     end    
   end   
 
   # describe "Nevigation" do
-  #   describe "Nevigating company" do
-  #     it "allows navigation from the company page to the listing page" do
+  #   describe "Nevigating charity" do
+  #     it "allows navigation from the charity page to the listing page" do
 
-  #       bar_feature = Company.create(company_attributes)
+  #       bar_feature = Company.create(charity_attributes)
 
-  #       visit company_url(bar_feature)
+  #       visit charity_url(bar_feature)
 
   #       click_link "View All"
         
@@ -52,22 +52,22 @@ describe "Charity Pages" do
 
   #     it "allows navigation from the listing page to the detail page" do
 
-  #       hotel_feature = Company.create(company_attributes)
+  #       hotel_feature = Company.create(charity_attributes)
 
   #       visit companies_path
 
   #       click_link "Show"
 
-  #       expect(current_path).to eq(company_path(hotel_feature))
+  #       expect(current_path).to eq(charity_path(hotel_feature))
   #     end
   #   end
   # end
 
   # describe "Eddit" do
-  #   describe "Editing a company" do  
-  #     it "updates the company and shows the companies's updated details" do
+  #   describe "Editing a charity" do  
+  #     it "updates the charity and shows the companies's updated details" do
 
-  #       book_feature = Company.create(company_attributes)
+  #       book_feature = Company.create(charity_attributes)
 
   #       visit companies_path
         
@@ -75,7 +75,7 @@ describe "Charity Pages" do
 
   #       click_link 'Edit'
         
-  #       expect(current_path).to eq(edit_company_path(book_feature))
+  #       expect(current_path).to eq(edit_charity_path(book_feature))
             
   #       fill_in 'Business name',             with:     'Wanza Bar'
   #       fill_in 'Email address',             with:     'wanza@wanza.com'
