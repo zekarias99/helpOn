@@ -1,123 +1,75 @@
-<% title "#{@deal.city.name} - Today's SugarDeal: #{@deal.blurb_title}" %>
+<div class="clearfix deal with_tags">
 
-<div id="boxed">
-  <div id="show_deal">
-    <p class="deal_name">Today's SugarDeal:
-      <%= @deal.name %>
-    </p>
-    <hr />
-    
-    <div id="deal_action">
-      <div class="buy_count_down">
-        <%= image_tag 'buy-this-deal.png' %>
-        <div class="height80">
-          <%= render :partial => @deal.deal_type.downcase %>
-        </div>
-        
-        <div class="time_to_buy">TIME LEFT TO BUY</div>
-        
-        <div id='deal_date_field'><%= @deal.weekend? ? @deal.deal_date + 3 : @deal.deal_date + 1 %></div>
-
-        <%= render :partial => 'countdown' %>
-        <br />
-      </div>
-    </div>
-    
-    <div class="deal_photo">
-      <%= image_tag @deal.photo.url(:medium) %>
-    </div>
-    
-    <div class="deal_details_div">
-      <p><strong>Crucial Deal Details</strong></p>
-      <ul class="details">
-      <% for fine_print in @deal.fine_prints %>
-        <li><%= fine_print.description %></li>
-      <% end %>
-        <li><%= link_to "SugarDeal FAQs", '/faq' %></li>
-      </ul>
-    </div>
-    
-    <div class="good_stuff_div">
-      <p><strong>The Good Stuff</strong></p>
-      <ul class="details">
+  <div class="deal_title">
+    <h2><%= @deal.name %></h2>
       <% for highlight in @deal.highlights %>
-        <li><%= highlight.description %></li>
+      <span class="title descriptor"><%= truncate(highlight.description, length: 45, separator: ' ') %></span>
       <% end %>
-      </ul>
-    </div>
-    
-    <div class="blurb_div readable">
-      <p><strong><%= @deal.blurb_title %></strong></p>
-      <%=raw @deal.blurb %>
-    </div>
-    
-    <div class="company_div readable">
-      <p><strong>The Company</strong></p>
-      <%= link_to @deal.company.name, @deal.company.website %><br />
-      <%= @deal.company.address %><br />
-      <%= @deal.company.city.name+', '+@deal.company.city.state.abbreviation+' '+@deal.company.zip_code.to_s %><br />
-      <%= @deal.company.phone %>
-      <br /><br />
-      <div class="sugarbucks">
-        <%= image_tag 'dollar.jpg', :width => 175 %>
-        <strong>SugarBucks Sweeten The Deal!</strong>
-        <ul class="details">
-          <li>Every Deal comes with a SugarBucks code.</li>
-          <li>Every purchase of today's SugarDeal increases the value of the code.</li>
-          <li>You can apply the code to a future SugarDeal purchase.</li>
-        </ul>
-        <%= link_to 'Click here for more details.', '/sugarbucks' %>
-      </div>
-    </div>
   </div>
-  <div id="side_bar">
-    <div id="social">
-      <%= image_tag 'share.png' %>
-      <%= link_to(image_tag('facebook-sq.png', :width => 40),
-      "http://facebook.com/share.php?u=http://sugarsave.com/#{@deal.city.search_name}/&t=#{@deal.blurb_title}", :target => :blank) %>
-      <%= link_to(image_tag('twitter-sq.png', :width => 40),
-      "http://twitter.com/home?status=SugarSaveKnox - #{@deal.blurb_title}", :target => :blank) %>
-      <%= link_to(image_tag('email-sq.png', :width => 40),
-      new_recommendation_path(:deal => @deal.id)) %>
+  <div class="secondary">
+    <div class="galaria">
+        <%= image_tag @deal.photo.url %>
     </div>
-    <hr />
-    <div id="charitable">
-      <p class="charitable_title"><%= image_tag @charity.photo.url(:thumb) %> <%= link_to "This Week's Featured Charity*", charity_path(@charity) %><p>
+    <% for fine_print in @deal.fine_prints %>
+  <div class="galaria-thumbnails-container">
+    <div class="fine_print"> 
+      <h3 id="fine">The fine print</h3>
+      <%= fine_print.description %>
+    </div>
+    <div class="sumery">
+    <h3 class="fine"><%= @deal.blurb_title %></h3>
+    <%=truncate(@deal.blurb, length: 65, separator: ' ') %>
+    </div>
+    <% end %>
 
-      <p class="charitable_blurb">*Each week SugarSave features one local charity. We spread the word about their good works and donate a portion of SugarDeal sales to their cause. Sweet!</p>
-    </div>
-    <hr />
-    <% cache(:action => 'show', :action_suffix => 'tweets') do %>
-      <div id="tweets">
-        <%= render :partial => 'shared/tweets' %>
-      </div>
-    <% end %>
-    <% cache(:action => 'show', :action_suffix => 'fb_like') do %>
-    <br />
-    <div id="fb_like">
-      <%= render :partial => 'shared/fb_like' %>
-    </div>
-    <% end %>
+    <p><%= link_to "Edit", edit_deal_path(@deal) %></p> 
   </div>
-  
-  <% if current_user.try(:role) == 'admin' %>
-    <p class="left"><%= link_to "Edit", edit_deal_path(@deal) %></p>
-  <% end %>
-  
+
+  </div>
+     <table cellspacing="0" cellpadding="0">
+        <thead>
+          <tr>
+            <th scope="col">Value</th>
+            <th scope="col">Discount</th>
+            <th scope="col">Save</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= number_to_currency(@deal.regular_price, :precision => 2) %></td>
+            <td><%= number_to_percentage(@deal.initial_discount, :precision => 2) %></td>
+            <td><%= number_to_currency(@deal.flat_savings, :precision => 2) %></td>
+          </tr>
+        </tbody>
+      </table>
+        <p id="charity_choise">Your choise of Charity will get</p> 
+          <p id="charity_help">10%</p>
+        <table class="your_charity">
+              <th>Charity Get</th>
+              <th>Charity Get</th>
+            <tr>
+              <td>10%<%= number_to_currency(@deal.current_price, :precision => 2) %></dt>
+              <td><%= number_to_currency(@deal.charity_get, :precision => 2) %></td>
+            </tr>
+        </table>
+
+          <div class="messaging">
+            <div class="bought_message level_1">Over 230 bought</div>
+              <div class="limited_quantity_message level_2">Limited quantity available</div>
+                <div class="tipped_check_mark">
+                  <span>The deal is on!</span>
+                </div>
+          </div>
+      </div>
+  </div>
 </div>
 
-<script type="text/javascript">
-var dealDate = $('#deal_date_field').html();
-var dealDateArray = dealDate.split('-');
 
-$('#countdown_dashboard').countDown({
-  targetDate: {
-    'day':      dealDateArray[2],
-    'month':    dealDateArray[1],
-    'year':     dealDateArray[0],
-    'hour':     0,
-    'min':      0,
-    'sec':      0
-  }
-});
-</script>
+
+    
+
+    
+
+
+
+  

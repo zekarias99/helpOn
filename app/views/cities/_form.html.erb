@@ -1,12 +1,16 @@
-<%= form_for( @city, :html => { :class => "normal_form" } ) do |f| %>
-<p>
-  <%= f.label :state %> 
-  <%= f.text_field :state %> 
-</p>
-<p>
-  <%= f.label :name %> 
-  <%= f.text_field :name %> 
-</p>
-  <%= f.submit %>
+<%= form_for @city do |f| %>
+  <%= render "shared/errors_city" %>
+
+<fieldset>
+  <p>
+    <%= f.label :state %> 
+    <%= f.text_field :state %> 
+  </p>
+  <p>
+    <%= f.label :name %> 
+    <%= f.text_field :name %> 
+  </p>
+    <%= f.submit %>
+</fieldset>
 <% end %>
 

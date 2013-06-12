@@ -14,9 +14,7 @@ Helpon::Application.routes.draw do
   match '/:city_name',  to:  'deals#show', via: 'get'
   match '*path',        to:  'static_pages#index', via: 'get'
 
-  resources :deal do
-    get :preview, :on => :member
-  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

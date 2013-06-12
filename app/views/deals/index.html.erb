@@ -1,5 +1,5 @@
-<% provide(:title, 'Deals') %>
-<h1>Deals</h1>
+<% provide(:title, 'All Deals') %>
+<h1>All Deals</h1>
 
 <table id="tablelist">
   <tr>
@@ -11,19 +11,55 @@
   </tr>
   <% for deal in @deals %>
     <tr>
-      <td><%= link_to deal.name, edit_deal_path(deal) %></td>
-      <td><%=raw deal.blurb %></td>
+      <td><%= deal.name %>|  |</td>
+      <td><%=raw deal.blurb %>| |</td>
       <td><%= number_to_currency(deal.regular_price) %></td>
       <td><%= deal.initial_discount %>
       <% unless deal.max_discount.blank? %>
          <%= deal.max_discount %>
        <% end %></td>
       <td><%= deal.max_threshold %></td>
-      <td><%= link_to "Delete", deal, method: :delete, 
-        data: { confirm: 'Are you sure?'} %></td>
-      <td><%= link_to "Preview", preview_deal_path(deal) %></td>
-    </tr>
-  <% end %>
 </table>
+<table class="deal_details_table">
+    <th>Value</th>
+    <th>Price</th>
+    <th>Discount</th>
+    <th>Savings</th>
+    <tr>
+      <td><%= number_to_currency(deal.regular_price, :precision => 2) %></td>
+      <td><%= number_to_currency(deal.current_price, :precision => 2) %></td>
+      <td><%= number_to_percentage(deal.discount_percent, :precision => 2) %></td>
+      <td><%= number_to_currency(deal.savings, :precision => 2) %></td>
+    </tr>
+</table>
+
+<table class="deal_details_table">
+    <th>Value</th>
+    <th>Discount</th>
+    <th>Savings</th>
+    <tr>
+      <td><%= number_to_currency(deal.regular_price, :precision => 2) %></td>
+      <td><%= number_to_percentage(deal.initial_discount, :precision => 2) %></td>
+      <td><%= number_to_currency(deal.flat_savings, :precision => 2) %></td>
+    </tr>
+</table>
+<br />
+<p><b><%= deal.order_count %> purchased</b></p>
+<br />
+<div id="ordered_percent"><%= deal.ordered_percent %></div>
+<div id="progressbar"></div>
+<p><%= deal.orders_to_go %> more to go...</p>
+<h2>Your choise of Charity will get 10%</h2>
+<p><%= number_to_currency(deal.your_charity_get, :precision => 2) %></p>
+<p><%= number_to_currency(deal.charity_get, :precision => 2) %></p>
+<br />
+ <%= image_tag deal.photo.url %>
+
+             <td><%= link_to "Delete", deal, method: :delete, 
+              data: { confirm: 'Are you sure?'} %></td>
+            <td><%= link_to "Show", deal %></td>
+<% end %>
+
+
 
 <p class="links"><%= link_to "New Deal", new_deal_path %></p>

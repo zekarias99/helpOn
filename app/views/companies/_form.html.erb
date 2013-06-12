@@ -1,67 +1,67 @@
-<%= form_for(@company) do |f| %>
-
+<%= form_for @company do |f| %>
   <%= render "shared/errors_company" %>
-
+</fieldset>
   <p>
-    <%= f.label :business_name%><br />
+    <%= f.label :business_name%><br/>
     <%= f.text_field :business_name %> <br/>
   </p>
   <p>
-    <%= f.label :email_address%><br />
+    <%= f.label :email_address%><br/>
     <%= f.text_field :email_address %>
   </p>
   <p>
-    <%= f.label :first_name %><br />
+    <%= f.label :first_name %><br/>
     <%= f.text_field :first_name %>
   </p>
   <p>
-    <%= f.label :last_name %><br />
+    <%= f.label :last_name %><br/>
     <%= f.text_field :last_name %>
   </p>
   <p>
-    <%= f.label :address_1 %><br />
+    <%= f.label :address_1 %><br/>
     <%= f.text_field :address_1 %>
   </p>
   <p>
-    <%= f.label :address_2 %><br />
+    <%= f.label :address_2 %><br/>
     <%= f.text_field :address_2 %>
   </p>
   <p>
-    <%= f.label :state %><br />
+    <%= f.label :state %><br/>
     <%= f.text_field :state %>
   </p>
   <p>
-    <%= f.label :zip %><br />
+    <%= f.label :zip %><br/>
     <%= f.text_field :zip %>
   </p>
   <p>
-    <%= f.label :country %><br />
+    <%= f.label :country %><br/>
     <%= f.text_field :country %>
   </p>
   <p>
-    <%= f.label :phone %><br />
+    <%= f.label :phone %><br/>
     <%= f.text_field :phone %>
   </p>
   <p>
-    <%= f.label :website %><br />
+    <%= f.label :website %><br/>
     <%= f.text_field :website %>
   </p>
 
   <p>
-    <%= f.label :pick_a_category %><br />
+    <%= f.label :pick_a_category %><br/>
     <%= f.text_field :pick_a_category %>
   </p>
   <p>
-    <%= f.label :where_do_you_want_your_helpon_to_run %><br />
+    <%= f.label :where_do_you_want_your_helpon_to_run %><br/>
     <%= f.text_field :where_do_you_want_your_helpon_to_run %>
   </p>
   <p>
-    <%= f.label :review_links %><br />
+    <%= f.label :review_links %><br/>
     <%= f.text_field :review_links %>
   </p>
   <p>
-    <%= f.label :tell_us_a_little_bit_about_your_business %><br />
+    <%= f.label :tell_us_a_little_bit_about_your_business %><br/>
     <%= f.text_area :tell_us_a_little_bit_about_your_business %>
   </p>
-  <p><%= f.submit %>  </p>
+  <p><%= f.submit :Submit %></p>
+</fieldset>
 <% end %>

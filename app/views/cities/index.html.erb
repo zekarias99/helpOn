@@ -9,7 +9,8 @@
     <tr>
       <td><%= link_to city.name, edit_city_path(city) %></td>
       <td><%= city.state %></td>
-      <td><%= link_to "Delete", city, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to "Delete", city, method: :delete, 
+        data: { confirm: 'Are you sure?'} %></td>
     </tr>
   <% end %>
 </table>

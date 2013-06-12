@@ -24,7 +24,7 @@
 
 body {
   font-family: Georgia, serif;
-  background-image: url(bkgdHome.jpg);
+  background-image: url(backgrd.jpg);
   margin: 0;
   padding:0;
 }
@@ -61,8 +61,8 @@ p, h1, h2, h3, h4, h5, h6, li {
 
 #header #mainMenu {
   position: absolute;
-  top: 75px;
-  left: 390px;
+  top: 55px;
+  left: 200px;
 }
 
 #mainMenu ul {
@@ -143,4 +143,5 @@ p, h1, h2, h3, h4, h5, h6, li {
   margin-top: 20px;
   line-height: 25px;
 }
+
 

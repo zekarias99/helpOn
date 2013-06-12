@@ -125,7 +125,6 @@ describe "Charity Pages" do
         fill_in 'Last name',                 with:     'Bar'
         fill_in 'Address 1',                 with:     '3322 140 th S.t'
         fill_in 'Address 2',                 with:     'NE Seattle'
-        fill_in 'City',                      with:      2
         fill_in 'State',                     with:     'Seattle'
         fill_in 'Zip',                       with:     '98125'
         fill_in 'Country',                   with:     'USA'
@@ -136,9 +135,9 @@ describe "Charity Pages" do
         fill_in 'Where do you want your helpon to run', with: 'Asmara'
         fill_in 'Tell us a little bit about your business', with: 'Best!!'
       
-        click_button "Create Company"
+        click_button "Create Charity"
 
-        expect(current_path).to eq(company_path(Company.last))
+        expect(current_path).to eq(charity_path(Charity.last))
 
         expect(page).to have_content('Successfully created company.')
       end

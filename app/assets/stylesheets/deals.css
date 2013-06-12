@@ -2,3 +2,117 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+.clearfix {
+display: block;
+clear: both;
+margin-bottom: 20px;
+padding-top: 15px;
+padding-right: 10px;
+padding-left: 10px;
+padding-bottom: 10px; 
+}
+
+.deal_title {
+  padding: 0;
+  margin: 0;
+}
+
+span.title {
+  color: rgb(148, 148, 148);
+}
+
+.secondary {
+  position: relative;
+  width: 440px;
+  float: right;
+}
+
+.galaria {
+  display: block;
+opacity: 1;
+width: 440px;
+height: 267px;
+position: relative;
+top: 10px;
+left: 0px;
+float: right;
+}
+
+.deal_details_table td {
+  text-align: center;
+  width: 33%;
+}
+
+
+#charity_choise {
+  font-size: 1.80em;
+}
+
+#charity_help {
+    font-size: 2em;
+  line-height: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.galaria-thumbnails-container {
+  position: absolute;
+  left: 0px;
+  height: 237px;
+  width: 440px;
+  top: 280px;
+}
+
+#fine {
+  margin: 0px;
+}
+
+.fine_print {
+  float: left;
+  width: 212px;
+}
+
+.messaging {
+  background-color: #DDEACF;
+  margin-top: 10px;
+  position: relative;
+  width: 200px;
+
+}
+
+.sumery {
+  float: left;
+}
+
+.your_charity {
+  background-color: #CFEEF5;
+  margin-right: 100px;
+}
+
+body table {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .9em;
+  margin: 0px 10px 20px 0px;
+  width: 200px;
+}
+
+table th {
+  font-size: 1em;
+  line-height: 30px;
+  font-weight: bold;
+  text-align: left;
+  padding-left: 10px;
+}
+
+table td {
+  line-height: 20px;
+  padding-left: 10px;
+}
+
+
+
+
+
+
+
+

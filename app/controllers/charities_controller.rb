@@ -52,7 +52,7 @@ class CharitiesController < ApplicationController
            :last_name, :job_title, :email_address, :telephone_number,     
            :i_agree_to_the, :description,
            :address_1, :address_2, :state, :zip, :country,
-           :website, :pick_a_category )
+           :website, :pick_a_category, :city_id )
   end
 end
 

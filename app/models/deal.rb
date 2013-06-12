@@ -7,7 +7,7 @@ class Deal < ActiveRecord::Base
 
   validates :regular_price, :initial_discount, :deal_date, :blurb,
             :max_discount, :max_threshold, :blurb_title, :deal_type,
-            :tipping_point, :end_date, :approved, presence: true
+            :tipping_point, :end_date, presence: true
   validates :name, presence: true, uniqueness: { case_sensitive: false }
   validates :name,  presence: true, length: { maximum: 50 }
   validates :regular_price, :initial_discount, :max_threshold, :max_discount, 
@@ -87,5 +87,12 @@ class Deal < ActiveRecord::Base
   
   def flat_savings
     self.regular_price*(self.initial_discount.to_f/100)
+  end
+  def your_charity_get
+    (flat_savings)*0.1
+  end
+
+  def charity_get
+    (current_price.to_f)*0.1
   end
 end
