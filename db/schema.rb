@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130605050239) do
+ActiveRecord::Schema.define(version: 20130613202013) do
 
   create_table "charities", force: true do |t|
     t.string   "charity_name"
@@ -128,6 +128,14 @@ ActiveRecord::Schema.define(version: 20130605050239) do
     t.string   "abbreviation"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "password_digest"
   end
 
 end

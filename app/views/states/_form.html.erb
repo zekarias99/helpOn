@@ -1,4 +1,5 @@
 <%= form_for(@state) do |f| %>
+<fieldset>
   <%= render "shared/errors_state" %>
 
   <p>
@@ -10,4 +11,5 @@
     <%= f.text_field :abbreviation %>
   </p>
   <p><%= f.submit %> | <%=  link_to "Cancel", states_path %> </p>
+</fieldset>
 <% end %>

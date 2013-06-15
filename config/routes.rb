@@ -1,5 +1,6 @@
 Helpon::Application.routes.draw do
 
+  get "users/new"
   root  'static_pages#home'
 
   resources :deals, :fine_prints, :highlights, :companies, :charities, 
@@ -7,13 +8,13 @@ Helpon::Application.routes.draw do
   # get   'deals/:id' =>  'deals#show', as: 'deal'
   # get   'deals/:id/edit' =>  'deals#edit', as: 'edit_deal'
   # patch 'deals/:id' =>  'deals#update'
-  match 'help',         to: 'static_pages#help',    via: 'get'
-  match 'about',        to: 'static_pages#about',   via: 'get'
-  match 'contact',      to: 'static_pages#contact', via: 'get' 
+  match 'help',         to: 'static_pages#help',         via: 'get'
+  match 'about',        to: 'static_pages#about',        via: 'get'
+  match 'contact',      to: 'static_pages#contact',      via: 'get' 
   match 'how_it_works', to: 'static_pages#how_it_works', via: 'get' 
-  match '/:city_name',  to:  'deals#show', via: 'get'
-  match '*path',        to:  'static_pages#index', via: 'get'
-
+  # match '/:city_name',  to: 'deals#show',                via: 'get'
+  # match '*path',        to: 'static_pages#index',        via: 'get'
+match '/signup',  to: 'users#new',            via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
