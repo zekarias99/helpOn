@@ -6,6 +6,11 @@ gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.1.2'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+
+gem 'jquery-rails', '2.2.1'
+gem 'turbolinks', '1.0.0'
+gem 'jbuilder', '1.0.1'
+
 group :development, :test do
   gem 'sqlite3', '1.3.7'
   gem 'rspec-rails', '2.13.1'
@@ -48,9 +53,6 @@ group :assets do
   gem 'uglifier', '1.0.3'
 end
 
-gem 'jquery-rails', '2.2.1'
-gem 'turbolinks', '1.0.0'
-gem 'jbuilder', '1.0.1'
 
 group :production do
   gem 'pg', '0.14.1'
