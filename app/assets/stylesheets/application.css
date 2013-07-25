@@ -77,6 +77,15 @@ p, h1, h2, h3, h4, h5, h6, li {
   float: left;
 }
 
+.cf:before, .cf:after {
+  content:"";
+  display:table;
+}
+
+.cf:after {
+  clear:both;
+}
+
 #mainMenu li a:link, #mainMenu li a:visited {
   font-family: "Trebuchet MS", sans-serif;
   display: block;

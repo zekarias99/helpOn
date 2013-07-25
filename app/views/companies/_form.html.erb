@@ -47,9 +47,12 @@
   </p>
 
   <p>
-    <%= f.label :pick_a_category %><br/>
-    <%= f.text_field :pick_a_category %>
+    <%= f.label :pick_a_category, "Business Type" %><br/>
+    <%= f.select :pick_a_category, Company::PICK_A_CATEGORY_OPTIONS, prompt: "Pick one" %>
   </p>
+
+
+
   <p>
     <%= f.label :where_do_you_want_your_helpon_to_run %><br/>
     <%= f.text_field :where_do_you_want_your_helpon_to_run %>

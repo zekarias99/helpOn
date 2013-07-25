@@ -4,6 +4,7 @@ class Charity < ActiveRecord::Base
            :address_1, :state, :zip, :country,
            :website, :pick_a_category, presence: true 
   validates :email_address, format: { with: /(\S+)@(\S+)/ }
+  belongs_to :city
 
     PICK_A_CATEGORY_OPTIONS = [ 
     'Aged',
@@ -38,5 +39,4 @@ class Charity < ActiveRecord::Base
   ]
 
   validates :pick_a_category, inclusion: { in: PICK_A_CATEGORY_OPTIONS }
-  belongs_to :city
 end

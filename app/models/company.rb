@@ -5,4 +5,15 @@ class Company < ActiveRecord::Base
             :tell_us_a_little_bit_about_your_business, presence: true
   belongs_to :city
   belongs_to :deal
+
+  PICK_A_CATEGORY_OPTIONS = [ 
+    'Food & Drink',
+    'Events & Activities',
+    'Beauty & Spa',
+    'Fitness, Health & Wellness',
+    'Home & Auto',
+    'Other'
+  ]
+
+  validates :pick_a_category, inclusion: { in: PICK_A_CATEGORY_OPTIONS }
 end
