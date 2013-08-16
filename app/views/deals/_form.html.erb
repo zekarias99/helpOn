@@ -1,64 +1,33 @@
-<%= form_for( @deal, :html => { :multipart => true, :class => "normal_form"} ) do |f| %>
-  <%= render "shared/errors_deal" %>
-
- <fieldset>
-    <p>        
-    <%= f.label :name %><br/>
+<%= simple_form_for( @deal, :html => { :multipart => true, :class => "normal_form"} ) do |f| %>
+  <%= render "shared/errors_deal" %>        
+    <%= f.label :name %>
     <%= f.text_field :name %>
-    </p>
-    <p>
-    <%= f.label :photo, 'Photo' %><br/>
+    <%= f.label :photo, 'Photo' %>
     <%= f.file_field :photo %>
-    </p> 
-    <p>
-    <%= f.label :blurb_title %><br/>
+    <%= f.label :blurb_title %>
     <%= f.text_field :blurb_title %>
-    </p>
-    <p>
-    <%= f.label :blurb %><br/>
+    <%= f.label :blurb %>
     <%= f.text_area :blurb %> 
-    </p> 
-    <p>
-    <%= f.label :deal_type %><br/>
+    <%= f.label :deal_type %>
     <%= f.text_field :deal_type %>
-    </p>
-    <p>
-    <%= f.label :regular_price, :label => 'Price' %><br/>
+    <%= f.label :regular_price, :label => 'Price' %>
     <%= f.number_field :regular_price %>
-    </p> 
-    <p>
-    <%= f.label :initial_discount, :label => 'Discount' %><br/>
+    <%= f.label :initial_discount, :label => 'Discount' %>
     <%= f.number_field :initial_discount %>
-    </p>
-    <p>
-    <%= f.label :max_discount, :label => 'Max Discount' %><br/>
+    <%= f.label :max_discount, :label => 'Max Discount' %>
     <%= f.number_field :max_discount %>
-    </p>
-    <p>
-    <%= f.label :max_threshold, :label => 'Max Threashold' %><br/>
+    <%= f.label :max_threshold, :label => 'Max Threashold' %>
     <%= f.number_field :max_threshold %>
-    </p>
-    <p>
-    <%= f.label :tipping_point, :label => 'Tipping Point' %><br/>
+    <%= f.label :tipping_point, :label => 'Tipping Point' %>
     <%= f.number_field :tipping_point %>
-    </p>
-    <p>
-    <%= f.label :deal_date  %><br/>
+    <%= f.label :deal_date  %>
     <%= f.date_select :deal_date %>
-    </p>
-    <p>
-    <%= f.label :end_date  %><br/>
+    <%= f.label :end_date  %>
     <%= f.date_select :end_date %>
-    </p>
-    <p>
-    <%= f.label :city_id  %><br/>
-    <%= f.number_field :city_id %>
-    </p>
-    <p>
-    <%= f.submit %>
-    </p>
-</fieldset>
-  <% end %>
+    <%= f.label :city_id  %>
+    <%= f.number_field :city_id %> <br/>
+    <%= f.submit :Submit %>
+<% end %>
   
 
 

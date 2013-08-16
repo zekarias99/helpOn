@@ -1,4 +1,7 @@
-<p><%= @fine_print.description %></p>
+<div class="page-header"> 
+  <p><%= @fine_print.description %></p>
+</div>
+
 
 <%= link_to "List All Fine Prints", fine_prints_path %> 
  <%= link_to "Delete", fine_print_path(@fine_print), method: :delete, 

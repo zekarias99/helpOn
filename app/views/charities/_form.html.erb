@@ -1,76 +1,24 @@
-<%= form_for(@charity) do |f| %>
-  <%= render "shared/errors_charity" %>
+<%= simple_form_for(@charity) do |f| %>
+    <%= render "shared/errors_charity" %>
+    <%= f.input :charity_name%>
+    <%= f.input :registered_charity_number%>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>    
+    <%= f.input :job_title %>    
+    <%= f.input :email_address %>   
+    <%= f.input :address_1 %> 
+    <%= f.input :address_2 %> 
+    <%= f.input :state %> 
+    <%= f.input :zip %> 
 
-<fieldset>
-  <p>
-    <%= f.label :charity_name%><br />
-    <%= f.text_field :charity_name %> <br/>
-  </p>
-  <p>
-    <%= f.label :registered_charity_number%><br />
-    <%= f.text_field :registered_charity_number %>
-  </p>
-  <p>
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
-  </p>
-  <p>
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
-  </p>
-  <p>
-    <%= f.label :job_title %><br />
-    <%= f.text_field :job_title %>
-  </p>
-  <p>
-    <%= f.label :email_address %><br />
-    <%= f.text_field :email_address %>
-  </p>
-  <p>
-    <%= f.label :address_1 %><br />
-    <%= f.text_field :address_1 %>
-  </p>
-  <p>
-    <%= f.label :address_2 %><br />
-    <%= f.text_field :address_2 %>
-  </p>
-  <p>
-    <%= f.label :state %><br />
-    <%= f.text_field :state %>
-  </p>
-  <p>
-    <%= f.label :zip %><br />
-    <%= f.number_field :zip %>
-  </p>
-  <p>
-    <%= f.label :country %><br />
-    <%= f.text_field :country %>
-  </p>
-  <p>
-    <%= f.label :telephone_number %><br />
-    <%= f.number_field :telephone_number %>
-  </p>
-  <p>
-    <%= f.label :website %><br />
-    <%= f.text_field :website %>
-  </p>
-  <p>
-    <%= f.label :city_id %><br />
-    <%= f.text_field :city_id %>
-  </p>
+    <%= f.label :country %>
+    <%= f.text_field :country %> 
 
-  <p>
-    <%= f.label :pick_a_category %><br />
-    <%= f.select :pick_a_category, Charity::PICK_A_CATEGORY_OPTIONS, prompt: "Pick one" %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.label :i_agree_to_the %><br />
-    <%= f.check_box :i_agree_to_the %>
-  </p>
-  <p><%= f.submit %>  </p>
-</fieldset>
+    <%= f.input :telephone_number %> 
+    <%= f.input :website %> 
+    <%= f.input :city_id %> 
+    <%= f.input :pick_a_category %>    <%= f.select :pick_a_category, Charity::PICK_A_CATEGORY_OPTIONS, prompt: "Pick one" %>
+    <%= f.input :description %>    <%= f.text_area :description %>
+    <%= f.input :i_agree_to_the %>    <%= f.check_box :i_agree_to_the %>
+    <%= f.button :submit %> 
 <% end %>

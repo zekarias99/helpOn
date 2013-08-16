@@ -1,7 +1,9 @@
 <div class="clearfix deal with_tags">
 
   <div class="deal_title">
-    <h2><%= @deal.name %></h2>
+    <div class="page-header"> 
+      <h2><%= @deal.name %></h2>
+    </div>
       <% for highlight in @deal.highlights %>
       <span class="title descriptor"><%= truncate(highlight.description, length: 45, separator: ' ') %></span>
       <% end %>

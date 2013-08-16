@@ -519,54 +519,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "spec/requests/deal_pages_spec.rb",
-			"settings":
-			{
-				"buffer_size": 4890,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/controllers/deals_controller.rb",
-			"settings":
-			{
-				"buffer_size": 752,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/models/deal.rb",
-			"settings":
-			{
-				"buffer_size": 36,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/deals/show.html.erb",
-			"settings":
-			{
-				"buffer_size": 1157,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/deals/index.html.erb",
-			"settings":
-			{
-				"buffer_size": 70,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/static_pages/home.html.erb",
-			"settings":
-			{
-				"buffer_size": 1529,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "Packages/Ruby/Ruby.sublime-build",
 	"command_palette":
@@ -720,27 +672,55 @@
 	},
 	"file_history":
 	[
-		"/Users/zekarias/Desktop/char_help/helpon/spec/support/attributes.rb",
-		"/Users/zekarias/Desktop/char_help/helpon/app/controllers/deals_controller.rb",
-		"/Users/zekarias/Desktop/char_help/helpon/config/routes.rb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/static_pages/contact.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/static_pages/home.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/static_pages/how_it_works.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/static_pages/index.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/static_pages/help.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/users/edit.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/static_pages/about.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/users/index.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/users/new.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/users/show.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/states/new.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/states/show.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/states/edit.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/states/index.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/sessions/new.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/highlights/index.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/highlights/new.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/highlights/show.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/highlights/edit.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/fine_prints/edit.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/fine_prints/index.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/fine_prints/new.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/fine_prints/show.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/deals/new.html.erb",
 		"/Users/zekarias/Desktop/char_help/helpon/app/views/deals/show.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/companies/edit.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/companies/index.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/companies/new.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/companies/show.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/cities/index.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/cities/new.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/cities/show.html.erb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/views/cities/edit.html.erb",
 		"/Users/zekarias/Desktop/char_help/helpon/app/views/deals/index.html.erb",
-		"/Users/zekarias/Desktop/char_help/helpon/app/assets/stylesheets/application.css",
 		"/Users/zekarias/Desktop/char_help/helpon/spec/requests/deal_pages_spec.rb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/controllers/deals_controller.rb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/models/deal.rb",
+		"/Users/zekarias/Desktop/char_help/helpon/spec/support/attributes.rb",
+		"/Users/zekarias/Desktop/char_help/helpon/config/routes.rb",
+		"/Users/zekarias/Desktop/char_help/helpon/app/assets/stylesheets/application.css",
 		"/Users/zekarias/Desktop/char_help/helpon/spec/requests/static_pages_spec.rb",
 		"/Users/zekarias/Desktop/char_help/helpon/app/helpers/application_helper.rb",
 		"/Users/zekarias/Desktop/char_help/helpon/spec/helpers/application_helper_spec.rb",
 		"/Users/zekarias/Desktop/char_help/helpon/app/views/layouts/_header.html.erb",
 		"/Users/zekarias/Desktop/char_help/helpon/app/views/layouts/_footer.html.erb",
 		"/Users/zekarias/Desktop/char_help/helpon/Gemfile",
-		"/Users/zekarias/Desktop/char_help/helpon/app/views/static_pages/help.html.erb",
 		"/Users/zekarias/Desktop/char_help/helpon/app/views/layouts/application.html.erb",
-		"/Users/zekarias/Desktop/char_help/helpon/app/views/static_pages/home.html.erb",
-		"/Users/zekarias/Desktop/char_help/helpon/app/views/static_pages/about.html.erb",
-		"/Users/zekarias/Desktop/char_help/helpon/app/views/static_pages/how_it_works.html.erb",
 		"/Users/zekarias/Desktop/char_help/helpon/app/views/layouts/_sidebar.html.erb",
 		"/Users/zekarias/Desktop/char_help/helpon/app/views/layouts/_shim.html.erb",
-		"/Users/zekarias/Desktop/char_help/helpon/app/views/static_pages/contact.html.erb",
 		"/Users/zekarias/Desktop/char_help/helpon/app/controllers/static_pages_controller.rb",
 		"/Users/zekarias/Desktop/char_help/helpon/spec/spec_helper.rb",
 		"/Users/zekarias/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
@@ -819,35 +799,7 @@
 		"/Users/zekarias/Desktop/cource/zwb/app/views/stocks/show.html.erb",
 		"/Users/zekarias/Desktop/cource/zwb/app/views/stocks/new.html.erb",
 		"/Users/zekarias/Desktop/cource/zwb/app/views/stocks/edit.html.erb",
-		"/Users/zekarias/Desktop/cource/zwb/app/views/portfolios/new.html.erb",
-		"/Users/zekarias/Desktop/cource/zwb/app/views/projected_earnings/_form.html.erb",
-		"/Users/zekarias/Desktop/cource/zwb/app/views/earnings/edit.html.erb",
-		"/Users/zekarias/Boot/blog2/app/assets/stylesheets/bootstrap_and_overrides.css.less",
-		"/Users/zekarias/Desktop/cource/zwb/db/schema.rb",
-		"/tmp/subl stdin U5vqpj.txt",
-		"/tmp/subl stdin 5EkNsx.txt",
-		"/Users/zekarias/Desktop/cource/zwb/app/controllers/portfolios_controller.rb",
-		"/Users/zekarias/Desktop/cource/zwb/spec/spec_helper.rb",
-		"/Users/zekarias/Desktop/cource/zwb/config/routes.rb",
-		"/Users/zekarias/Desktop/cource/zwb/spec/requests/user_pages_spec.rb",
-		"/Users/zekarias/Desktop/cource/zwb/app/views/portfolios/show.html.erb",
-		"/Users/zekarias/Desktop/cource/zwb/app/views/layouts/_header.html.erb",
-		"/Users/zekarias/Desktop/cource/zwb/config/database.yml",
-		"/Users/zekarias/Desktop/Ruby Programing/try.rb",
-		"/Users/zekarias/Desktop/Hessen/depot/app/assets/stylesheets/application.css",
-		"/Users/zekarias/Desktop/Hessen/depot/config/routes.rb",
-		"/Users/zekarias/Desktop/Hessen/depot/app/models/product.rb",
-		"/Users/zekarias/Desktop/Hessen/depot/config/initializers/session_store.rb",
-		"/Users/zekarias/rails_course/ticketee/app/controllers/files_controller.rb",
-		"/Users/zekarias/Desktop/Kevin/my_app/app/views/say/hello.html.erb",
-		"/Users/zekarias/Desktop/Kevin/my_app/app/views/say/index.html.erb",
-		"/Users/zekarias/Desktop/Kevin/my_app/app/views/say/good_buy.html.erb",
-		"/Users/zekarias/Desktop/Kevin/my_app/app/controllers/say_controller.rb",
-		"/Users/zekarias/Desktop/Kevin/my_app/config/routes.rb",
-		"/Users/zekarias/Desktop/Kevin/my_app/app/views/layouts/index.html.erb",
-		"/Users/zekarias/charity/help_on/app/views/layouts/_header.html.erb",
-		"/Users/zekarias/charity/help_on/.gitignore",
-		"/Users/zekarias/charity/help_on/spec/spec_helper.rb"
+		"/Users/zekarias/Desktop/cource/zwb/app/views/portfolios/new.html.erb"
 	],
 	"find":
 	{
@@ -855,7 +807,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 108.0,
+		"height": 0.0,
 		"where_history":
 		[
 			"/Users/zekarias/rails_project/help_on/app/assets/stylesheets",
@@ -950,212 +902,13 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "spec/requests/deal_pages_spec.rb",
-					"settings":
-					{
-						"buffer_size": 4890,
-						"regions":
-						{
-							"bookmarks":
-							{
-								"flags": 144,
-								"icon": "bookmark",
-								"regions":
-								[
-									[
-										408,
-										374
-									]
-								],
-								"scope": "bookmarks"
-							}
-						},
-						"selection":
-						[
-							[
-								4737,
-								4737
-							]
-						],
-						"settings":
-						{
-							"encoding_helper_confidence": 1.0,
-							"encoding_helper_encoding": "UTF-8",
-							"encoding_helper_encoding_sublime": "UTF-8",
-							"syntax": "Packages/User/RSpec.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 5.0,
-						"translation.y": 3582.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/controllers/deals_controller.rb",
-					"settings":
-					{
-						"buffer_size": 752,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								56,
-								56
-							]
-						],
-						"settings":
-						{
-							"encoding_helper_confidence": 1.0,
-							"encoding_helper_encoding": "UTF-8",
-							"encoding_helper_encoding_sublime": "UTF-8",
-							"syntax": "Packages/Rails/Ruby on Rails.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/models/deal.rb",
-					"settings":
-					{
-						"buffer_size": 36,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								31,
-								31
-							]
-						],
-						"settings":
-						{
-							"encoding_helper_confidence": 1.0,
-							"encoding_helper_encoding": "UTF-8",
-							"encoding_helper_encoding_sublime": "UTF-8",
-							"syntax": "Packages/Rails/Ruby on Rails.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		},
 		{
-			"selected": 2,
 			"sheets":
 			[
-				{
-					"buffer": 3,
-					"file": "app/views/deals/show.html.erb",
-					"settings":
-					{
-						"buffer_size": 1157,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"encoding_helper_confidence": 1.0,
-							"encoding_helper_encoding": "UTF-8",
-							"encoding_helper_encoding_sublime": "UTF-8",
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "app/views/deals/index.html.erb",
-					"settings":
-					{
-						"buffer_size": 70,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								70,
-								70
-							]
-						],
-						"settings":
-						{
-							"encoding_helper_confidence": 1.0,
-							"encoding_helper_encoding": "UTF-8",
-							"encoding_helper_encoding_sublime": "UTF-8",
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/views/static_pages/home.html.erb",
-					"settings":
-					{
-						"buffer_size": 1529,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"encoding_helper_confidence": 1.0,
-							"encoding_helper_encoding": "UTF-8",
-							"encoding_helper_encoding_sublime": "UTF-8",
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -1187,7 +940,7 @@
 		"cols":
 		[
 			0.0,
-			0.48070098216,
+			0.0585291976086,
 			1.0
 		],
 		"rows":

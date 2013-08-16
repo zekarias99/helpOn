@@ -1,70 +1,23 @@
-<%= form_for @company do |f| %>
+<%= simple_form_for @company do |f| %>
+
   <%= render "shared/errors_company" %>
-<fieldset>
-  <p>
-    <%= f.label :business_name%><br/>
-    <%= f.text_field :business_name %> <br/>
-  </p>
-  <p>
-    <%= f.label :email_address%><br/>
-    <%= f.text_field :email_address %>
-  </p>
-  <p>
-    <%= f.label :first_name %><br/>
-    <%= f.text_field :first_name %>
-  </p>
-  <p>
-    <%= f.label :last_name %><br/>
-    <%= f.text_field :last_name %>
-  </p>
-  <p>
-    <%= f.label :address_1 %><br/>
-    <%= f.text_field :address_1 %>
-  </p>
-  <p>
-    <%= f.label :address_2 %><br/>
-    <%= f.text_field :address_2 %>
-  </p>
-  <p>
-    <%= f.label :state %><br/>
-    <%= f.text_field :state %>
-  </p>
-  <p>
-    <%= f.label :zip %><br/>
-    <%= f.text_field :zip %>
-  </p>
-  <p>
-    <%= f.label :country %><br/>
-    <%= f.text_field :country %>
-  </p>
-  <p>
-    <%= f.label :phone %><br/>
-    <%= f.text_field :phone %>
-  </p>
-  <p>
-    <%= f.label :website %><br/>
-    <%= f.text_field :website %>
-  </p>
 
-  <p>
-    <%= f.label :pick_a_category, "Business Type" %><br/>
-    <%= f.select :pick_a_category, Company::PICK_A_CATEGORY_OPTIONS, prompt: "Pick one" %>
-  </p>
-
-
-
-  <p>
-    <%= f.label :where_do_you_want_your_helpon_to_run %><br/>
-    <%= f.text_field :where_do_you_want_your_helpon_to_run %>
-  </p>
-  <p>
-    <%= f.label :review_links %><br/>
-    <%= f.text_field :review_links %>
-  </p>
-  <p>
-    <%= f.label :tell_us_a_little_bit_about_your_business %><br/>
-    <%= f.text_area :tell_us_a_little_bit_about_your_business %>
-  </p>
-  <p><%= f.submit :Submit %></p>
-</fieldset>
+  <%= f.input :business_name%>
+  <%= f.input :email_address%>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :address_1 %>
+  <%= f.input :address_2 %>
+  <%= f.input :state %>
+  <%= f.input :zip %>
+  <%= f.label :country %>
+  <%= f.input :phone %>
+  <%= f.input :website %>
+  <%= f.label  :pick_a_category, "Business Type" %>
+  <%= f.select :pick_a_category, Company::PICK_A_CATEGORY_OPTIONS, prompt: "Pick one" %>
+  <%= f.input :where_do_you_want_your_helpon_to_run %>
+  <%= f.input :review_links %>
+  <%= f.input :tell_us_a_little_bit_about_your_business %>
+  <%= f.text_area :tell_us_a_little_bit_about_your_business %><br/>
+  <%= f.submit :Submit %>
 <% end %>
