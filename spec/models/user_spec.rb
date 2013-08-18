@@ -122,35 +122,13 @@ describe User do
     end
   end
 
-    describe "email address with mixed case" do
-      let(:mixed_case_email) { "Foo@ExAMple.com" }
-      
-      it "it should be saved as all lower-case" do
-        @user.email = mixed_case_email
-        @user.save
-        expect(@user.reload.email).to eq mixed_case_email.downcase
-      end
-    end
-
-    describe "edit" do
-    let(:user) { FactoryGirl.create(:user) }
-    before { visit edit_user_path(user) }
+  describe "email address with mixed case" do
+    let(:mixed_case_email) { "Foo@ExAMple.com" }
     
-    describe "page" do
-      it { should have_content("Update your profile") }
-      it { should have_title("Edit user") }
-    end
-
-    describe "with invalid information" do
-      before { click_button "Save changes" }
-
-      it { should have_content('error') }
-    end
-
-    describe "with invalid information" do
-      before { click_button "Save changes" }
-
-      it { should have_content('error') }
+    it "it should be saved as all lower-case" do
+      @user.email = mixed_case_email
+      @user.save
+      expect(@user.reload.email).to eq mixed_case_email.downcase
     end
   end
 end
