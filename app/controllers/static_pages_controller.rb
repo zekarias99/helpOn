@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
 
   def home
+    @status = current_user.statuses.build if signed_in?
   end
 
   def help

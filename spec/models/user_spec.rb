@@ -17,6 +17,8 @@ describe User do
   it { should respond_to(:authenticate) }
   it { should respond_to(:admin) }
   it { should respond_to(:password_confirmation ) }
+  it { should respond_to(:statuses) }
+  it { should respond_to(:feed) }
 
   it { should be_valid }
   it { should_not be_admin }
@@ -131,4 +133,40 @@ describe User do
       expect(@user.reload.email).to eq mixed_case_email.downcase
     end
   end
+
+  describe "status association" do
+
+    before { @user.save }
+
+    let!(:older_status) do
+      FactoryGirl.create(:status, user: @user, created_at: 1.day.ago)
+    end
+    let!(:newer_status)do
+      FactoryGirl.create(:status, user: @user, created_at: 1.hour.ago)
+    end
+    it "should have the right statuses order" do
+      expect(@user.statuses.to_a).to eq [ newer_status, older_status]
+    end     
+
+    it "should destroy associated statuses" do
+      statuses = @user.statuses.to_a
+      @user.destroy
+      expect(statuses).not_to be_empty
+      statuses.each do |status|
+        expect(Status.where(id: status.id)).to be_empty
+      end
+    end
+  end
 end
+
+
+
+
+
+
+
+
+
+
+
+

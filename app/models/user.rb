@@ -1,5 +1,13 @@
 class User < ActiveRecord::Base
 
+has_attached_file :avatar, :styles => 
+                  { :medium => "300x300>", :thumb => "100x100>" }, 
+                  :default_url => "/images/:style/missing.png"
+
+
+
+  has_many :statuses, dependent: :destroy
+
   before_save { self.email = email.downcase } 
   before_create :create_remember_token 
 
@@ -17,6 +25,10 @@ class User < ActiveRecord::Base
 
   def User.encrypt(token)
     Digest::SHA1.hexdigest(token.to_s)
+  end
+
+  def feed
+    
   end
 
   private
