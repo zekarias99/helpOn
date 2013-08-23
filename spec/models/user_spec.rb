@@ -3,13 +3,14 @@ require 'spec_helper'
 describe User do
 
   before do
-    @user = User.new(name: "Example User", email: "user@example.com",
+    @user = User.new(name: "Example",last_name: "User", email: "user@example.com",
                      password: "foobar", password_confirmation: "foobar")
   end
 
   subject { @user }
 
   it { should respond_to(:name) }
+  it { should respond_to(:last_name) }
   it { should respond_to(:email) }
   it { should respond_to(:password_digest) }
   it { should respond_to(:password) }
@@ -19,6 +20,8 @@ describe User do
   it { should respond_to(:password_confirmation ) }
   it { should respond_to(:statuses) }
   it { should respond_to(:feed) }
+  it { should respond_to(:friendships) }
+  it { should respond_to(:avatar) }
 
   it { should be_valid }
   it { should_not be_admin }
@@ -35,6 +38,11 @@ describe User do
   describe "when a name is not valid" do
     before { @user.name = " " }
     it { should_not be_valid }
+  end  
+
+  describe "when a last_name is not valid" do
+    before { @user.last_name = " " }
+    it { should_not be_valid }
   end
 
   describe "when the email is not present" do
@@ -44,6 +52,11 @@ describe User do
 
   describe "when name is too long" do
     before { @user.name = "a" * 51 }
+    it { should_not be_valid }
+  end
+
+  describe "when last_name is too long" do
+    before { @user.last_name = "a" * 51 }
     it { should_not be_valid }
   end
 
@@ -92,7 +105,7 @@ describe User do
 
   describe "when password confirmation is nil" do
     before do
-        @user = User.new(name: "Michael Hartl", email: "mhartl@example.com",
+        @user = User.new(name: "Zekarias Araya", email: "araya@example.com",
                          password: "foobar", password_confirmation: nil)
     end
     it { should_not be_valid }
@@ -158,15 +171,3 @@ describe User do
     end
   end
 end
-
-
-
-
-
-
-
-
-
-
-
-

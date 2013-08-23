@@ -2,14 +2,18 @@
 <div class="page-header"> 
 <h1>Update your profile</h1>
 </div>
-
-    <%= form_for(@user) do |f| %>
+<%= simple_form_for( @user, :html => { :multipart => true, :class => "normal_form"} ) do |f| %>
   <fieldset>
       <%= render "shared/error_messages", object: @user %>
     <p>
       <%= f.label :name %>
       <%= f.text_field :name %>
     </p>
+  <p>
+    <%= f.label :last_name, :label => 'Last Name' %>
+    <%= f.text_field :name %>
+  </p>
+
     <p>
       <%= f.label :email %>
       <%= f.text_field :email %>
@@ -22,8 +26,14 @@
       <%= f.label :password_confirmation, "Confirm Password" %>
       <%= f.password_field :password_confirmation %>
     </p>
+
     <p><%= f.submit "Save changes"%></p>
+
+     <%= f.label :avatar, 'Photo' %>
+    <%= f.file_field :avatar %>
   </fieldset>
     <% end %>
+
+
 
 

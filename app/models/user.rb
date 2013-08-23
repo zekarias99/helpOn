@@ -7,11 +7,13 @@ has_attached_file :avatar, :styles =>
 
 
   has_many :statuses, dependent: :destroy
+  has_many :friendships, foreign_key: "friend_id", dependent: :destroy
 
   before_save { self.email = email.downcase } 
   before_create :create_remember_token 
 
   validates :name,  presence: true, length: { maximum: 50 }
+  validates :last_name,  presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
