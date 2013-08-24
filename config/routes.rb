@@ -1,5 +1,6 @@
 Helpon::Application.routes.draw do
 
+  get "profiles/show"
   get "users/new"
   root  'static_pages#home'
   resources :sessions, only: [:new, :create, :destroy]
