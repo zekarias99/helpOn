@@ -52,7 +52,7 @@ describe "User pages" do
 
     it { should have_title(user.name) }
     it { should have_content(user.name) }
-    it { should have_link('change', href: 'http://gravatar.com/emails') }
+    it { should have_content( text: 'Upload Profile Picture') }
 
     describe "statuses" do
       it { should have_content(s1.content) }
@@ -134,9 +134,11 @@ describe "User pages" do
 
     describe "with valid information" do
       let(:new_name)  { "New Name" }
+      let(:new_last_name)  { "New Last Name" }
       let(:new_email) { "new@example.com" }
       before do
         fill_in "Name",             with: new_name
+        fill_in "Last Name",        with: new_last_name
         fill_in "Email",            with: new_email
         fill_in "Password",         with: user.password
         fill_in "Confirm Password", with: user.password
