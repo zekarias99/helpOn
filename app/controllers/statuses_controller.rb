@@ -21,7 +21,7 @@ class StatusesController < ApplicationController
   private
 
   def correct_user
-    @status = current_user.statuses.find_by_id(params[:id])
+    @status = current_user.status.find_by(id: params[:id])
     redirect_to root_url if @status.nil?
   end
 
