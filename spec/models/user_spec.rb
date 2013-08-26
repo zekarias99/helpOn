@@ -22,6 +22,7 @@ describe User do
   it { should respond_to(:feed) }
   it { should respond_to(:friendships) }
   it { should respond_to(:avatar) }
+  it { should respond_to(:full_name) }
 
   it { should be_valid }
   it { should_not be_admin }
@@ -168,6 +169,14 @@ describe User do
       statuses.each do |status|
         expect(Status.where(id: status.id)).to be_empty
       end
+    end
+    describe "status" do
+      let(:unfriend_post) do 
+        FactoryGirl.create(:status, user: FactoryGirl.create(:user))
+      end
+      its(:feed) { should include(older_status) }
+      its(:feed) { should include(newer_status) }
+      its(:feed) { should_not include(unfriend_post) }
     end
   end
 end

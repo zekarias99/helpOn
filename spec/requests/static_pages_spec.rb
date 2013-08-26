@@ -11,6 +11,23 @@ describe "Static pages" do
     it { should have_content('Helpon') }
     it { should have_title(full_title('')) }
     it { should_not have_title(full_title('| Home')) }
+
+    describe "for signed-in users" do
+      let(:user) { FactoryGirl.create(:user) }
+
+      before do
+        FactoryGirl.create(:status, user: user, content: "Lorem ipsum")
+        FactoryGirl.create(:status, user: user, content: "Dolar sit amet")
+        sign_in user
+        visit root_path
+      end
+
+      it "should render the user's feed" do
+        user.feed.each do |item|
+          page.should have_selector("li##{item.id}", text: text.content)
+        end
+      end
+    end
   end
 
   describe "Help page" do

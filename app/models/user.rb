@@ -30,7 +30,11 @@ has_attached_file :avatar, :styles =>
   end
 
   def feed
-    
+    Status.where("user_id = ?", id)
+  end
+
+  def full_name
+    name + " " + last_name
   end
 
   private
