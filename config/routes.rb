@@ -5,6 +5,7 @@ Helpon::Application.routes.draw do
   root  'static_pages#home'
   resources :sessions, only: [:new, :create, :destroy]
   resources :statuses, only: [:create, :destroy]
+  resources :friendships
   match '/signin',    to: 'sessions#new',         via: 'get'
    match '/signout',  to: 'sessions#destroy',     via: 'delete'
   resources :deals, :fine_prints, :highlights, :companies, :charities, 

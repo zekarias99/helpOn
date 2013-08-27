@@ -23,6 +23,7 @@ describe User do
   it { should respond_to(:friendships) }
   it { should respond_to(:avatar) }
   it { should respond_to(:full_name) }
+  it { should respond_to(:friends) }
 
   it { should be_valid }
   it { should_not be_admin }

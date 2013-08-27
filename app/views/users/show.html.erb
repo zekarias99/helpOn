@@ -1,9 +1,14 @@
 <% provide(:title, @user.name) %>
 <div class="page-header"> 
-<h2><%= @user.full_name %></h2>
+<h2>Profile</h2>
 </div>
 <div class="row">
-	<div class="span4">
+  <div class="span4">
+  <h3>
+    <%= gravatar_for @user %>
+    <%= @user.full_name %>
+    <%= link_to "Add Friend", new_friendship_path(friend_id: @user) %>
+  </h3>
 		<%= image_tag @user.avatar.url(:medium) %>
 	</div>
   <div class="span8">

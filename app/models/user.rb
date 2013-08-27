@@ -8,6 +8,7 @@ has_attached_file :avatar, :styles =>
 
   has_many :statuses, dependent: :destroy
   has_many :friendships, foreign_key: "friend_id", dependent: :destroy
+  has_many :friends, through: :friendships
 
   before_save { self.email = email.downcase } 
   before_create :create_remember_token 
