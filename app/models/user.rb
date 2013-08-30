@@ -8,7 +8,13 @@ has_attached_file :avatar, :styles =>
 
   has_many :statuses, dependent: :destroy
   has_many :friendships, foreign_key: "friend_id", dependent: :destroy
-  has_many :friends, through: :friendships
+  has_many :friends, through: :friendships,
+           conditions: { friendships: { state: 'accepted'}}
+
+  has_many :pending_user_friendships, class_name: 'Friendship',
+                                     foreign_key: :user_id,
+                                     conditions: { state: 'pending' }
+  has_many :pending_friends, through: :pending_user_friendships, source: :friend
 
   before_save { self.email = email.downcase } 
   before_create :create_remember_token 
@@ -36,6 +42,13 @@ has_attached_file :avatar, :styles =>
 
   def full_name
     name + " " + last_name
+  end
+
+  def gravatar_url
+    stripped_email = email.strip
+    downcased_email = stripped_email.downcase
+    hash = Digest::MD5.hexdigest(downcased_email)
+    "http://gravatar.com/avatar/#{hash}"
   end
 
   private

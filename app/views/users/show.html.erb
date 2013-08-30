@@ -7,8 +7,16 @@
   <h3>
     <%= gravatar_for @user %>
     <%= @user.full_name %>
-    <%= link_to "Add Friend", new_friendship_path(friend_id: @user) %>
   </h3>
+
+  <div id="friend-status">
+    <% if current_user.friends.include?(@user) || current_user.pending_friends.include?(@user) %>
+      <%= link_to "Edit Friendship", edit_friendship_path(friend_id: @user), class: 'btn' %>
+    <% else %>
+      <%= link_to "Add Friend", new_friendship_path(friend_id: @user), class: 'btn', id: 'add-friendship', data: { friend_id: @user.to_param } %>
+    <% end %>
+  </div>
+
 		<%= image_tag @user.avatar.url(:medium) %>
 	</div>
   <div class="span8">

@@ -19,8 +19,13 @@ Helpon::Application.routes.draw do
   match 'how_it_works', to: 'static_pages#how_it_works', via: 'get' 
   # match '/:city_name',  to: 'deals#show',                via: 'get'
   # match '*path',        to: 'static_pages#index',        via: 'get'
-match '/signup',  to: 'users#new',            via: 'get'
+  match '/signup',  to: 'users#new',            via: 'get'
 
+    resources :friendships do
+      member do
+        put :accept
+      end
+    end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
