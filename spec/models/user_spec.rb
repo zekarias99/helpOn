@@ -10,6 +10,7 @@ describe User do
   subject { @user }
 
   it { should respond_to(:name) }
+  it { should respond_to(:last_name) }
   it { should respond_to(:email) }
   it { should respond_to(:password_digest) }
   it { should respond_to(:password) }
@@ -18,7 +19,6 @@ describe User do
   it { should respond_to(:admin) }
   it { should respond_to(:password_confirmation ) }
   it { should respond_to(:statuses) }
-  it { should respond_to(:feed) }
 
   it { should be_valid }
   it { should_not be_admin }

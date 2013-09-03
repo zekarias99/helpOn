@@ -3,8 +3,8 @@
   <h1>Sign up</h1>
 </div>
 
-<%= form_for(@user) do |f| %>
-<fieldset>
+<%= simple_form_for(@user) do |f| %>
+
  <%= render "shared/error_messages", object: @user %>
 
   <p>
@@ -30,5 +30,4 @@
     <%= f.password_field :password_confirmation %>
   </p>
   <p><%= f.submit "Create my account" %> </p>
-</fieldset>
 <% end %>

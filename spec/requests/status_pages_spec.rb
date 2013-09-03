@@ -4,22 +4,32 @@ describe "Status pages" do
 
   subject { page }
 
-  let(:user) { FactoryGirl.create(:user) }
-  before { sign_in user }
+  describe "index" do
+    let(:user) { FactoryGirl.create(:user) }
+    before(:each) do
+      sign_in user
+      visit statuses_path
+    end
 
-  describe "status creation" do
-  	before { visit root_path }
+    it { should have_title('All statuses') }
+    it { should have_selector('h1', text: "All of the statuses") }
 
-  	describe "with invalid  information" do
+    it "should list each statuses" do
+      Status.all.each do |status|
+        expect(page).to have_selector('strong', text: status.user.full_name)
+        expect(page).to have_selector('p', text: status.content)
+      end
+    end
+  end
 
-  	  it "should not create a status" do
-  	  	expect { click_button "Post" }.not_to change(Status, :count)
-  	  end
+  describe "show" do
+    let(:user) { FactoryGirl.create(:user) }
+    before(:each) do
+      sign_in user
+      visit status_url(status)
+    end
 
-  	  describe "error messages" do
-  	  	before { click_button "Post" }
-  	  	it { should have_content('error') }
-  	  end
-  	end
+    it { should have_title('Status') }
+    it { should have_text(status.user.full_name)}
   end
 end
