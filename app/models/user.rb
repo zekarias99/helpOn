@@ -23,12 +23,12 @@ has_attached_file :avatar, :styles =>
     SecureRandom.urlsafe_base64
   end
 
-  def User.encrypt(token)
-    Digest::SHA1.hexdigest(token.to_s)
+  def full_name
+    name + " " + last_name
   end
 
-  def feed
-    
+  def User.encrypt(token)
+    Digest::SHA1.hexdigest(token.to_s)
   end
 
   private
