@@ -4,7 +4,7 @@ Helpon::Application.routes.draw do
   get "users/new"
   root  'static_pages#home'
   resources :sessions, only: [:new, :create, :destroy]
-  resources :statuses, only: [:create, :destroy]
+  resources :statuses
   resources :friendships
   match '/signin',    to: 'sessions#new',         via: 'get'
    match '/signout',  to: 'sessions#destroy',     via: 'delete'

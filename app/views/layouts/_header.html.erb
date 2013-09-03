@@ -1,11 +1,13 @@
 
 <div class="navbar navbar-fixed-top navbar-nverse">
 <div class="navbar-inner">
+  <div class="container">
   <div class="container"><%= link_to 'Helpon', root_path, class: "brand" %></div>
   <nav>
   <ul class="nav pull-right">
     <li><%= link_to "Home", root_path %></li>
     <li><%= link_to "All Deals", deals_path %></li>
+    <li><%= link_to "All Statuses", statuses_path %></li>
     <li><%= link_to "Today's Deal", '#' %></li>
     <li><%= link_to "Get Featured", new_company_path %></li>
     <li><%= link_to "Register Chatity", new_charity_path %></li>
@@ -34,5 +36,6 @@
   </ul>
  </nav>
 </div> <!-- mainMenu -->
+</div>
 </div>
 
