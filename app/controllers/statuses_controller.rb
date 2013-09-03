@@ -1,33 +1,45 @@
 class StatusesController < ApplicationController
- before_action :signed_in_user, only: [:new, :create, :edit, :update, :destroy]
- before_action :correct_user, only: :destroy
 
+  before_filter :signed_in_user, only: [:new, :create, :edit, :update]
 
-def index
- @statuses = Status.all
-end
-
-def new
-  @status = Status.new
-end
-
-def show
-  @status = Status.find(params[:id])
-end
-
-def edit
-  @status = Status.find(params[:id])
-end
-
-def create
-  @status = Status.new(status_param)
-  if @status.save
-    flash[:success] = "Status created!" 
-    redirect_to root_url
-  else
-    render :new
+  # GET /statuses
+  # GET /statuses.json
+  def index
+    @statuses = Status.all
   end
-end
+
+  # GET /statuses/1
+  # GET /statuses/1.json
+  def show
+  end
+
+  # GET /statuses/new
+  def new
+    @status = Status.new
+  end
+
+  # GET /statuses/1/edit
+  def edit
+  end
+
+  # POST /statuses
+  # POST /statuses.json
+  def create
+    @status = Status.new(status_params)
+
+    respond_to do |format|
+      if @status.save
+        format.html { redirect_to @status, notice: 'Status was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @status }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @status.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PATCH/PUT /statuses/1
+  # PATCH/PUT /statuses/1.json
 
   def update
     respond_to do |format|
@@ -42,32 +54,25 @@ end
   end
 
 
-  # def create
-  # 	@status = current_user.statuses.build(status_param)
-  # 	if @status.save
-  # 	  flash[:success] = "status created!"
-  # 	  redirect_to root_url
-  # 	else
-  #     @feed_items = []
-  #     render 'static_pages/home'
-  # 	end
-  # end
-
+  # DELETE /statuses/1
+  # DELETE /statuses/1.json
   def destroy
     @status.destroy
-    redirect_to root_url
+    respond_to do |format|
+      format.html { redirect_to statuses_url }
+      format.json { head :no_content }
+    end
   end
 
   private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_status
+      @status = Status.find(params[:id])
+    end
 
-  # def correct_user
-  #   @status = current_user.statuses.find_by(id: params[:id])
-  #   redirect_to root_url if @status.nil?
-  # end
 
-  def status_param
-  	params.require(:status).permit(:content)
-  end	  
-
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def status_params
+      params.require(:status).permit(:user_id, :content)
+    end
 end
-

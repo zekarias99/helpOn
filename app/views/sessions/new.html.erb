@@ -3,18 +3,22 @@
   <h1>Sign in</h1>
 </div>
 
-    <%= form_for(:session, url: sessions_path) do |f| %>
-  <fieldset>
-    <p>
-      <%= f.label :email %>
-      <%= f.text_field :email %>
-    </p>
-    <p>
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-    </p>
-     <p> <%= f.submit "Sign in" %> </p>
-  </fieldset>
-    <% end %>
+<div class="row">
+  <div class="span4">
+    <%= simple_form_for(:session, url: sessions_path, html: { class: "well" }) do |f| %>
+    <fieldset>
+      <legend>Sign In</legend>
+      <%= f.input :email %>
+      <%= f.input :password %>
+       <div> <%= f.button :submit, "Sign in" %></div>
+    </fieldset>
 
+    <% end %>
     <p>New user? <%= link_to "Sign up", signup_path %></p>
+  </div>
+  <div class="span8">
+    <h2>Sign in is easy and secure </h2> 
+  </div>
+</div>
+
+

@@ -21,7 +21,7 @@ describe Status do
   end
 
   describe "when blank content" do
-  	before { @status.content = " "}
-  	it { should_not be_valid }
-  end
+    before { @status.content = " "}
+    it { should_not be_valid }
+  end  
 end

@@ -3,16 +3,27 @@
   <h1>Sign up</h1>
 </div>
 
-<%= form_for(@user) do |f| %>
-<fieldset>
+<%= simple_form_for(@user) do |f| %>
+
  <%= render "shared/error_messages", object: @user %>
 
     <%= f.label :name %><br />
     <%=  f.text_field :name %> <br/>
+<<<<<<< HEAD
 
     <%= f.label :last_name, 'Last Name' %>
     <%= f.text_field :last_name %>
  
+=======
+  </p> 
+
+   <p>
+    <%= f.label :last_name %><br />
+    <%=  f.text_field :last_name %> <br/>
+  </p>
+
+  <p>
+>>>>>>> user-status
     <%= f.label :email %><br />
     <%= f.text_field :email %>
 
@@ -21,6 +32,11 @@
 
     <%= f.label :password_confirmation, "Confirmation" %><br />
     <%= f.password_field :password_confirmation %>
+<<<<<<< HEAD
     <%= f.submit "Create my account" %> 
 </fieldset>
+=======
+  </p>
+  <p><%= f.submit "Create my account" %> </p>
+>>>>>>> user-status
 <% end %>

@@ -32,23 +32,12 @@ has_attached_file :avatar, :styles =>
     SecureRandom.urlsafe_base64
   end
 
-  def User.encrypt(token)
-    Digest::SHA1.hexdigest(token.to_s)
-  end
-
-  def feed
-    Status.where("user_id = ?", id)
-  end
-
   def full_name
     name + " " + last_name
   end
 
-  def gravatar_url
-    stripped_email = email.strip
-    downcased_email = stripped_email.downcase
-    hash = Digest::MD5.hexdigest(downcased_email)
-    "http://gravatar.com/avatar/#{hash}"
+  def User.encrypt(token)
+    Digest::SHA1.hexdigest(token.to_s)
   end
 
   private
