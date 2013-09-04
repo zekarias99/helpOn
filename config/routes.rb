@@ -1,8 +1,7 @@
 Helpon::Application.routes.draw do
 
-  get "profiles/show"
-  get "users/new"
   root  'static_pages#home'
+  get "users/new"
   resources :sessions, only: [:new, :create, :destroy]
   resources :statuses
   resources :friendships
@@ -29,6 +28,8 @@ Helpon::Application.routes.draw do
         put :accept
       end
     end
+  get "profiles/show"
+  match '/:id',       to: 'profiles#show',        via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

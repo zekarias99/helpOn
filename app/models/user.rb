@@ -28,13 +28,22 @@ has_attached_file :avatar, :styles =>
   validates :password, length: { minimum: 6 }
   validates :password_confirmation, presence: true
 
+  def full_name
+    name + " " + last_name
+  end
+
+  def gravatar_url
+    stripped_email = email.strip
+    downcased_email = stripped_email.downcase
+    hash = Digest::MD5.hexdigest(downcased_email)
+
+    "http://gravatar.com/avatar/#{hash}"
+  end
+
   def User.new_remember_token
     SecureRandom.urlsafe_base64
   end
 
-  def full_name
-    name + " " + last_name
-  end
 
   def User.encrypt(token)
     Digest::SHA1.hexdigest(token.to_s)
