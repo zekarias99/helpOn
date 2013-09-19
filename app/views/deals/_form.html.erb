@@ -1,5 +1,5 @@
 <%= simple_form_for( @deal, :html => { :multipart => true, :class => "normal_form"} ) do |f| %>
-  <%= render "shared/errors_deal" %>        
+  <%= render 'shared/error_messages', object: @deal %>      
     <%= f.label :name %>
     <%= f.text_field :name %>
     <%= f.label :photo, 'Photo' %>

@@ -1,5 +1,5 @@
 <%= simple_form_for(@charity) do |f| %>
-    <%= render "shared/errors_charity" %>
+    <%= render 'shared/error_messages', object: @charity %>
     <%= f.input :charity_name%>
     <%= f.input :registered_charity_number%>
     <%= f.input :first_name %>

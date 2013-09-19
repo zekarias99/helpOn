@@ -1,6 +1,6 @@
 <%= form_for(@fine_print) do |f| %>
 
-<%= render "shared/errors_fine" %>
+<%= render 'shared/error_messages', object: @fine_print %>
 <fieldset>
   <p>
     <%= f.label :description %><br />

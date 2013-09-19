@@ -1,5 +1,7 @@
 <%= simple_form_for @city do |f| %>
-  <%= render "shared/errors_city" %>
+
+  <%= render 'shared/error_messages', object: @city %>
+  
     <%= f.input :state %> 
     <%= f.input :name %> 
     <%= f.button :submit %>

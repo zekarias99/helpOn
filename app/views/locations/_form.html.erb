@@ -1,7 +1,7 @@
 <div id="boxed">
   <%= form_for(@location, :html => { :class => "normal_form" }) do |f| %>
   <fieldset>
-    <%= render "shared/errors_location" %>
+    <%= render 'shared/error_messages', object: @location %>
 
       <%= f.label :name, :label => "City Name" %>
       <%= f.text_field :name %>

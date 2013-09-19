@@ -6,7 +6,8 @@ gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.1.2'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
-
+gem 'will_paginate', '3.0.4'
+gem 'bootstrap-will_paginate', '0.0.9'
 gem 'jquery-rails', '2.2.1'
 gem 'turbolinks', '1.1.1'
 gem 'jbuilder', '1.0.2'

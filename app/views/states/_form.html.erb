@@ -1,6 +1,6 @@
 <%= form_for(@state) do |f| %>
 <fieldset>
-  <%= render "shared/errors_state" %>
+  <%= render 'shared/error_messages', object: @state %>
 
   <p>
     <%= f.label :name %><br />

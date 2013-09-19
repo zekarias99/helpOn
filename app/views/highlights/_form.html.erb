@@ -1,6 +1,6 @@
 <%= form_for(@highlight) do |f| %>
 
-  <%= render "shared/errors_highlight" %>
+  <%= render 'shared/error_messages', object: @highlight %>
   <fieldset>
     <p>
       <%= f.label :description %>

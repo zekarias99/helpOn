@@ -5,7 +5,7 @@
 
 <%= form_for(@user) do |f| %>
 <fieldset>
-  <%= render "shared/errors_user" %>
+  <%= render 'shared/error_messages', object: @user %>
 
   <p>
     <%= f.label :name %><br />

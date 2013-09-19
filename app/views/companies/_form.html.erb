@@ -1,6 +1,6 @@
 <%= simple_form_for @company do |f| %>
 
-  <%= render "shared/errors_company" %>
+<%= render 'shared/error_messages', object: @company %>
 
   <%= f.input :business_name%>
   <%= f.input :email_address%>
