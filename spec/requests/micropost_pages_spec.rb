@@ -8,8 +8,8 @@ describe "MicropostPages" do
 
  before { sign_in user }
 
- describe "micropost creation" do
-   before { visit root_path }
+  describe "micropost creation" do
+    before { visit root_path }
 
     describe "invalid infomation" do
    	
@@ -21,6 +21,18 @@ describe "MicropostPages" do
    	    before { click_button "Post" }
    	    it { should have_content('error') }
    	  end
+    end
+  end
+
+  describe "micropost destruction" do
+    before { FactoryGirl.create(:micropost, user: user) }
+
+    describe "as correct user" do
+      before { visit root_path }
+
+      it "should delete a micropost" do
+        expect { click_link "delete" }.to change(Micropost, :count).by(-1)
+      end
     end
   end
 end
