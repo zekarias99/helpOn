@@ -1,0 +1,15 @@
+<% @user ||= current_user %>
+<div class="stats">
+  <a href="<%= joining_user_path(@user) %>">
+    <strong id="joining" class="stat">
+      <%= @user.joined_users.count %>
+    </strong>
+    joining
+  </a>
+  <a href="<%= joiners_user_path(@user) %>">
+    <strong id="joiners" class="stat">
+      <%= @user.joiners.count %>
+    </strong>
+    joiners
+  </a>
+</div>

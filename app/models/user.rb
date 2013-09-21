@@ -12,6 +12,25 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true
 
   has_many :microposts, dependent: :destroy
+  has_many :relationships, foreign_key: "joiner_id", dependent: :destroy
+  has_many :joined_users, through: :relationships, source: :joined
+  has_many :reverse_relationships, foreign_key: "joined_id", 
+                                    class_name: "Relationship", 
+                                    dependent: :destroy
+  has_many :joiners, through: :reverse_relationships, source: :joiner
+
+  def joining?(other_user)
+    relationships.find_by(joined_id: other_user.id)
+  end
+
+  def join!(other_user)
+    relationships.create!(joined_id: other_user.id)
+  end
+
+  def unjoin!(other_user)
+    relationships.find_by(joined_id: other_user.id).destroy!
+  end
+
 
   def feed
     Micropost.where("user_id = ?", id)

@@ -19,6 +19,13 @@ describe User do
   it { should respond_to(:password_confirmation ) }
   it { should respond_to(:microposts) }
   it { should respond_to(:feed) }
+  it { should respond_to(:relationships) }
+  it { should respond_to(:joined_users) }
+  it { should respond_to(:reverse_relationships) }
+  it { should respond_to(:joiners) }
+  it { should respond_to(:joining?) }
+  it { should respond_to(:join!) }
+  it { should respond_to(:unjoin!) }
 
   it { should be_valid }
   it { should_not be_admin }
@@ -167,6 +174,29 @@ describe User do
       its(:feed) { should include(newer_micropost) }
       its(:feed) { should include(older_micropost) }
       its(:feed) { should_not include(unjoined_post) }
+    end
+  end
+
+  describe "joining" do
+    let(:other_user) { FactoryGirl.create(:user) }
+    before do
+      @user.save
+      @user.join!(other_user)
+    end
+
+    it { should be_joining(other_user) }
+    its(:joined_users) { should include(other_user) }
+
+    describe "joined user" do
+      subject { other_user }
+      its(:joiners) { should include(@user) }
+    end
+
+    describe "unjoining" do
+      before { @user.unjoin!(other_user) }
+
+      it { should_not be_joining(other_user) }
+      its(:joined_users) { should_not include(other_user) }
     end
   end
 end

@@ -26,6 +26,17 @@ describe "Static pages" do
           expect(page).to have_selector("li##{item.id}", text: item.content)
         end
       end
+
+      describe "joiner/joining counts" do
+        let(:other_user) { FactoryGirl.create(:user) }
+        before do
+          other_user.join!(user)
+          visit root_path
+        end
+
+        it { should have_link("0 joining", href: joining_user_path(user)) }
+        it { should have_link("1 joiners", href: joiners_user_path(user)) }
+      end
     end
   end
 

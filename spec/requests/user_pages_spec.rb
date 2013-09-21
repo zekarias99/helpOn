@@ -58,6 +58,56 @@ describe "User pages" do
       it { should have_content(m1.content) }
       it { should have_content(user.microposts.count) }   
     end
+
+    describe "join/unjoin buttons" do
+      let(:other_user) { FactoryGirl.create(:user) }
+      before { sign_in user }
+
+      describe "joining a user" do
+        before { visit user_path(other_user) }
+
+        it "should increment the joined user count" do
+          expect do
+            click_button "Join"
+          end.to change(user.joined_users, :count).by(1)
+        end
+
+        it "should increment the other user's joiners count" do
+          expect do
+            click_button "Join"
+          end.to change(other_user.joiners, :count).by(1)
+        end
+
+        describe "toggling the button" do
+          before { click_button "Join" }
+          it { should have_xpath("//input[@value='Unjoin']") }
+        end
+      end
+
+      describe "unjoining a user" do
+        before do
+          user.join!(other_user)
+          visit user_path(other_user)
+        end
+
+        it "should decrement the joined user count" do
+          expect do
+            click_button "Unjoin"
+          end.to change(user.joined_users, :count).by(-1)
+        end
+
+        it "should decrement the other user's joiners count" do
+          expect do
+            click_button "Unjoin"
+          end.to change(other_user.joiners, :count).by(-1)
+        end
+
+        describe "toggling the button" do
+          before { click_button "Unjoin" }
+          it { should have_xpath("//input[@value='Join']") }
+        end
+      end
+    end
   end
 
   describe "signup page" do
@@ -155,6 +205,34 @@ describe "User pages" do
       end
       before { patch user_path(user), params }
       specify { expect(user.reload).not_to be_admin }
+    end
+  end
+
+  describe "joining/joiners" do
+    let(:user) { FactoryGirl.create(:user) }
+    let(:other_user) { FactoryGirl.create(:user) }
+    before { user.join!(other_user) }
+
+    describe "joined users (joining)" do
+      before do
+        sign_in user
+        visit joining_user_path(user)
+      end
+
+      it { should have_title(full_title('Joining')) }
+      it { should have_selector('h3', text: ('Joining')) }
+      it { should have_link(other_user.name, href: user_path(other_user)) }
+    end
+
+    describe "joiners (joining)" do
+      before do
+        sign_in other_user
+        visit joiners_user_path(other_user)
+      end
+
+      it { should have_title(full_title('Joiners')) }
+      it { should have_selector('h3', text: ('Joiners')) }
+      it { should have_link(user.name, href: user_path(user)) }
     end
   end
 end

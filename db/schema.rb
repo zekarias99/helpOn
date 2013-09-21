@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130912172947) do
+ActiveRecord::Schema.define(version: 20130919140209) do
 
   create_table "charities", force: true do |t|
     t.string   "charity_name"
@@ -142,6 +142,17 @@ ActiveRecord::Schema.define(version: 20130912172947) do
   end
 
   add_index "microposts", ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
+
+  create_table "relationships", force: true do |t|
+    t.integer  "joiner_id"
+    t.integer  "joined_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "relationships", ["joined_id"], name: "index_relationships_on_joined_id"
+  add_index "relationships", ["joiner_id", "joined_id"], name: "index_relationships_on_joiner_id_and_joined_id", unique: true
+  add_index "relationships", ["joiner_id"], name: "index_relationships_on_joiner_id"
 
   create_table "states", force: true do |t|
     t.string   "name"

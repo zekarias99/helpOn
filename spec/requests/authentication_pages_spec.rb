@@ -81,6 +81,17 @@ describe "Authentication" do
               expect(page).to have_title(user.name)
             end            
           end
+    
+
+          describe "visiting the joining page" do
+            before { visit joining_user_path(user) }
+            it { should have_selector('title', text: 'Sign in') }
+          end
+
+          describe "visiting the joiners page" do
+            before { visit joiners_user_path(user) }
+            it { should have_selector('title', text: 'Sign in') }
+          end        
         end
       end
 
@@ -111,6 +122,18 @@ describe "Authentication" do
           before { visit users_path }
           it { should have_title('Sign in') }
         end
+      end
+
+      describe "in the Relationships controller" do
+        describe "submiting to the create action" do
+          before { post relationships_path }
+          specify { expect(response).to redirect_to(signin_path) }
+        end
+
+        describe "submitting to the destroy action" do
+          before { delete relationship_path(1) }
+          specify { expect(response).to redirect_to(signin_path) }
+        end         
       end
 
       describe "as wrong user" do

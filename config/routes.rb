@@ -3,13 +3,20 @@ Helpon::Application.routes.draw do
   root  'static_pages#home'
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
+
+  resources :users do
+    member do
+      get :joining, :joiners
+    end
+  end
 
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',    to: 'sessions#new',         via: 'get'
   match '/signout',  to: 'sessions#destroy',     via: 'delete'
 
   resources :deals, :fine_prints, :highlights, :companies, :charities, 
-            :cities, :states, :locations, :users
+            :cities, :states, :locations
   # get   'deals/:id' =>  'deals#show', as: 'deal'
   # get   'deals/:id/edit' =>  'deals#edit', as: 'edit_deal'
   # patch 'deals/:id' =>  'deals#update'
