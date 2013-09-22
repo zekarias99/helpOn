@@ -1,0 +1,2 @@
+$("#join_form").html("<%= escape_javascript(render('users/unjoin')) %>")
+$("#joiners").html('<%= @user.joiners.count %>')
