@@ -7,4 +7,10 @@ class Micropost < ActiveRecord::Base
 
 	default_scope -> { order('created_at DESC') }
 
+# Returns microposts from the users being followed by the given user.
+  def self.from_users_joined_by(user)
+    joined_user_ids = user.joined_user_ids
+    where("user_id IN (:joined_user_ids) OR user_id = :user_id",
+          joined_user_ids: joined_user_ids, user_id: user)
+  end
 end
