@@ -1,0 +1,13 @@
+
+<span class="charityName">
+  <h2><%= charity.charity_name %></h2>
+</span>
+<span class="description">
+  <%=raw charity.description %>
+</span>
+
+   <% if current_user?(charity.user) %>
+    <%= link_to "delete", charity, method: :delete,
+                                     data: { confirm: "You sure?" },
+                                     title: charity.charity_name %>
+  <% end %>

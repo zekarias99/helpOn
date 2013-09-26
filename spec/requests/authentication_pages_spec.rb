@@ -95,6 +95,19 @@ describe "Authentication" do
         end
       end
 
+      describe "in the Charities controller" do
+
+        describe "submiting to the create action" do
+          before { post charities_path }
+          specify { expect(response).to redirect_to(signin_path) }
+        end
+
+        describe "submitting to the destroy action" do
+          before { delete charities_path(FactoryGirl.create(:charity)) }
+          specify { expect(response).to redirect_to(signin_path) }
+        end       
+      end
+
       describe "in the micropost controller " do
 
         describe "submiting to the create action" do
@@ -121,6 +134,14 @@ describe "Authentication" do
         describe "visiting the user index" do
           before { visit users_path }
           it { should have_title('Sign in') }
+        end
+      end
+
+      describe "in the Charities controller" do
+
+        describe "submiting to the create action" do
+          before { post charities_path }
+          specify { expect(response).to redirect_to(signin_path) }
         end
       end
 

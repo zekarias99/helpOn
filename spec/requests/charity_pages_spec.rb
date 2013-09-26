@@ -1,157 +1,38 @@
 require 'spec_helper'
 
-describe "Charity Pages" do
-  describe "(index/charity = charities_url)" do
-    describe "Viewing the list of charities" do
-      it "shows the charities" do
+describe "Charity pages" do
+  
+  subject { page }
 
-        red_cross = Charity.create(charity_attributes)
-        unhcr     = Charity.create(charity_attributes)
+  let(:user) { FactoryGirl.create(:user) }
 
-        visit charities_url
+  before { sign_in user }
 
-        expect(page).to have_text('List Charities')
+  describe "charity creation" do
+    before { visit root_path }
+
+    describe "invalid information" do
+      
+      it "should not create a charity" do
+        expect { click_button "Create Charity" }.not_to change(Charity, :count)
+      end
+
+      describe "error messages" do
+        before { click_button "Create Charity" }
+        it { should have_content('error') }
       end
     end
   end
 
-  describe "(show/charities_path" do
-    describe "Viewing an individual charity" do
-      it "shows the charities details" do
+  describe "charity destruction" do
+    before { FactoryGirl.create(:charity, user: user) }
 
-        un = Charity.create(charity_attributes)
-        visit charities_url
-        expect(page).to have_text(un.charity_name)
+    describe "as correct user" do
+      before { visit root_path }
+
+      it "should delete a charity" do
+        expect { click_link "delete" }.to change(Charity, :count).by(-1)
       end
-
-      it "shows the charities details" do
-
-        un = Charity.create(charity_attributes)
-
-        visit charities_url
-
-        click_link 'Show'
-
-        expect(page).to have_text(un.charity_name)
-      end
-    end    
-  end   
-
-  # describe "Nevigation" do
-  #   describe "Nevigating charity" do
-  #     it "allows navigation from the charity page to the listing page" do
-
-  #       bar_feature = Company.create(charity_attributes)
-
-  #       visit charity_url(bar_feature)
-
-  #       click_link "View All"
-        
-  #       expect(current_path).to eq(companies_path)
-  #     end
-
-  #     it "allows navigation from the listing page to the detail page" do
-
-  #       hotel_feature = Company.create(charity_attributes)
-
-  #       visit companies_path
-
-  #       click_link "Show"
-
-  #       expect(current_path).to eq(charity_path(hotel_feature))
-  #     end
-  #   end
-  # end
-
-  # describe "Eddit" do
-  #   describe "Editing a charity" do  
-  #     it "updates the charity and shows the companies's updated details" do
-
-  #       book_feature = Company.create(charity_attributes)
-
-  #       visit companies_path
-        
-  #       click_link "Show"
-
-  #       click_link 'Edit'
-        
-  #       expect(current_path).to eq(edit_charity_path(book_feature))
-            
-  #       fill_in 'Business name',             with:     'Wanza Bar'
-  #       fill_in 'Email address',             with:     'wanza@wanza.com'
-  #       fill_in 'First name',                with:     'Wanza'
-  #       fill_in 'Last name',                 with:     'Bar'
-  #       fill_in 'Address 1',                 with:     '3322 140 th S.t'
-  #       fill_in 'Address 2',                 with:     'NE Seattle'
-  #       fill_in 'City',                      with:      2
-  #       fill_in 'State',                     with:     'Seattle'
-  #       fill_in 'Zip',                       with:     '98125'
-  #       fill_in 'Country',                   with:     'USA'
-  #       fill_in 'Phone',                     with:     '206 388 8482'
-  #       fill_in 'Website',                   with:     'www.wanza.com'
-  #       fill_in 'Pick a category',           with:     'Hotel'
-  #       fill_in 'Review links',              with:     'www.alenalky.com'
-  #       fill_in 'Where do you want your helpon to run', with: 'Asmara'
-  #       fill_in 'Tell us a little bit about your business', with: 'Best!!'
-
-  #       click_button 'Update Company'
-
-  #       expect(current_path).to eq(companies_path)
-
-  #       expect(page).to have_text('Successfully updated company.')
-  #     end  
-  #   end    
-  # end
-
-  # describe "Create" do
-  #   describe "Creating a new feature" do
-  #     it "should save the company and & shows the new companies details" do
-
-  #       visit companies_path
-
-  #       click_link 'New Cha'
-
-  #       expect(current_path).to eq(new_company_path)
-
-  #       fill_in 'Business name',             with:     'Wanza Bar'
-  #       fill_in 'Email address',             with:     'wanza@wanza.com'
-  #       fill_in 'First name',                with:     'Wanza'
-  #       fill_in 'Last name',                 with:     'Bar'
-  #       fill_in 'Address 1',                 with:     '3322 140 th S.t'
-  #       fill_in 'Address 2',                 with:     'NE Seattle'
-  #       fill_in 'State',                     with:     'Seattle'
-  #       fill_in 'Zip',                       with:     '98125'
-  #       fill_in 'Country',                   with:     'USA'
-  #       fill_in 'Phone',                     with:     '206 388 8482'
-  #       fill_in 'Website',                   with:     'www.wanza.com'
-  #       fill_in 'Pick a category',           with:     'Hotel'
-  #       fill_in 'Review links',              with:     'www.alenalky.com'
-  #       fill_in 'Where do you want your helpon to run', with: 'Asmara'
-  #       fill_in 'Tell us a little bit about your business', with: 'Best!!'
-      
-  #       click_button "Create Charity"
-
-  #       expect(current_path).to eq(charity_path(Charity.last))
-
-  #       expect(page).to have_content('Successfully created company.')
-  #     end
-  #   end
-  # end
-
-  # describe "Delete" do
-  #   describe "Deleting a company feature" do
-  #     it "destroys the the company and shows the feature company listing" do
-
-  #       feature_delete = Company.create(company_attributes)
-
-  #       visit company_path(feature_delete)
-
-  #       click_link 'Remove'
-
-  #       expect(current_path).to eq(companies_path)
-  #       expect(page).not_to have_text(feature_delete.business_name)
-  #       expect(page).to have_text("Successfully removed company.")
-  #     end
-  #   end
-  # end
+    end
+  end
 end

@@ -1,17 +1,31 @@
 <% provide(:title, @user.name) %>
+<h2>Wel come to my HelpOn page</h2>
+<%= image_tag 'help_on_cover.jpg' %>
 <div class="row">
-	<asside class="span4">
+	<asside class="span3">
 		<section>
 			<h1>
 				<%= gravatar_for @user  %>
 				<%= @user.name %>
+
+				<% if @user.charities.any? %>
+				<div>Charities (<%= @user.charities.count %>)</div>			
+
+				<% end %>
+				<%= will_paginate @charities %>
 			</h1>
 		</section>
 		<section>
 			<%= render 'shared/stats' %>
 		</section>
     </asside>
-	<div class="span8">
+	<div class="span6">
+				<ol class="charities">
+					<%= render @charities %>
+				</ol>
+	</div>
+
+		<div class="span3">
 		<%= render 'join_form' if signed_in? %>
 		<% if @user.microposts.any? %>
 			<h3>Microposts (<%= @user.microposts.count %>)</h3>

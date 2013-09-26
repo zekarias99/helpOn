@@ -1,0 +1,6 @@
+
+<h1><%#= current_user.charities.charity_name %></h1>
+  <span><%= pluralize(current_user.charities.count, "charity") %> </span>
+  <span>view my charity</span>
+  <span><%#= current_user.charity.description %></span>
+

@@ -1,9 +1,18 @@
 class Charity < ActiveRecord::Base
-  validates :charity_name, :first_name, :telephone_number,
+
+   before_save { self.email_address = email_address.downcase } 
+  validates :charity_name, :first_name, :telephone_number, :user_id,
            :last_name, :job_title, :i_agree_to_the, :description,
            :address_1, :state, :zip, :country,
            :website, :pick_a_category, presence: true 
-  validates :email_address, format: { with: /(\S+)@(\S+)/ }
+    VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email_address, presence: true, format: { with: VALID_EMAIL_REGEX },
+                    uniqueness: { case_sensitive: false }
+
+  validates :charity_name, presence: true, length: { maximum: 50 }
+  validates :description, presence: true, length: { maximum: 500 }
+
+  belongs_to :user
   belongs_to :city
 
     PICK_A_CATEGORY_OPTIONS = [ 

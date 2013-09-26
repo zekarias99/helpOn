@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
                                     class_name: "Relationship", 
                                     dependent: :destroy
   has_many :joiners, through: :reverse_relationships, source: :joiner
+  has_many :charities, dependent: :destroy
 
   def joining?(other_user)
     relationships.find_by(joined_id: other_user.id)

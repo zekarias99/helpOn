@@ -17,11 +17,9 @@
     <%= f.input :telephone_number %> 
     <%= f.input :website %> 
     <%= f.input :city_id %> 
-    <%= f.input :pick_a_category %>   
-     <%= f.select :pick_a_category, Charity::PICK_A_CATEGORY_OPTIONS, prompt: "Pick one" %>
-    <%= f.input :description %>   
-     <%= f.text_area :description %>
-    <%= f.input :i_agree_to_the %>    
-    <%= f.check_box :i_agree_to_the %>
-    <%= f.button :submit %> 
+   <p> <%= f.input :pick_a_category %></p>
+    <p> <%= f.select :pick_a_category, Charity::PICK_A_CATEGORY_OPTIONS, prompt: "Pick one" %></p>
+   <p> <%= f.text_area :description %> </p>
+  <p> <%= f.check_box :i_agree_to_the %> </p>
+   <%= f.button :submit %> 
 <% end %>

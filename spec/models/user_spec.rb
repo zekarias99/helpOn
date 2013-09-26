@@ -26,6 +26,7 @@ describe User do
   it { should respond_to(:joining?) }
   it { should respond_to(:join!) }
   it { should respond_to(:unjoin!) }
+  it { should respond_to(:charities) }
 
   it { should be_valid }
   it { should_not be_admin }
@@ -208,6 +209,32 @@ describe User do
 
       it { should_not be_joining(other_user) }
       its(:joined_users) { should_not include(other_user) }
+    end
+  end
+
+  describe "charity association" do
+
+    before { @user.save }
+
+    let!(:older_charity) do
+      FactoryGirl.create(:charity, user: @user, created_at: 1.day.ago)
+    end
+
+    let!(:newer_charity) do
+      FactoryGirl.create(:charity, user: @user, created_at: 1.hour.ago)
+    end 
+    
+    it "should have the right charities in the right order" do
+      expect(@user.charities.to_a).to eq [newer_charity, older_charity]
+    end
+
+    it "should destroy associated charities" do
+      microposts = @user.charities.to_a
+      @user.destroy
+      expect(charities).not_to be_empty
+      charities.each do |charity|
+        expect(Micropost.where(id: charity.id)).to be_empty
+      end
     end
   end
 end
