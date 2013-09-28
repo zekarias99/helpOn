@@ -35,4 +35,22 @@ FactoryGirl.define do
     city_id                   "1"
     user
   end
+  factory :company do
+    business_name                            "Wanza Bar"
+    email_address                            "wanza@helpon.com"
+    first_name                               "Teshome"      
+    last_name                                "Araya"
+    address_1                                "3022 NE"
+    address_2                                "2022 NE"
+    state                                    "Dessie"
+    zip                                       1264
+    country                                  "USA"
+    phone                                    2064534565
+    website                                  "www.wanza.com"
+    pick_a_category                          "Hotel"
+    where_do_you_want_your_helpon_to_run     "At Dessie"
+    review_links                             "www.helpon.com"
+    tell_us_a_little_bit_about_your_busines  "We are owsome!!"
+    user
+  end
 end

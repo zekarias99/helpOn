@@ -1,164 +1,104 @@
 require 'spec_helper'
 
 describe "Company pages" do
-  describe "(index/company = companies_url)" do
-    describe "Viewing the list of companies" do
-      it "shows the company" do
 
-        hotel_feature = Company.create(company_attributes)
-        bar_feature   = Company.create(company_attributes)
+  subject { page }
 
-        visit companies_url
+  describe "index" do
 
-        expect(page).to have_text('Company')
-        expect(page).to have_text('City')
-        expect(page).to have_text('State')
-        expect(page).to have_text(hotel_feature.business_name)
-        expect(page).to have_text(bar_feature.business_name)
-        expect(page).to have_text(hotel_feature.state)
-        expect(page).to have_text(bar_feature.state)
+    let(:company) { FactoryGirl.create(:company) }
+
+    before(:each) do
+      visit companies_path
+    end
+
+    it { should have_title('List Companies') }
+    it { should have_content('List Companies') }
+
+    it "should list each company" do
+      Company.all.each do |company|
+        expect(page).to have_selector('li', text: company.bussines_name)
+        expect(page).to have_selector('li', text: company.city)
+        expect(page).to have_selector('li', text: company.state)
       end
     end
   end
 
-  describe "(show/company = company_url(company))" do
-    describe "Viewing an individual company" do
-      it "shows the company's details" do
+  describe "delete links" do
 
-        spa_feature = Company.create(company_attributes)
-        visit company_url(spa_feature)
-        expect(page).to have_text(spa_feature.business_name)
-      end
+    it { should_not have_link('delete') }
 
-      it "shows the company's details" do
-
-        spa_feature = Company.create(company_attributes)
-
-        visit companies_url
-
-        click_link 'Show'
-
-        expect(page).to have_text(spa_feature.business_name)
-      end
-    end    
-  end   
-
-  describe "Nevigation" do
-    describe "Nevigating company" do
-      it "allows navigation from the company page to the listing page" do
-
-        bar_feature = Company.create(company_attributes)
-
-        visit company_url(bar_feature)
-
-        click_link "View All"
-        
-        expect(current_path).to eq(companies_path)
-      end
-
-      it "allows navigation from the listing page to the detail page" do
-
-        hotel_feature = Company.create(company_attributes)
-
+    describe "as an admin user" do
+      let(:admin) { FactoryGirl.create(:admin) }
+      before do
+        sign_in admin
         visit companies_path
-
-        click_link "Show"
-
-        expect(current_path).to eq(company_path(hotel_feature))
       end
-    end
-  end
 
-  describe "Eddit" do
-    describe "Editing a company" do  
-      it "updates the company and shows the companies's updated details" do
-
-        book_feature = Company.create(company_attributes)
-
-        visit companies_path
-        
-        click_link "Show"
-
-        click_link 'Edit'
-        
-        expect(current_path).to eq(edit_company_path(book_feature))
-            
-        fill_in 'Business name',             with:     'Wanza Bar'
-        fill_in 'Email address',             with:     'wanza@wanza.com'
-        fill_in 'First name',                with:     'Wanza'
-        fill_in 'Last name',                 with:     'Bar'
-        fill_in 'Address 1',                 with:     '3322 140 th S.t'
-        fill_in 'Address 2',                 with:     'NE Seattle'
-        fill_in 'City',                      with:      2
-        fill_in 'State',                     with:     'Seattle'
-        fill_in 'Zip',                       with:     '98125'
-        fill_in 'Country',                   with:     'USA'
-        fill_in 'Phone',                     with:     '206 388 8482'
-        fill_in 'Website',                   with:     'www.wanza.com'
-        fill_in 'Pick a category',           with:     'Hotel'
-        fill_in 'Review links',              with:     'www.alenalky.com'
-        fill_in 'Where do you want your helpon to run', with: 'Asmara'
-        fill_in 'Tell us a little bit about your business', with: 'Best!!'
-
-        click_button 'Update Company'
-
-        expect(current_path).to eq(companies_path)
-
-        expect(page).to have_text('Successfully updated company.')
-      end  
-    end    
-  end
-
-  describe "Create" do
-    describe "Creating a new feature" do
-      it "should save the company and & shows the new companies details" do
-
-        visit companies_path
-
-        click_link 'New Company'
-
-        expect(current_path).to eq(new_company_path)
-
-        fill_in 'Business name',             with:     'Wanza Bar'
-        fill_in 'Email address',             with:     'wanza@wanza.com'
-        fill_in 'First name',                with:     'Wanza'
-        fill_in 'Last name',                 with:     'Bar'
-        fill_in 'Address 1',                 with:     '3322 140 th S.t'
-        fill_in 'Address 2',                 with:     'NE Seattle'
-        fill_in 'City',                      with:      2
-        fill_in 'State',                     with:     'Seattle'
-        fill_in 'Zip',                       with:     '98125'
-        fill_in 'Country',                   with:     'USA'
-        fill_in 'Phone',                     with:     '206 388 8482'
-        fill_in 'Website',                   with:     'www.wanza.com'
-        fill_in 'Pick a category',           with:     'Hotel'
-        fill_in 'Review links',              with:     'www.alenalky.com'
-        fill_in 'Where do you want your helpon to run', with: 'Asmara'
-        fill_in 'Tell us a little bit about your business', with: 'Best!!'
-      
-        click_button "Create Company"
-
-        expect(current_path).to eq(company_path(Company.last))
-
-        expect(page).to have_content('Successfully created company.')
+      it { should have_link('delete', href: user_path(User.first)) }
+      it "should be able to delete charity" do
+        expect do
+          click_link('delete', match: :first)
+        end.to change(Company, :count).by(-1)
       end
-    end
-  end
-
-  describe "Delete" do
-    describe "Deleting a company feature" do
-      it "destroys the the company and shows the feature company listing" do
-
-        feature_delete = Company.create(company_attributes)
-
-        visit company_path(feature_delete)
-
-        click_link 'Remove'
-
-        expect(current_path).to eq(companies_path)
-        expect(page).not_to have_text(feature_delete.business_name)
-        expect(page).to have_text("Successfully removed company.")
-      end
+      it { should_not have_link('delete'), href: user_path(admin) }
     end
   end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

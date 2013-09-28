@@ -9,4 +9,8 @@ module ApplicationHelper
       "#{base_title} | #{page_title}"             # String interpolation
     end
   end
+
+  def admins_only(&block)
+    block.call if current_user.try(:admin?)
+  end
 end

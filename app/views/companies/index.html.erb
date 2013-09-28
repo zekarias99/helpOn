@@ -1,19 +1,19 @@
 <% provide(:title, 'List Companies') %>
-<ul id="companies">
-  <li>
-    <article class="company">
+
 
      <h1>List Companies</h1>
 
-      <table id="tablelist">
         <tr>
-          <th>Company</th>
+        <% admins_only do %>
+
+         <th>Company</th>
           <th>City</th>
           <th>State</th>
         </tr>
         <% @companies.each do |company| %>
           <tr>
             <td><%= company.business_name %></td>
+            <td><%= company.city %></td>
             <td><%= company.state %></td>
             <td><%= link_to "Delete", company, method: :delete, 
               data: { confirm: 'Are you sure?'} %></td>
@@ -22,6 +22,7 @@
       </table>
     </article>
   </li>
+      <% end %>
       <% end %>
 </ul>
 <p class="links"><%= link_to "New Company", new_company_path %></p>

@@ -10,14 +10,14 @@
   <%= f.input :address_2 %>
   <%= f.input :state %>
   <%= f.input :zip %>
-  <%= f.label :country %>
+  <%= f.input :country%> 
+
   <%= f.input :phone %>
   <%= f.input :website %>
   <%= f.label  :pick_a_category, "Business Type" %>
   <%= f.select :pick_a_category, Company::PICK_A_CATEGORY_OPTIONS, prompt: "Pick one" %>
   <%= f.input :where_do_you_want_your_helpon_to_run %>
   <%= f.input :review_links %>
-  <%= f.input :tell_us_a_little_bit_about_your_business %>
   <%= f.text_area :tell_us_a_little_bit_about_your_business %><br/>
   <%= f.submit :Submit %>
 <% end %>
