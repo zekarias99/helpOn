@@ -1,5 +1,6 @@
 Helpon::Application.routes.draw do
 
+  get "users/index"
   root  'static_pages#home'
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
