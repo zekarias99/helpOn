@@ -1,6 +1,7 @@
 class CompaniesController < ApplicationController
 
-   before_action :admin_user,     only: :destroy
+  before_action :admin_user,     only: [:index, :show, :edit, :update, :destroy]
+
 
   def index
     @companies = Company.all
@@ -55,9 +56,5 @@ class CompaniesController < ApplicationController
             :country, :phone, :website, :pick_a_category,
             :where_do_you_want_your_helpon_to_run, :review_links,
             :tell_us_a_little_bit_about_your_business)
-  end
-
-  def admin_user
-    redirect_to(root_url) unless current_user.admin?
   end
 end
