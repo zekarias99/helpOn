@@ -1,6 +1,6 @@
 class CompaniesController < ApplicationController
 
-  before_action :admin_user,     only: [:index, :show, :edit, :update, :destroy]
+  before_action :admin_user,     only: [:index, :show, :destroy]
 
 
   def index
@@ -15,9 +15,6 @@ class CompaniesController < ApplicationController
     @company = Company.find(params[:id])    
   end
   
-  def edit
-    @company = Company.find(params[:id])
-  end
   
   def create
     @company = Company.new(company_params)
@@ -29,16 +26,6 @@ class CompaniesController < ApplicationController
     end
   end
   
-  
-  def update
-    @company = Company.find(params[:id])
-    if @company.update(company_params)
-      flash[:notice] = "Successfully updated company."
-      redirect_to companies_url
-    else
-      render :action => 'edit'
-    end
-  end
   
   def destroy
     @company = Company.find(params[:id])

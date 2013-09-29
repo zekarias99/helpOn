@@ -18,6 +18,8 @@ helper_method :current_user
 
  
   def admin_user
-  	redirect_to(root_url) unless current_user.admin?
+    if current_user.nil? || !current_user.admin?
+      redirect_to root_url, alert: "You must be admin to perform this action" 
+    end
   end
 end
