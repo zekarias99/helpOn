@@ -49,8 +49,7 @@ FactoryGirl.define do
     website                                  "www.wanza.com"
     pick_a_category                          "Hotel"
     where_do_you_want_your_helpon_to_run     "At Dessie"
+    tell_us_a_little_bit_about_your_business  "We are owsome!!"
     review_links                             "www.helpon.com"
-    tell_us_a_little_bit_about_your_busines  "We are owsome!!"
-    user
   end
 end

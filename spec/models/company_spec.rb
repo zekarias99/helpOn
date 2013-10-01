@@ -1,10 +1,27 @@
 require 'spec_helper'
 
 describe Company do
-
-  before { @company = Company.new(company_attributes) }
+ 
+ before do
+   @company = Company.new(company_attributes)
+ end
 
   subject { @company }
+
+  it { should respond_to(:business_name) }
+  it { should respond_to(:email_address) }
+  it { should respond_to(:first_name) }
+  it { should respond_to(:last_name) }
+  it { should respond_to(:address_1) }
+  it { should respond_to(:state) }
+  it { should respond_to(:zip) }
+  it { should respond_to(:pick_a_category) }
+  it { should respond_to(:country) }
+  it { should respond_to(:phone) }
+  it { should respond_to(:where_do_you_want_your_helpon_to_run) }
+  
+
+  it { should be_valid }
 
   describe "when business name is not present" do
     before { @company.business_name = " " }
@@ -31,16 +48,6 @@ describe Company do
     it { should_not be_valid }
   end
 
-  describe "when address 2 is not present" do
-    before { @company.address_2 = " " }
-    it { should be_valid }
-  end
-
-  describe "when city id is not present" do
-    before { @company.city_id = " " }
-    it { should_not be_valid }
-  end
-
   describe "when state is not present" do
     before { @company.state = " " }
     it { should_not be_valid }
@@ -61,10 +68,6 @@ describe Company do
     it { should_not be_valid }
   end
 
-  describe "when website is not present" do
-    before { @company.website = " " }
-    it { should be_valid }
-  end
 
   describe "when pick a catagory is not present" do
     before { @company.pick_a_category = " " }
@@ -76,16 +79,52 @@ describe Company do
     it { should_not be_valid }
   end
 
-  describe "when review links is not present" do
-    before { @company.review_links = " " }
-    it { should be_valid }
-  end
 
   describe "when tell us a little bit about your business is not present" do
     before { @company.pick_a_category = " " }
     it { should_not be_valid }
   end
 
-  it "an valid e-mail should_not valid"
-  it "valid e-mail should be valid"
+  describe " when business description  that is too long" do
+    before { @company.tell_us_a_little_bit_about_your_business = "a" * 501 }
+    it { should_not be_valid }
+  end
+
+  describe "when email address format is invalid" do
+    it "should be invalid" do
+      addresses = %w[user@foo,com user_at_foo.org example.user@foo.]
+      addresses.each do |invalid_address|
+        @company.email_address = invalid_address
+        expect(@company).to_not be_valid
+      end
+    end
+  end
+
+  describe "when email format is valid" do
+    it "should be valid" do
+      addresses = %w[user@foo.com A_USER@f.b.org frst.las@foo.jp a+b@baz.cn]
+      addresses.each do |valid_address|
+        @company.email_address = valid_address
+        expect(@company).to be_valid
+      end
+    end
+  end
+
+  describe "email address with mixed case" do
+    let(:mixed_case_email) { "Foo@ExAMple.com" }
+    
+    it "it should be saved as all lower-case" do
+      @company.email_address = mixed_case_email
+      @company.save
+      expect(@company.reload.email_address).to eq mixed_case_email.downcase
+    end
+  end
+
+
+  it "valid business name should be valid"
+  it "invalid business name should be valid"
+  it "valid first name should be valid"
+  it "invalid first name should be valid"
+  it "valid last name should be valid"
+  it "invalid last name should be valid"
 end

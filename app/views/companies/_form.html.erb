@@ -14,10 +14,15 @@
 
   <%= f.input :phone %>
   <%= f.input :website %>
-  <%= f.label  :pick_a_category, "Business Type" %>
-  <%= f.select :pick_a_category, Company::PICK_A_CATEGORY_OPTIONS, prompt: "Pick one" %>
+  <%= f.input  :pick_a_category %>
+  <%#= f.select :pick_a_category, Company::PICK_A_CATEGORY_OPTIONS, prompt: "Pick one" %>
+  <%= f.input :where_do_you_want_your_helpon_to_run %>
   <%= f.input :where_do_you_want_your_helpon_to_run %>
   <%= f.input :review_links %>
-  <%= f.text_area :tell_us_a_little_bit_about_your_business %><br/>
+  <%= f.label :tell_us_a_little_bit_about_your_business, "Tell us a little bit about your business" %><br />
+  <%= f.text_area :tell_us_a_little_bit_about_your_business, placeholder: "Tell as a little..."  %></b>
+  <p>
+    
+  </p>
   <%= f.submit :Submit %>
 <% end %>
