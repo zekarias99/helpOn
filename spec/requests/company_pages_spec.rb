@@ -11,9 +11,9 @@ describe "Company pages" do
     before(:each) do
       visit companies_path
     end
-  end
+  
 
-  describe "index page: delete links" do
+   describe "index page: delete links" do
 
     it { should_not have_link('Delete') }
     it { should_not have_link('New Company') }
@@ -27,24 +27,25 @@ describe "Company pages" do
         visit companies_path
       end
 
-    it { should have_title('List Companies') }
-    it { should have_content('List Companies') }
-    it { should have_link('Delete') }
-    it { should have_link('Show') }
+      it { should have_title('List Companies') }
+      it { should have_content('List Companies') }
+      it { should have_link('Delete') }
+      it { should have_link('Show') }
     
 
-    it "should list each company" do
-      Company.all.each do |company|
-        expect(page).to have_selector('li', text: company.bussines_name)
-        expect(page).to have_selector('li', text: company.city)
-        expect(page).to have_selector('li', text: company.state)
-      end
-    end
+        it "should list each company" do
+          Company.all.each do |company|
+            expect(page).to have_selector('li', text: company.bussines_name)
+            expect(page).to have_selector('li', text: company.city)
+            expect(page).to have_selector('li', text: company.state)
+          end
+        end
 
-      it "should be able to delete campany" do
-        expect do
-          click_link('Delete')
-        end.to change(Company, :count).by(-1)
+        it "should be able to delete campany" do
+          expect do
+            click_link('Delete')
+          end.to change(Company, :count).by(-1)
+        end
       end
     end
   end
@@ -56,13 +57,13 @@ describe "Company pages" do
     it { should_not have_link('View All') }
 
     describe "as an admin user have: Remove & View All" do
-      let!(:c1) { FactoryGirl.create(:company) }
+      let!(:c1) { FactoryGirl.create(:company, email_address: "foobar@wanza.com") }
       let!(:c2) { FactoryGirl.create(:company) }
       let(:admin) { FactoryGirl.create(:admin) }
 
       before do
         sign_in admin
-        visit company_path
+        visit company_path(company)
       end
 
       it { should have_link('Remove') }
