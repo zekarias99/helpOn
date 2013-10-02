@@ -48,8 +48,6 @@ describe "Company pages" do
         end
       end
     end
-  
-
     describe "show page" do
       it { should_not have_title('Company') }
       it { should_not have_link('Edit') }
@@ -70,6 +68,13 @@ describe "Company pages" do
         it { should have_link('View All') }
       end
     end
+  end
+
+  describe "get featured page " do
+    before { visit company_path}
+
+    it { should have_content('Tell us about your businnes') }
+    it { should have_title('Get Featured') }
   end
 end
 
