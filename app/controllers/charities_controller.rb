@@ -67,8 +67,7 @@ class CharitiesController < ApplicationController
 
   def charity_params
     params.require(:charity).
-    permit(:charity_name, :registered_charity_number, :first_name, 
-           :last_name, :job_title, :email_address, :telephone_number,     
+    permit(:charity_name, :registered_charity_number,      
            :i_agree_to_the, :description,
            :address_1, :address_2, :state, :zip, :country,
            :website, :pick_a_category, :city_id )

@@ -62,12 +62,9 @@ describe "User pages" do
     describe "charities" do
 
     let(:user) { FactoryGirl.create(:user) }
-    let!(:c1) { FactoryGirl.create(:charity, user: user, charity_name: "UNHCR1",  
-                                registered_charity_number: "111048", 
-                                  first_name: "Foo1", last_name: "Bar1",  
-                                  job_title: "Manager1", 
-                                  email_address: "manager1@unhcr.gov",
-                                  telephone_number: "111048",
+    let!(:c1) { FactoryGirl.create(:charity, user: user, 
+                                  charity_name: "UNHCR1",  
+                                  registered_charity_number: 111048 , 
                                   i_agree_to_the: true,
                                   description: "Human Right",
                                   address_1: "3022 NE 140th St",
@@ -77,13 +74,11 @@ describe "User pages" do
                                   country: "USA",
                                   website: "unhcr1.org",
                                   pick_a_category: "International",
-                                  city_id: "1", user_id: user.id) }
-    let!(:c2) { FactoryGirl.create(:charity, user: user, charity_name: "UNHCR",  
-                                registered_charity_number: "111048", 
-                                  first_name: "Foo", last_name: "Bar",  
-                                  job_title: "Manager", 
-                                  email_address: "manager@unhcr.gov",
-                                  telephone_number: "111048",
+                                  city_id: "1", 
+                                  user_id: user.id) }
+    let!(:c2) { FactoryGirl.create(:charity, user: user, 
+                                  charity_name: "UNHCR",  
+                                  registered_charity_number: "111048", 
                                   i_agree_to_the: true,
                                   description: "Human Right",
                                   address_1: "3022 NE 140th St",
@@ -93,7 +88,8 @@ describe "User pages" do
                                   country: "USA",
                                   website: "unhcr.org",
                                   pick_a_category: "International",
-                                  city_id: "1", user_id: user.id) }
+                                  city_id: "1", 
+                                  user_id: user.id) }
 
     before { visit user_path(user) } 
 

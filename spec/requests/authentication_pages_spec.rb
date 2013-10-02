@@ -119,7 +119,7 @@ describe "Authentication" do
           before { delete microposts_path(FactoryGirl.create(:micropost)) }
           specify { expect(response).to redirect_to(signin_path) }
         end        
-      end
+       end
 
         describe "visiting the edit page" do
           before { visit edit_user_path(user) }
