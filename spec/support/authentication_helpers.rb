@@ -7,17 +7,3 @@ module AuthenticationHelpers
     page.should have_content("Helpon")
   end
 end 
-
-RSpec.configure do |c|
-	c.include AuthenticationHelpers, type: :view
-end
-
-
-module AuthHelpers
-  def sign_in(user)
-    session[:user_id] = user.id
-  end
-end
-RSpec.configure do |c|
-  c.include AuthHelpers, type: :view
-end

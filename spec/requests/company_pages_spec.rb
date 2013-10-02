@@ -48,26 +48,27 @@ describe "Company pages" do
         end
       end
     end
-  end
+  
 
-  describe "show page" do
-    it { should_not have_title('Company') }
-    it { should_not have_link('Edit') }
-    it { should_not have_link('Remove') }
-    it { should_not have_link('View All') }
+    describe "show page" do
+      it { should_not have_title('Company') }
+      it { should_not have_link('Edit') }
+      it { should_not have_link('Remove') }
+      it { should_not have_link('View All') }
 
-    describe "as an admin user have: Remove & View All" do
-      let!(:c1) { FactoryGirl.create(:company, email_address: "foobar@wanza.com") }
-      let!(:c2) { FactoryGirl.create(:company) }
-      let(:admin) { FactoryGirl.create(:admin) }
+      describe "as an admin user have: Remove & View All" do
+        let!(:c1) { FactoryGirl.create(:company, email_address: "teshome@wanza.com") }
+        let!(:c2) { FactoryGirl.create(:company, email_address: "anotheremail@wanza.com") }
+        let(:admin) { FactoryGirl.create(:admin) }
 
-      before do
-        sign_in admin
-        visit company_path(company)
+        before do
+          sign_in admin
+          visit company_path(company)
+        end
+
+        it { should have_link('Remove') }
+        it { should have_link('View All') }
       end
-
-      it { should have_link('Remove') }
-      it { should have_link('View All') }
     end
   end
 end

@@ -46,7 +46,7 @@ FactoryGirl.define do
     zip                                       1264
     country                                  "USA"
     phone                                    2064534565
-    website                                  "www.wanza.com"
+    website                                  "http://example.com"
     pick_a_category                          "Hotel"
     where_do_you_want_your_helpon_to_run     "At Dessie"
     tell_us_a_little_bit_about_your_business  "We are owsome!!"
