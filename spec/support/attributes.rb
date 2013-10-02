@@ -39,7 +39,7 @@ def company_attributes(overrides = {})
     zip:                  '98125',
     country:              'USA',
     phone:                '206 388 8482',
-    website:              'www.wanza.com',
+    website:              'http://wanza.com',
     pick_a_category:      'Hotel',
     review_links:         'www.alenalky.com',
     where_do_you_want_your_helpon_to_run: 'Asmara',

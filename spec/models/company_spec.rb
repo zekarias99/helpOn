@@ -120,7 +120,27 @@ describe Company do
     end
   end
 
+  describe "when website URL is valid" do
+    it "should be valid" do
+      sites = %w[http://example.com https://example]
+      sites.each do |valid_site|
+        @company.website = valid_site
+        expect(@company).to be_valid
+      end
+    end
+  end
 
+  describe "when website URL is invalid" do
+    it "should be invalid" do
+      sites = %w[example.com http examplehttp]
+      sites.each do |invalid_site|
+        @company.website = invalid_site
+
+        expect(@company).to_not be_valid
+        expect(@company.errors[:website].any?).to be_true
+      end
+    end
+  end  
   it "valid business name should be valid"
   it "invalid business name should be valid"
   it "valid first name should be valid"

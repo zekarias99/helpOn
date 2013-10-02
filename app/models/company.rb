@@ -11,6 +11,9 @@ class Company < ActiveRecord::Base
   validates :email_address, presence: true, format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
 
+  validates :website, format: { with: /https?:\/\/[\S]+\b/i,
+                                message: "must reference a valid URL" }
+
   belongs_to :city
   belongs_to :deal
 
