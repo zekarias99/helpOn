@@ -16,7 +16,7 @@ describe "User pages" do
 
     it "should list each user" do
       User.all.each do |user|
-        expect(page).to have_selector('li', text: user.name)
+        expect(page).to have_selector('li', text: user.full_name)
       end
     end
   end
@@ -172,7 +172,8 @@ describe "User pages" do
 
     describe "with valid information" do
       before do
-        fill_in "Name",         with: "Example User"
+        fill_in "Name",         with: "Example"
+        fill_in "Last Name",    with: "User"
         fill_in "Email",        with: "user@example.com"
         fill_in "Password",     with: "foobar"
         fill_in "Confirmation", with: "foobar"
@@ -222,10 +223,12 @@ describe "User pages" do
     end
 
     describe "with valid information" do
-      let(:new_name)  { "New Name" }
+      let(:new_name)  { "NewName" }
+      let(:new_last_name)  { "NewLastName" }
       let(:new_email) { "new@example.com" }
       before do
         fill_in "Name",             with: new_name
+        fill_in "Last Name",        with: new_last_name
         fill_in "Email",            with: new_email
         fill_in "Password",         with: user.password
         fill_in "Confirm Password", with: user.password
@@ -236,6 +239,7 @@ describe "User pages" do
       it { should have_selector('div.alert.alert-success') }
       it { should have_link('Sign out', href: signout_path) }
       specify { expect(user.reload.name).to  eq new_name }
+      specify { expect(user.reload.last_name).to  eq new_last_name }
       specify { expect(user.reload.email).to eq new_email }
     end
 

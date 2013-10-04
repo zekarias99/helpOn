@@ -1,4 +1,4 @@
-<% provide(:title, @user.name) %>
+<% provide(:title, @user.full_name) %>
 <h2>Wel come to my HelpOn page</h2>
 <%= image_tag 'help_on_cover.jpg' %>
 <div class="row">
@@ -6,7 +6,7 @@
 		<section>
 			<h1>
 				<%= gravatar_for @user  %>
-				<%= @user.name %>
+				<%= @user.full_name %>
 
 				<% if @user.charities.any? %>
 				<div>Charities (<%= @user.charities.count %>)</div>			

@@ -9,6 +9,8 @@ class Charity < ActiveRecord::Base
   validates :charity_name, presence: true, length: { maximum: 50 }
   validates :description, presence: true, length: { maximum: 500 }
 
+  default_scope -> { order('created_at DESC') }
+
   belongs_to :user
   belongs_to :city
 

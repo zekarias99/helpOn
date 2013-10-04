@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   before_create :create_remember_token 
 
   validates :name,  presence: true, length: { maximum: 50 }
+  validates :last_name,  presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
@@ -19,6 +20,10 @@ class User < ActiveRecord::Base
                                     dependent: :destroy
   has_many :joiners, through: :reverse_relationships, source: :joiner
   has_many :charities, dependent: :destroy
+
+  def full_name
+    name + " " + last_name
+  end
 
   def joining?(other_user)
     relationships.find_by(joined_id: other_user.id)

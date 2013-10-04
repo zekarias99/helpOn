@@ -104,6 +104,17 @@ ActiveRecord::Schema.define(version: 20131002213107) do
 
   add_index "fine_prints", ["deal_id"], name: "index_fine_prints_on_deal_id"
 
+  create_table "friendships", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "friend_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "state"
+  end
+
+  add_index "friendships", ["state"], name: "index_friendships_on_state"
+  add_index "friendships", ["user_id", "friend_id"], name: "index_friendships_on_user_id_and_friend_id", unique: true
+
   create_table "highlights", force: true do |t|
     t.string   "description"
     t.integer  "deal_id"
@@ -147,6 +158,24 @@ ActiveRecord::Schema.define(version: 20131002213107) do
     t.datetime "updated_at"
   end
 
+  create_table "statuses", force: true do |t|
+    t.text     "content"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "statuses", ["user_id", "created_at"], name: "index_statuses_on_user_id_and_created_at"
+
+  create_table "user_friendships", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "friend_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_friendships", ["user_id", "friend_id"], name: "index_user_friendships_on_user_id_and_friend_id"
+
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
@@ -154,7 +183,12 @@ ActiveRecord::Schema.define(version: 20131002213107) do
     t.datetime "updated_at"
     t.string   "password_digest"
     t.string   "remember_token"
-    t.boolean  "admin",           default: false
+    t.boolean  "admin",               default: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string   "last_name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
