@@ -21,8 +21,29 @@ class User < ActiveRecord::Base
   has_many :joiners, through: :reverse_relationships, source: :joiner
   has_many :charities, dependent: :destroy
 
+  has_attached_file :avatar, styles: { large: "800x800>", medium: "300x200>",
+                                       small: "260x180>", thumb: "80x80#" }
+
   def full_name
     name + " " + last_name
+  end
+
+  def self.get_gravatars
+    all.each do |user|
+      if !user.avatar?
+        user.avatar = URI.parse(user.gravatar_url)
+        user.save
+        print "."
+      end
+    end
+  end
+
+  def gravatar_url
+    stripped_email = email.strip
+    downcased_email = stripped_email.downcase
+    hash = Digest::MD5.hexdigest(downcased_email)
+
+    "http://gravatar.com/avatar/#{hash}"
   end
 
   def joining?(other_user)

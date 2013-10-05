@@ -4,8 +4,8 @@
 <div class="row">
 	<asside class="span3">
 		<section>
-			<h1>
-				<%= gravatar_for @user  %>
+			<h4>
+				<%= avatar_profile_link @user %>
 				<%= @user.full_name %>
 
 				<% if @user.charities.any? %>
@@ -13,7 +13,7 @@
 
 				<% end %>
 				<%= will_paginate @charities %>
-			</h1>
+			</h4>
 		</section>
 		<section>
 			<%= render 'shared/stats' %>
