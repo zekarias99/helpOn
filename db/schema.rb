@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131004202600) do
+ActiveRecord::Schema.define(version: 20131005103958) do
+
+  create_table "albums", force: true do |t|
+    t.string   "title"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "albums", ["user_id"], name: "index_albums_on_user_id"
 
   create_table "charities", force: true do |t|
     t.string   "charity_name"
@@ -139,6 +148,22 @@ ActiveRecord::Schema.define(version: 20131004202600) do
   end
 
   add_index "microposts", ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
+
+  create_table "pictures", force: true do |t|
+    t.integer  "album_id"
+    t.integer  "user_id"
+    t.string   "caption"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "asset_file_name"
+    t.string   "asset_content_type"
+    t.integer  "asset_file_size"
+    t.datetime "asset_updated_at"
+  end
+
+  add_index "pictures", ["album_id"], name: "index_pictures_on_album_id"
+  add_index "pictures", ["user_id"], name: "index_pictures_on_user_id"
 
   create_table "relationships", force: true do |t|
     t.integer  "joiner_id"
