@@ -12,6 +12,7 @@
 				<div>Charities (<%= @user.charities.count %>)</div>			
 
 				<% end %>
+
 				<%= will_paginate @charities %>
 			</h4>
 		</section>
@@ -19,13 +20,27 @@
 			<%= render 'shared/stats' %>
 		</section>
     </asside>
-	<div class="span6">
+
+
+	<div class="span3">
 				<ol class="charities">
 					<%= render @charities %>
 				</ol>
+	</div>	
+
+	<div class="span3">
+								
+		<% if @user.albums.any? %>
+		<div>Albums</div> 
+	     <ol class="albums">
+	     	<%= render @albums %>
+	     </ol>
+		<% end %>
+
+		<%= will_paginate @albums %>
 	</div>
 
-		<div class="span3">
+	<div class="span3">
 		<%= render 'join_form' if signed_in? %>
 		<% if @user.microposts.any? %>
 			<h3>Microposts (<%= @user.microposts.count %>)</h3>
@@ -37,3 +52,41 @@
 		<%= will_paginate @microposts %>
 	</div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -16,6 +16,11 @@ FactoryGirl.define do
   	user
   end
 
+  factory :album do
+    title  "Haricane Album"
+    user
+  end
+
   factory :charity do
     charity_name              "UNHCR"
     registered_charity_number  111048
@@ -28,7 +33,7 @@ FactoryGirl.define do
     country                   "USA"
     website                   "unhcr.org"
     pick_a_category           "International"
-    city_id                   "1"
+    city                       "Seattle"
     user
   end
   factory :company do

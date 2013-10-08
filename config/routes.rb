@@ -6,6 +6,12 @@ Helpon::Application.routes.draw do
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
 
+   scope ":id" do
+    resources :albums do
+      resources :pictures
+    end
+  end
+
   resources :users do
     member do
       get :joining, :joiners

@@ -16,7 +16,7 @@ describe Charity do
                                   country: "USA",
                                   website: "unhcr.org",
                                   pick_a_category: "International",
-                                  city_id: "1", 
+                                  city: "Seattle", 
                                   user_id: user.id)
   end
 
@@ -33,7 +33,7 @@ describe Charity do
    it { should respond_to(:country) }
    it { should respond_to(:website) }
    it { should respond_to(:pick_a_category) }
-   it { should respond_to(:city_id) }
+   it { should respond_to(:city) }
    its(:user) { should ==user }
 
    it { should be_valid }
@@ -61,6 +61,11 @@ describe Charity do
    describe "when zip is not present" do
    	before { @charity.zip = nil }
    	it { should_not be_valid }
+   end
+
+   describe "when city is not present" do
+    before { @charity.city = nil }
+    it { should_not be_valid }
    end
 
    describe "when country is not present" do

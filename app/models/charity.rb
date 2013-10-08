@@ -2,9 +2,8 @@ class Charity < ActiveRecord::Base
 
    
   validates :charity_name, :user_id, :i_agree_to_the, :description,
-           :address_1, :state, :zip, :country,
+           :address_1, :state, :zip, :country, :city, 
            :website, :pick_a_category, presence: true 
-    VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   validates :charity_name, presence: true, length: { maximum: 50 }
   validates :description, presence: true, length: { maximum: 500 }
@@ -12,7 +11,6 @@ class Charity < ActiveRecord::Base
   default_scope -> { order('created_at DESC') }
 
   belongs_to :user
-  belongs_to :city
 
     PICK_A_CATEGORY_OPTIONS = [ 
     'Aged',

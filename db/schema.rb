@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131005103958) do
+ActiveRecord::Schema.define(version: 20131007001854) do
 
   create_table "albums", force: true do |t|
     t.string   "title"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20131005103958) do
     t.datetime "updated_at"
   end
 
+  add_index "albums", ["created_at"], name: "index_albums_on_created_at"
   add_index "albums", ["user_id"], name: "index_albums_on_user_id"
 
   create_table "charities", force: true do |t|
@@ -33,14 +34,14 @@ ActiveRecord::Schema.define(version: 20131005103958) do
     t.string   "country"
     t.string   "website"
     t.string   "pick_a_category"
-    t.integer  "city_id"
+    t.string   "city"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "registered_charity_number"
   end
 
-  add_index "charities", ["city_id"], name: "index_charities_on_city_id"
+  add_index "charities", ["city"], name: "index_charities_on_city"
   add_index "charities", ["user_id"], name: "index_charities_on_user_id"
 
   create_table "cities", force: true do |t|
@@ -163,6 +164,7 @@ ActiveRecord::Schema.define(version: 20131005103958) do
   end
 
   add_index "pictures", ["album_id"], name: "index_pictures_on_album_id"
+  add_index "pictures", ["created_at"], name: "index_pictures_on_created_at"
   add_index "pictures", ["user_id"], name: "index_pictures_on_user_id"
 
   create_table "relationships", force: true do |t|

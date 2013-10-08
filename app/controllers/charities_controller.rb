@@ -70,7 +70,7 @@ class CharitiesController < ApplicationController
     permit(:charity_name, :registered_charity_number,      
            :i_agree_to_the, :description,
            :address_1, :address_2, :state, :zip, :country,
-           :website, :pick_a_category, :city_id )
+           :website, :pick_a_category, :city )
   end
 
     def correct_user

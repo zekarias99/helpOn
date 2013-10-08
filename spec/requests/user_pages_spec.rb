@@ -59,6 +59,21 @@ describe "User pages" do
       it { should have_content(user.microposts.count) }   
     end
 
+      let(:user) { FactoryGirl.create(:user) }
+      let(:a1) { FactoryGirl.create(:album, user: user, title: "Foo") }
+      let(:a2) { FactoryGirl.create(:album, user: user, title: "Bar") }
+
+    before { visit user_path(user) }
+
+    it { should have_title(user.full_name) }
+    it { should have_content(user.full_name) }
+    it { should have_content('Here Album goes') }
+    
+    describe "albums" do
+      it { should have_content(a1.title) }
+      it { should have_content(a2.title) }   
+    end 
+
     describe "charities" do
 
     let(:user) { FactoryGirl.create(:user) }
@@ -74,7 +89,7 @@ describe "User pages" do
                                   country: "USA",
                                   website: "unhcr1.org",
                                   pick_a_category: "International",
-                                  city_id: "1", 
+                                  city: "1", 
                                   user_id: user.id) }
     let!(:c2) { FactoryGirl.create(:charity, user: user, 
                                   charity_name: "UNHCR",  
@@ -88,7 +103,7 @@ describe "User pages" do
                                   country: "USA",
                                   website: "unhcr.org",
                                   pick_a_category: "International",
-                                  city_id: "1", 
+                                  city: "1", 
                                   user_id: user.id) }
 
     before { visit user_path(user) } 
@@ -190,7 +205,7 @@ describe "User pages" do
         let(:user) { User.find_by(email: 'user@example.com') }
 
         it { should have_link('Sign out') }
-        it { should have_title(user.name) }
+        it { should have_title(user.last_name) }
         it { should have_content('Welcome to HelpOn') }        
       end
     end
@@ -228,10 +243,10 @@ describe "User pages" do
       let(:new_last_name)  { "NewLastName" }
       let(:new_email) { "new@example.com" }
       before do
-        fill_in "Name",             with: new_name
+        fill_in "user[name]",       with: new_name
         fill_in "Last Name",        with: new_last_name
         fill_in "Email",            with: new_email
-        fill_in "Password",         with: user.password
+        fill_in "user[password]",   with: user.password        
         fill_in "Confirm Password", with: user.password
         click_button "Save changes"
       end

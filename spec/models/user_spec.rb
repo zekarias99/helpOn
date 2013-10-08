@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe User do
 
+# this user is exist only in memory
   before do
     @user = User.new(name: "Example User", last_name: "Example User", email: "user@example.com",
                      password: "foobar", password_confirmation: "foobar")
@@ -21,6 +22,7 @@ describe User do
   it { should respond_to(:admin) }
   it { should respond_to(:password_confirmation ) }
   it { should respond_to(:microposts) }
+  it { should respond_to(:albums) }
   it { should respond_to(:gravatar_url) }
   it { should respond_to(:feed) }
   it { should respond_to(:relationships) }
@@ -251,4 +253,75 @@ describe User do
       end
     end
   end
+
+  describe "album association" do
+  
+    # Here we save user to get id of the user
+    # let! force to save in the database
+
+    before { @user.save }
+      let!(:older_album) do 
+        FactoryGirl.create(:album, user: @user, created_at: 1.day.ago)
+      end
+      let!(:newer_album) do
+        FactoryGirl.create(:album, user: @user, created_at: 1.hour.ago)
+      end  
+    it "should have the right albums in the right order" do
+       @user.albums.should == [newer_album, older_album]
+    end
+
+    it "should destroy associated albums" do
+      albums = @user.albums
+      @user.destroy
+      albums.each do |album|
+        Album.find_by_id(album.id).should be_nil
+      end
+    end
+  end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
