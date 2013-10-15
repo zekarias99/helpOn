@@ -21,7 +21,8 @@ class User < ActiveRecord::Base
   has_many :joiners, through: :reverse_relationships, source: :joiner
   has_many :charities, dependent: :destroy
   has_many :albums, dependent: :destroy
-  has_many :picturs, dependent: :destroy
+  has_many :pictures, dependent: :destroy
+
 
   has_attached_file :avatar, styles: { large: "800x800>", medium: "300x200>",
                                        small: "260x180>", thumb: "80x80#" }
@@ -29,6 +30,7 @@ class User < ActiveRecord::Base
   def full_name
     name + " " + last_name
   end
+
 
   def self.get_gravatars
     all.each do |user|

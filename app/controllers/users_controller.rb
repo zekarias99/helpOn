@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :signed_in_user, only: [:index,:edit, :update, 
-                                 :destroy, :joining, :joiners]
+                                        :destroy, :joining, :joiners]
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,     only: :destroy
 
@@ -16,7 +16,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @microposts = @user.microposts.paginate(page: params[:page])
     @charities  = @user.charities.paginate(page: params[:page])
-    @albums =     @user.albums.paginate(page: params[:page])
   end
 
   def create

@@ -11,7 +11,7 @@ helper_method :current_user
  private
 
 
-   def current_user
+  def current_user
     remember_token = User.encrypt(cookies[:remember_token])
     @current_user ||= User.find_by_remember_token(remember_token)
   end

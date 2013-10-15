@@ -1,0 +1,9 @@
+<%= form_for ([@user, @album]), :html => { :id => "uploadform" } do |f| %>
+<div class="form-input">
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+
+
+	<%= f.submit  %>
+</div>
+<% end %>
