@@ -2,8 +2,8 @@ class StaticPagesController < ApplicationController
 
   def home
     if signed_in?
-      @micropost = current_user.microposts.build 
-      @charity = current_user.charities.build 
+      @charity    = current_user.charities.build 
+      @micropost  = current_user.microposts.build 
       @feed_items = current_user.feed.paginate(page: params[:page])
     end
   end
@@ -14,7 +14,10 @@ class StaticPagesController < ApplicationController
   def about    
   end
 
-  def how_it_works    
+  def how_it_works 
+    if signed_in?
+    @charity = current_user.charities.build 
+    end   
   end
 
   def contact  

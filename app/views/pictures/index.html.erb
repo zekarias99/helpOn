@@ -1,5 +1,5 @@
-    <% if signed_in? && current_user == @user %>
-    <%= link_to 'Add Picture', new_album_picture_path(current_user, @album), class: 'btn pull-right' %>
+    <% if signed_in? %>
+    <%= link_to 'Add Picture', new_user_album_picture_path(current_user, @album, @picture), class: 'btn pull-right' %>
   <% end %>
   <h1><%= @album.title %></h1>
 
@@ -8,14 +8,14 @@
 <% @pictures.each do |picture| %>
   <li>
     <div class="thumbnail">
-    <%= link_to image_tag(picture.asset.url(:small)), album_picture_path(@user, @album, picture) %><br />
+    <%= link_to image_tag(picture.asset.url(:small)), user_album_picture_path(@user, @album, picture) %><br />
       <div class="caption">
         <% if picture.caption? %><%= picture.caption %><br /><% end %>
         
-        <%= link_to 'View full size', album_picture_path(@user, @album, picture) %>
+        <%= link_to 'View full size', user_album_picture_path(@user, @album, picture) %>
         <% if can_edit_picture?(picture) %>
-          | <%= link_to "Edit", edit_album_picture_path(@album, picture) %>
-          | <%= link_to "Delete", album_picture_path(@album, picture), 
+          | <%= link_to "Edit", edit_user_album_picture_path(@album, picture) %>
+          | <%= link_to "Delete", user_album_picture_path(@album, picture), 
                                    method: :delete, data: { confirm: "Are you sure?" } %>
         <% end %>
 

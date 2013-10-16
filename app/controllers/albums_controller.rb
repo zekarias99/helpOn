@@ -22,22 +22,8 @@ class AlbumsController < ApplicationController
 
 def edit
     @user = current_user
-    @album = @user.albums.find(params[:id])
+    @album = @user.albums.find_by(id: params[:id])
   end
-
-  # def create
-  #   @album = current_user.albums.build(album_params)
-
-  #   respond_to do |format|
-  #     if @album.save
-  #       format.html { redirect_to @album, notice: 'Album was successfully created.' }
-  #       format.json { render action: 'show', status: :created, location: @album }
-  #     else
-  #       format.html { render action: 'new' }
-  #       format.json { render json: @album.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
 
   def create
      @album = current_user.albums.build(album_params)
@@ -64,10 +50,8 @@ def edit
   
   def destroy
     @album.destroy
-    respond_to do |format|
-      format.html { redirect_to user_albums_url }
-      format.json { head :no_content }
-    end
+    flash[:notice] = "Album successfully deleted."
+     redirect_to user_albums_url   
   end
 
   private
