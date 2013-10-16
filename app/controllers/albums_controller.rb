@@ -1,15 +1,17 @@
 class AlbumsController < ApplicationController
-    before_action :signed_in_user, only: [:create, :new, :edit, :update, :destroy]
+    before_action :signed_in_user, only: [:create, :new, :edit, :update, :destroy, :show]
     before_action :find_user 
     before_action :find_album, only: [:edit, :update, :destroy, :show,]
 
   def index
-    @albums = Album.all
+    # @albums = Album.all
+    @albums = current_user.albums 
   end
 
   def show
-    @user = current_user
-    @album = @user.albums.find(params[:id])
+    # @user = User.find_by(id: params[:id])
+    @album = current_user.albums.find_by(id: params[:id])
+    # @album = @user.albums.find_by(id: params[:id])
   end
 
   
@@ -18,7 +20,9 @@ class AlbumsController < ApplicationController
     @album = Album.new
   end
 
-  def edit
+def edit
+    @user = current_user
+    @album = @user.albums.find(params[:id])
   end
 
   # def create
@@ -48,7 +52,7 @@ class AlbumsController < ApplicationController
   def update
     respond_to do |format|
       if @album.update(album_params)
-        format.html { redirect_to @album, notice: 'Album was successfully updated.' }
+        format.html { redirect_to current_user, notice: 'Album was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -61,7 +65,7 @@ class AlbumsController < ApplicationController
   def destroy
     @album.destroy
     respond_to do |format|
-      format.html { redirect_to albums_url }
+      format.html { redirect_to user_albums_url }
       format.json { head :no_content }
     end
   end

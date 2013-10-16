@@ -1,14 +1,17 @@
 class PicturesController < ApplicationController
-  before_action :signed_in_user, only: [:create, :new, :edit, :update, :destroy]
-  before_action :correct_user, only: [:create, :new, :edit, :update, :destroy]
+  before_action :signed_in_user, only: [:create, :new, :edit, :update, :destroy, :index, :show]
+  before_action :find_user 
   before_action :find_album
   before_action :find_picture, only: [:edit, :update, :show, :destroy]
+  before_action :correct_user, only: [:edit, :new, :create, :update, :destroy, :index,:show ]
 
   # before_action :ensure_proper_user, only: [:edit, :new, :create, :update, :destroy]
 
-  def index
-    @pictures = Picture.all
-  end
+
+ def index
+   @pictures = @album.pictures.all
+ end
+
 
 
     def show
@@ -16,10 +19,12 @@ class PicturesController < ApplicationController
       @pictures  = @album.pictures
     end
 
-  
+
   def new
-    @album   = @user.albums.find(params[:album_id])
+    @user = User.find_by(id: params[:id])
+    @album = @user.albums.find_by(id: params[:album_id])
     @picture = @album.pictures.build
+    @pictures = @album.pictures
   end
 
   
@@ -65,11 +70,6 @@ class PicturesController < ApplicationController
 
   private
 
-  def correct_user
-    @user = User.find(params[:id])
-    redirect_to(root_url) unless current_user?(@user)
-  end
-
   # def ensure_proper_user
   #   if current_user != @user
   #     flash[:error] = "You don't have permission to do that."
@@ -77,8 +77,12 @@ class PicturesController < ApplicationController
   #   end
   # end
 
+  def find_user
+    @user = User.find_by(id: params[:id])
+  end
+
   def find_picture
-    @picture = @album.pictures.find(params[:picture_id])
+    @picture = @album.pictures.find_by(id: params[:id])
   end
 
   def find_album
@@ -86,8 +90,13 @@ class PicturesController < ApplicationController
       
       @album = current_user.albums.find_by(id: params[:id])
     else
-      @album = @user.albums.find(params[:album_id])
+      @album = @user.albums.find_by(id: params[:id])
     end
+  end
+
+    def correct_user
+    @picture = current_user.pictures.find_by(id: params[:id])
+    redirect_to root_url if @picture.nil?
   end
 
 
