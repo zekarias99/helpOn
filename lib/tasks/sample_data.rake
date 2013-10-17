@@ -32,36 +32,32 @@ def make_microposts
     content = Faker::Lorem.sentence(5)
     users.each { |user| user.microposts.create!(content: content) }
   end
-    50.times do
-    title = Faker::Lorem.sentence(1)
-    users.each { |user| user.albums.create!(title: title) }
-  end
-    50.times do
-    charity_name                  = "UNHCR",  
-    registered_charity_number     = 111048, 
-    address_1                     = "3022 NE" ,
-    address_2                     = "3022 NE",
-    state                         = "Seattle",
-    zip                           =  98125,
-    country                       = "USA",
-    city                          = "Seattle",
-    website                       = "unhcr.org",
-    pick_a_category               = "International",
-    description                   = Faker::Lorem.sentence(3),
-    i_agree_to_the                = true
-    users.each { |user| user.charities.create!(charity_name: charity_name,
-                      registered_charity_number: registered_charity_number,
-                                               address_1: address_1, 
-                                               address_2: address_2, 
-                                               state: state,
-                                               zip: zip, 
-                                               country: country, 
-                                               city: city,
-                                               website: website,
-                                               pick_a_category: pick_a_category, 
-                                               description: description,
-                                               i_agree_to_the: i_agree_to_the) }
-  end  
+  #   50.times do
+  #   charity_name                  = "UNHCR",  
+  #   registered_charity_number     = 111048, 
+  #   address_1                     = "3022 NE" ,
+  #   address_2                     = "3022 NE",
+  #   state                         = "Seattle",
+  #   zip                           =  98125,
+  #   country                       = "USA",
+  #   city                          = "Seattle",
+  #   website                       = "unhcr.org",
+  #   pick_a_category               = "International",
+  #   description                   = Faker::Lorem.sentence(3),
+  #   i_agree_to_the                = true
+  #   users.each { |user| user.charities.create!(charity_name: charity_name,
+  #                     registered_charity_number: registered_charity_number,
+  #                                              address_1: address_1, 
+  #                                              address_2: address_2, 
+  #                                              state: state,
+  #                                              zip: zip, 
+  #                                              country: country, 
+  #                                              city: city,
+  #                                              website: website,
+  #                                              pick_a_category: pick_a_category, 
+  #                                              description: description,
+  #                                              i_agree_to_the: i_agree_to_the) }
+  # end  
 end
 
 def make_relationships

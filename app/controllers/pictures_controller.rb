@@ -1,48 +1,41 @@
 class PicturesController < ApplicationController
-  before_action :signed_in_user, only: [:create, :new, :edit, :update, :destroy]
+  before_action :signed_in_user, only: [:create, :new, :edit, :update, :destroy, :show]
   before_action :find_user 
-  # before_action :find_album
-  before_action :find_picture, only: [:edit, :update, :show, :destroy]
+  
+  before_action :find_picture, only: [:edit, :update, :destroy]
   # before_action :correct_user, only: [ :destroy ]
 
   # before_action :ensure_proper_user, only: [:edit, :new, :create, :update, :destroy]
 
 
  def index
-   @albums = current_user.albums 
-   @pictures = @album.pictures.all
+   @pictures = current_user.pictures
  end
 
 
 
     def show
-      @user = current_user
-      @album = current_user.albums.find_by(id: params[:id])
-      @pictures  = @album.pictures
+      @user = User.find(params[:id])
+      @picture = Picture.find(params[:id])
     end
 
 
   def new
-    @user = current_user
-    @album = @user.albums.find(params[:album_id])
-    @picture = @album.pictures.build
-    @pictures = @album.pictures
+    @user    = current_user
+    @picture = Picture.new
   end
 
-  
   def edit
     @user    = current_user
-    @album   = @user.albums.find_by(id: params[:id])
-    @picture = @album.pictures.find_by(id: params[:id])
+    @picture = @user.pictures.find(params[:id])
   end
 
   def create
-    @album = current_user.albums.find_by(id: params[:id])
-    @picture = @album.pictures.build(picture_params)
+    @picture  = current_user.pictures.build(picture_params)
     
     respond_to do |format|
       if @picture.save
-        format.html { redirect_to album_pictures_path(@album), notice: 'Picture was successfully created.' }
+        format.html { redirect_to user_picture_path(current_user, @picture), notice: 'Picture was successfully created.' }
         format.json { render json: @picture, status: :created, location: @picture }
       else
         format.html { render action: 'new' }
@@ -54,7 +47,7 @@ class PicturesController < ApplicationController
   def update
     respond_to do |format|
       if @picture.update(picture_params)
-        format.html { redirect_to user_album_pictures_path(@album), notice: 'Picture was successfully updated.' }
+        format.html { redirect_to user_pictures_path(@picture), notice: 'Picture was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -67,10 +60,14 @@ class PicturesController < ApplicationController
   def destroy
     @picture.destroy
     respond_to do |format|
-      format.html { redirect_to album_pictures_url(@album) }
+      format.html { redirect_to user_pictures_url(@picture) }
       format.json { head :no_content }
     end
   end
+
+  # def url_options
+  #   { user: params[:user] }.merge(super)
+  # end
 
 
   private
@@ -83,19 +80,22 @@ class PicturesController < ApplicationController
   # end
 
   def find_user
-    @user = User.find_by(id: params[:id])
+    @user = User.find_by(id: params[:user_id])
   end
 
   def find_picture
-    @picture = @album.pictures.find_by(id: params[:id])
+    @picture = current_user.pictures.find(params[:id])
   end
 
-  # def find_album
+
+
+
+  # def find_picture
   #   if signed_in? && current_user 
       
-  #     @album = current_user.albums.find_by(id: params[:id])
+  #     @picture = current_user.pictures.find_by(id: params[:picture_id])
   #   else
-  #     @album = @user.albums.find_by(id: params[:id])
+  #     @picture = @user.pictures.find_by(id: params[:picture_id])
   #   end
   # end
 

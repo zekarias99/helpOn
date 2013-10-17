@@ -20,7 +20,6 @@ class User < ActiveRecord::Base
                                     dependent: :destroy
   has_many :joiners, through: :reverse_relationships, source: :joiner
   has_many :charities, dependent: :destroy
-  has_many :albums, dependent: :destroy
   has_many :pictures, dependent: :destroy
 
 

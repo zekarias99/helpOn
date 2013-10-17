@@ -8,10 +8,9 @@ Helpon::Application.routes.draw do
   resources :relationships, only: [:create, :destroy]
 
    resources :users do
-    resources :albums do
       resources :pictures
-    end
   end
+
 
   resources :users do
     member do
