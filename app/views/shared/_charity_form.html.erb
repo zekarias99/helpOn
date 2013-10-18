@@ -7,14 +7,15 @@
     <%= f.input :state %> 
     <%= f.input :zip %> 
 
-    <%= f.label :country %>
-    <%= f.text_field :country %> 
+    <%= f.input :country %> 
 
     <%= f.input :website %> 
     <%= f.input :city %> 
-   <p> <%= f.input :pick_a_category %></p>
     <p> <%= f.select :pick_a_category, Charity::PICK_A_CATEGORY_OPTIONS, prompt: "Pick one" %></p>
-   <p> <%= f.text_area :description %> </p>
-  <p> <%= f.check_box :i_agree_to_the %> </p>
-   <%= f.button :submit %> 
+    <p> <%= f.input :description, as: :text, label: 'Description', 
+    placeholder: 'Discribe your goal Why you are doing this' %> 
+    <%= f.input :i_agree_to_the, label: 'Yes, I agree' %>
+   <div class="form-actions">
+     <%= f.submit "Create Charity", class: 'btn btn-primary' %><br />      
+   </div>
 <% end %>

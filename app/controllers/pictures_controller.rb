@@ -1,9 +1,9 @@
 class PicturesController < ApplicationController
-  before_action :signed_in_user, only: [:create, :new, :edit, :update, :destroy, :show]
+  before_action :signed_in_user
   before_action :find_user 
   
   before_action :find_picture, only: [:edit, :update, :destroy]
-  # before_action :correct_user, only: [ :destroy ]
+  before_action :correct_user, only: [ :destroy, :edit]
 
   # before_action :ensure_proper_user, only: [:edit, :new, :create, :update, :destroy]
 
@@ -103,6 +103,11 @@ class PicturesController < ApplicationController
   #   @picture = current_user.pictures.find_by(id: params[:id])
   #   redirect_to root_url if @picture.nil?
   # end
+
+  def correct_user
+    @picture = current_user.pictures.find_by(id: params[:id])
+    redirect_to root_url if @picture.nil?
+  end
 
 
     def picture_params

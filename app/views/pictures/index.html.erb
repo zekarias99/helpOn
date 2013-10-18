@@ -13,11 +13,11 @@
         <% if picture.caption? %><%= picture.caption %><br /><% end %>
         
         <%= link_to 'View full size', user_picture_path(@user, picture) %>
-        <% if can_edit_picture?(picture) %>
+        
           | <%= link_to "Edit", edit_user_picture_path(@user, picture) %>
-          | <%#= link_to "Delete", user_picture_path(picture), 
+          | <%= link_to "Delete", user_picture_path(@user, picture), 
                                    method: :delete, data: { confirm: "Are you sure?" } %>
-        <% end %>
+        
 
       </div>
     </div>
