@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
    $cities = City.includes(:state)
 
    
+
+   
 helper_method :current_user
 
  private

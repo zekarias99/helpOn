@@ -21,6 +21,12 @@ module ApplicationHelper
     end
   end
 
+
+  def avatar_profile_link(user, image_options={}, html_options={})
+    avatar_url = user.avatar? ? user.avatar.url(:thumb) : nil
+    link_to(image_tag(user.avatar_url, image_options), current_user(user.full_name), html_options)
+  end
+
   def admins_only(&block)
     block.call if current_user.try(:admin?)
   end

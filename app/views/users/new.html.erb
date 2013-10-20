@@ -6,7 +6,7 @@
 <div class="row">
   <div class="span6">
   	<h2>Your Information</h2>
-    <%= simple_form_for(@user) do |f| %>
+    <%= simple_form_for(@user, :html => { :multipart => true }) do |f| %>
       <%= render 'shared/error_messages', object: @user %>
       <%= f.input :name, input_html: { class: 'input-xlarge' } %> 
       <%= f.input :last_name, label: 'Last Name', input_html: { class: 'input-xlarge' } %> 

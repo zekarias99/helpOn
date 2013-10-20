@@ -4,6 +4,10 @@ class User < ActiveRecord::Base
   before_create :create_remember_token 
 
   validates :name,  presence: true, length: { maximum: 50 }
+  # validates_format_of :name, :with => /^[-\w\._@]+$/i, :allow_blank => true, 
+  #                :message => "should only contain letters, numbers, or .-_@"
+  # validates_format_of :last_name, :with => /^[-\w\._@]+$/i, :allow_blank => true, 
+  #                :message => "should only contain letters, numbers, or .-_@"
   validates :last_name,  presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX },
@@ -23,9 +27,11 @@ class User < ActiveRecord::Base
   has_many :pictures, dependent: :destroy
 
 
-  has_attached_file :avatar, styles: { large: "800x800>", medium: "300x200>",
-                                       small: "260x180>", thumb: "80x80#" }
+  has_attached_file :avatar, styles: {
+    large: "800x800>", medium: "300x200>", small: "260x180>", thumb: "80x80#" }
 
+  has_attached_file :cover_picture
+  
   def full_name
     name + " " + last_name
   end

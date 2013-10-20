@@ -3,7 +3,8 @@
 <h1>Update your profile</h1>
 </div>
 
-<%= simple_form_for(@user) do |f| %>
+ <%= simple_form_for @user, :html => { :multipart => true } do |f| %>
+ 
     <%= render 'shared/error_messages', object: @user %>
   <fieldset>
     <legend>About Me</legend>
@@ -16,6 +17,11 @@
     <legend>Profile Picture</legend>
     <%= f.input :avatar, as: :file %>  
     <%= bootstrap_paperclip_picture f, :avatar %>
+  </fieldset>
+
+  <fieldset>
+    <legend>Cover Picture</legend>
+    <%= f.input :cover_picture, as: :file %>  
   </fieldset>
 
   <fieldset>

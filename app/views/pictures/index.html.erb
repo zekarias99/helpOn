@@ -1,4 +1,4 @@
-    <% if signed_in? %>
+    <% if signed_in? && current_user == @user %>
     <%= link_to 'Add Picture', new_user_picture_path(current_user, @picture), class: 'btn pull-right' %>
   <% end %>
   

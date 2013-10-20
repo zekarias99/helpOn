@@ -13,6 +13,7 @@ gem 'turbolinks', '1.1.1'
 gem 'jbuilder', '1.0.2'
 gem 'simple_form'
 gem 'country_select'
+gem 'twitter-bootstrap-rails'
 
 group :development, :test do
   gem 'sqlite3', '1.3.7'
