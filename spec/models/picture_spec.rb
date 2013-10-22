@@ -1,5 +1,10 @@
 require 'spec_helper'
 
 describe Picture do
-  pending "add some examples to (or delete) #{__FILE__}"
+  
+  let(:user) { FactoryGirl.create(:user) }
+
+  before do
+    @picture = Picture.new(caption: 'My Dog', description: 'Lorem Epsem')
+  end
 end

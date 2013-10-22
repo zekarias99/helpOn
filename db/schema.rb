@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131020033646) do
+ActiveRecord::Schema.define(version: 20131021111634) do
 
   create_table "albums", force: true do |t|
     t.string   "title"
@@ -161,6 +161,7 @@ ActiveRecord::Schema.define(version: 20131020033646) do
     t.string   "asset_content_type"
     t.integer  "asset_file_size"
     t.datetime "asset_updated_at"
+    t.string   "asset"
   end
 
   add_index "pictures", ["album_id"], name: "index_pictures_on_album_id"

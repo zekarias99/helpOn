@@ -18,6 +18,7 @@ class PicturesController < ApplicationController
     def show
       @user = User.find(params[:id])
       @picture = Picture.find(params[:id])
+      add_breadcrumb @picture, user_picture_path(@user, @picture)
     end
 
 
@@ -29,6 +30,7 @@ class PicturesController < ApplicationController
   def edit
     @user    = current_user
     @picture = @user.pictures.find(params[:id])
+    add_breadcrumb "Editting Picture"
   end
 
   def create

@@ -1,0 +1,24 @@
+// Place all the styles related to the statuses controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.microposts {
+	border-bottom: solid 1px #CCC;
+	padding: 5px 0;
+}
+
+.microposts p {
+	margin: 4px 0;
+}
+
+.microposts.hover {
+	background: #FAFAFA;
+}
+
+.microposts .admin {
+	display: none;
+}
+
+.microposts.hover .admin {
+	display: inline;
+}
