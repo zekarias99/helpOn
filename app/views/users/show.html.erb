@@ -1,11 +1,15 @@
 <% provide(:title, @user.full_name) %>
 <div class="auter_cover_picture">
-<div class="cover_picture">
-	<%= image_tag @user.cover_picture, class: '' %>
-</div>
-  <div class="avatar">
-	<%= avatar_profile_link @user, {}, class: '' %><%= @user.full_name %>
+	   <div class="avatar">
+	<span> <%= avatar_profile_link @user, {}, class: '' %></span>
+	 <%= @user.full_name %>
 	</div>
+
+	<div class="cover_picture">
+		
+		<%= image_tag @user.cover_picture, class: '' %>
+	</div>
+
 </div>
 
 <%= render_breadcrumbs  %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131021111634) do
+ActiveRecord::Schema.define(version: 20131024102351) do
 
   create_table "albums", force: true do |t|
     t.string   "title"
@@ -70,14 +70,17 @@ ActiveRecord::Schema.define(version: 20131021111634) do
     t.string   "where_do_you_want_your_helpon_to_run"
     t.string   "review_links"
     t.string   "tell_us_a_little_bit_about_your_business"
-    t.integer  "city_id"
+    t.string   "city_id"
     t.integer  "deal_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   add_index "companies", ["city_id"], name: "index_companies_on_city_id"
+  add_index "companies", ["created_at"], name: "index_companies_on_created_at"
   add_index "companies", ["deal_id"], name: "index_companies_on_deal_id"
+  add_index "companies", ["user_id"], name: "index_companies_on_user_id"
 
   create_table "deals", force: true do |t|
     t.string   "name"

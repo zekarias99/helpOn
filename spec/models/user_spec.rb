@@ -22,7 +22,7 @@ describe User do
   it { should respond_to(:admin) }
   it { should respond_to(:password_confirmation ) }
   it { should respond_to(:microposts) }
-  it { should respond_to(:albums) }
+  it { should respond_to(:pictures) }
   it { should respond_to(:gravatar_url) }
   it { should respond_to(:feed) }
   it { should respond_to(:relationships) }
@@ -33,6 +33,7 @@ describe User do
   it { should respond_to(:join!) }
   it { should respond_to(:unjoin!) }
   it { should respond_to(:charities) }
+  it { should respond_to(:companies)}
 
   it { should be_valid }
   it { should_not be_admin }
@@ -228,6 +229,29 @@ describe User do
     end
   end
 
+  describe "company associations" do
+    before { @user.save }
+      let!(:older_company) do
+        FactoryGirl.create(:company, user: @user, created_at: 1.day.ago)
+      end
+      let!(:newer_company) do
+        FactoryGirl.create(:company, user: @user, created_at: 1.hour.ago)
+      end
+
+    it "should have the right companies in the right order" do
+      expect(@user.companies.to_a).to eq [newer_company, older_company]
+    end
+
+    it "should destroy associated companies" do
+      companies = @user.companies.to_a
+      @user.destroy
+      expect(companies).not_to be_empty
+      companies.each do |company|
+        expect(Company.where(id: company.id)).to be_empty
+      end
+    end
+  end
+
   describe "charity association" do
 
     before { @user.save }
@@ -245,39 +269,39 @@ describe User do
     end
 
     it "should destroy associated charities" do
-      microposts = @user.charities.to_a
+      charities = @user.charities.to_a
       @user.destroy
       expect(charities).not_to be_empty
       charities.each do |charity|
-        expect(Micropost.where(id: charity.id)).to be_empty
+        expect(Charity.where(id: charity.id)).to be_empty
       end
     end
   end
 
-  describe "album association" do
+  # describe "album association" do
   
-    # Here we save user to get id of the user
-    # let! force to save in the database
+  #   # Here we save user to get id of the user
+  #   # let! force to save in the database
 
-    before { @user.save }
-      let!(:older_album) do 
-        FactoryGirl.create(:album, user: @user, created_at: 1.day.ago)
-      end
-      let!(:newer_album) do
-        FactoryGirl.create(:album, user: @user, created_at: 1.hour.ago)
-      end  
-    it "should have the right albums in the right order" do
-       @user.albums.should == [newer_album, older_album]
-    end
+  #   before { @user.save }
+  #     let!(:older_album) do 
+  #       FactoryGirl.create(:album, user: @user, created_at: 1.day.ago)
+  #     end
+  #     let!(:newer_album) do
+  #       FactoryGirl.create(:album, user: @user, created_at: 1.hour.ago)
+  #     end  
+  #   it "should have the right albums in the right order" do
+  #      @user.albums.should == [newer_album, older_album]
+  #   end
 
-    it "should destroy associated albums" do
-      albums = @user.albums
-      @user.destroy
-      albums.each do |album|
-        Album.find_by_id(album.id).should be_nil
-      end
-    end
-  end
+  #   it "should destroy associated albums" do
+  #     albums = @user.albums
+  #     @user.destroy
+  #     albums.each do |album|
+  #       Album.find_by_id(album.id).should be_nil
+  #     end
+  #   end
+  # end
 end
 
 

@@ -71,66 +71,10 @@ describe "Company pages" do
   end
 
   describe "get featured page " do
-    before { visit company_path}
+    before { visit new_company_path}
 
-    it { should have_content('Tell us about your businnes') }
+    it { should have_content('Tell us about your business') }
     it { should have_title('Get Featured') }
   end
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -25,6 +25,7 @@ class User < ActiveRecord::Base
   has_many :joiners, through: :reverse_relationships, source: :joiner
   has_many :charities, dependent: :destroy
   has_many :pictures, dependent: :destroy
+  has_many :companies, dependent: :destroy
 
 
   has_attached_file :avatar, styles: {

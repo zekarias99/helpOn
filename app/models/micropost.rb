@@ -5,7 +5,7 @@ class Micropost < ActiveRecord::Base
 
 	belongs_to :user
 
-	default_scope -> { order('created_at DESC') }
+	default_scope -> { order('microposts.created_at DESC') }
 
 # Returns microposts from the users being followed by the given user.
   def self.from_users_joined_by(user)

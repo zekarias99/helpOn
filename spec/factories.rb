@@ -37,13 +37,11 @@ FactoryGirl.define do
     user
   end
   factory :company do
-    business_name                            "Wanza Bar"
-    email_address                            "wanza@helpon.com"
-    first_name                               "Teshome"      
-    last_name                                "Araya"
+    business_name                            "Wanza Bar"      
     address_1                                "3022 NE"
     address_2                                "2022 NE"
     state                                    "Dessie"
+    city                                     "Seattle"
     zip                                       1264
     country                                  "USA"
     phone                                    2064534565
@@ -51,6 +49,7 @@ FactoryGirl.define do
     pick_a_category                          "Hotel"
     where_do_you_want_your_helpon_to_run     "At Dessie"
     tell_us_a_little_bit_about_your_business  "We are owsome!!"
-    review_links                             "www.helpon.com"
+    review_links                              "http://example.com"
+    user
   end
 end

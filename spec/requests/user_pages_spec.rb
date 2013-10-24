@@ -89,7 +89,7 @@ describe "User pages" do
                                   country: "USA",
                                   website: "unhcr1.org",
                                   pick_a_category: "International",
-                                  city: "1", 
+                                  city: "Seattle", 
                                   user_id: user.id) }
     let!(:c2) { FactoryGirl.create(:charity, user: user, 
                                   charity_name: "UNHCR",  
@@ -103,7 +103,7 @@ describe "User pages" do
                                   country: "USA",
                                   website: "unhcr.org",
                                   pick_a_category: "International",
-                                  city: "1", 
+                                  city: "Seattle", 
                                   user_id: user.id) }
 
     before { visit user_path(user) } 
