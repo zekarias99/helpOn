@@ -33,7 +33,9 @@ FactoryGirl.define do
     country                   "USA"
     website                   "unhcr.org"
     pick_a_category           "International"
-    city                       "Seattle"
+    city                      "Seattle"
+    goal_amount               "Fri, 25 Oct 2013"
+    raising_ends_on             
     user
   end
   factory :company do

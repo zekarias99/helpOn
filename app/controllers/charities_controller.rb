@@ -11,7 +11,7 @@ class CharitiesController < ApplicationController
   end
 
   def edit
-    @user = current_user
+   @user = current_user
    @charity = @user.charities.find_by(params[:id])
   end
   
@@ -79,10 +79,10 @@ class CharitiesController < ApplicationController
 
   def charity_params
     params.require(:charity).
-    permit(:charity_name, :registered_charity_number,      
-           :i_agree_to_the, :description,
-           :address_1, :address_2, :state, :zip, :country,
-           :website, :pick_a_category, :city )
+    permit(:charity_name, :registered_charity_number, :i_agree_to_the,     
+           :description, :zip, :country, :address_1, :address_2, :goal_amount,
+           :state, :city, :raising_ends_on, :website, :pick_a_category,)
+            
   end
 
     def correct_user

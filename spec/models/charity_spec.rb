@@ -16,7 +16,9 @@ describe Charity do
                                   country: "USA",
                                   website: "unhcr.org",
                                   pick_a_category: "International",
-                                  city: "Seattle", 
+                                  city: "Seattle",
+                                  goal_amount: "2000",
+                                  raising_ends_on: "Fri, 25 Oct 2013", 
                                   user_id: user.id)
   end
 
@@ -34,6 +36,8 @@ describe Charity do
    it { should respond_to(:website) }
    it { should respond_to(:pick_a_category) }
    it { should respond_to(:city) }
+   it { should respond_to(:goal_amount) }
+   it { should respond_to(:raising_ends_on) }
    its(:user) { should ==user }
 
    it { should be_valid }
@@ -91,6 +95,16 @@ describe Charity do
   describe "when description is too long" do
   	before { @charity.description = "a" * 501 }
   	it { should_not be_valid } 	
+  end
+
+  describe "when raising ends on is not present" do
+    before { @charity.raising_ends_on = nil }
+    it { should_not be_valid }
+  end
+
+  describe "when goal amount is not present" do
+    before { @charity.goal_amount = nil }
+    it { should_not be_valid }
   end
 end
 
