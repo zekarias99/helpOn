@@ -1,6 +1,19 @@
 class CharitiesController < ApplicationController
-  before_action :signed_in_user, only: [:create, :destroy] 
+  before_action :signed_in_user
   before_action :correct_user,   only: :destroy
+
+  def index
+    @charities = current_user.charities
+  end
+
+  def new
+    @charity = current_user.charities.build 
+  end
+
+  def edit
+    @user = current_user
+   @charity = @user.charities.find_by(params[:id])
+  end
   
   def create
     @charity = current_user.charities.build(charity_params)
@@ -10,8 +23,17 @@ class CharitiesController < ApplicationController
     else
       @feed_items = current_user.feed.paginate(page: params[:page])
        render 'static_pages/home' 
+    end   
+  end
+
+  def update
+    @charity = Charity.find(params[:id])
+    if @charity.update(charity_params)
+      flash[:notice] = "Successfully updated charity."
+      redirect_to current_user
+    else
+      render  'edit'
     end
-    
   end
 
   def destroy
@@ -45,16 +67,6 @@ class CharitiesController < ApplicationController
   #   end
   # end
   
-  
-  # def update
-  #   @charity = Charity.find(params[:id])
-  #   if @charity.update(charity_params)
-  #     flash[:notice] = "Successfully updated charity."
-  #     redirect_to charities_url
-  #   else
-  #     render  'edit'
-  #   end
-  # end
   
   # def destroy
   #   @charity = Charity.find(params[:id])

@@ -18,9 +18,11 @@
 		<section>
 			<h4>
 				<% if @user.charities.any? %>
-				<div>Charities (<%= @user.charities.count %>)</div>			
+				<div>Charities (<%= @user.charities.count %>)</div>
+                <%= render @charities %>
 
 				<% end %>
+				
 
 				<%= will_paginate @charities %>
 			</h4>

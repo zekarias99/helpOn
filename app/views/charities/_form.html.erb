@@ -1,4 +1,5 @@
-<%= simple_form_for([@user, @charity], :html => { :multipart => true }) do |f| %>
+<%= simple_form_for(@charity) do |f| %>
+
     <%= render 'shared/error_messages', object: @charity %>
     <%= f.input :charity_name%>
     <%= f.input :registered_charity_number%> 
