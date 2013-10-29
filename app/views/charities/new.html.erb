@@ -1,6 +1,42 @@
+<% provide(:title, "Set Fundraising Page") %>
 <div class="page-header"> 
- <h1>Create a charity</h1> 
+<h1>Set Fundraising Page</h1>
 </div>
 
-<%= render 'form' %>
+ <%= simple_form_for([@user, @charity], :html => { :multipart => true }) do |f| %>
+ 
+    <%= render 'shared/error_messages', object: @charity %>
+  <fieldset>
+    <legend>Charity Profile</legend>
+    <%= f.input :charity_name%>
+    <%= f.input :registered_charity_number%> 
+    <p> <%= f.select :pick_a_category, 
+    Charity::PICK_A_CATEGORY_OPTIONS, prompt: "Pick one" %></p>
+    <p> <%= f.input :description, as: :text, label: 'Description', 
+    placeholder: 'Discribe your goal Why you are doing this' %>
+  </fieldset>
 
+  <fieldset>
+    <legend>Charity Contact Information </legend>
+    <%= f.input :address_1 %> 
+    <%= f.input :address_2 %> 
+    <%= f.input :city %> 
+    <%= f.input :zip %> 
+    <%= f.input :state %> 
+    <%= f.input :country %> 
+    <%= f.input :website %>    
+  </fieldset>
+
+  <fieldset>
+    <legend>Goal</legend>
+    <%= f.input :goal_amount %>
+    <%= f.input :raising_ends_on %>
+    <%= f.input :i_agree_to_the, label: 'Yes, I agree' %>
+  </fieldset>
+
+
+
+   <div class="form-actions">
+     <%= f.submit "Create Charity", class: 'btn btn-primary' %><br />      
+   </div>
+<% end %>

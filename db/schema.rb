@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131025170720) do
+ActiveRecord::Schema.define(version: 20131029021006) do
 
   create_table "albums", force: true do |t|
     t.string   "title"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20131025170720) do
 
   create_table "charities", force: true do |t|
     t.string   "charity_name"
-    t.boolean  "i_agree_to_the"
+    t.boolean  "i_agree_to_the",            default: false
     t.text     "description"
     t.string   "address_1"
     t.string   "address_2"

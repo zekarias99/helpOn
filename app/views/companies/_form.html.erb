@@ -1,7 +1,8 @@
 <%= simple_form_for @company do |f| %>
 
 <%= render 'shared/error_messages', object: @company %>
-
+<fieldset>
+  <legend>Business Information</legend>
   <%= f.input :business_name%>
   <%= f.input :address_1 %>
   <%= f.input :address_2 %>
@@ -12,14 +13,17 @@
   <%= f.input :phone %>
   <%= f.input :website %>
   <%= f.input  :pick_a_category %>
-  <%#= f.select :pick_a_category, Company::PICK_A_CATEGORY_OPTIONS, prompt: "Pick one" %>
+  <%#= f.select :pick_a_category, Company::PICK_A_CATEGORY_OPTIONS, 
+  prompt: "Pick one" %>
   <%= f.input :where_do_you_want_your_helpon_to_run %>
   <%= f.input :where_do_you_want_your_helpon_to_run %>
   <%= f.input :review_links %>
-  <%= f.label :tell_us_a_little_bit_about_your_business, "Tell us a little bit about your business" %><br />
-  <%= f.text_area :tell_us_a_little_bit_about_your_business, placeholder: "Tell as a little..."  %></b>
-  <p>
-    
-  </p>
-  <%= f.submit :Submit %>
+  <%= f.label :tell_us_a_little_bit_about_your_business,
+   "Tell us a little bit about your business" %><br />
+  <%= f.text_area :tell_us_a_little_bit_about_your_business,class: "span6", 
+   placeholder: "Tell as a little..."  %>
+</fieldset>
+<div class="form-actions">
+  <%= f.submit "Submit", class: 'btn btn-primary' %><br /> 
+</div>
 <% end %>

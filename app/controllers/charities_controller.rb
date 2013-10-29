@@ -11,8 +11,7 @@ class CharitiesController < ApplicationController
   end
 
   def edit
-   @user = current_user
-   @charity = @user.charities.find_by(params[:id])
+   @charity = current_user.charities.find_by(params[:id])
   end
   
   def create
@@ -21,8 +20,7 @@ class CharitiesController < ApplicationController
       flash[:success] = "Charity created"
       redirect_to root_url
     else
-      @feed_items = current_user.feed.paginate(page: params[:page])
-       render 'static_pages/home' 
+       render 'new' 
     end   
   end
 
