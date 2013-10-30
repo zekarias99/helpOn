@@ -22,7 +22,7 @@ Helpon::Application.routes.draw do
   match '/signin',    to: 'sessions#new',         via: 'get'
   match '/signout',  to: 'sessions#destroy',     via: 'delete'
 
-  resources :deals, :fine_prints, :highlights, :companies, :charities, 
+  resources :deals, :fine_prints, :highlights, :companies, :charities,  
             :cities, :states, :locations
   # get   'deals/:id' =>  'deals#show', as: 'deal'
   # get   'deals/:id/edit' =>  'deals#edit', as: 'edit_deal'

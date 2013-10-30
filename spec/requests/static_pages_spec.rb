@@ -27,6 +27,15 @@ describe "Static pages" do
         end
       end
 
+      describe "should see the Set Fundraising page" do
+        before do
+          sign_in user
+          visit root_path
+        end
+
+        it { should have_link('Set Fundraising Page') }
+      end
+
       describe "joiner/joining counts" do
         let(:other_user) { FactoryGirl.create(:user) }
         before do

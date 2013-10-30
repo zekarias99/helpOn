@@ -12,6 +12,10 @@ class Charity < ActiveRecord::Base
 
   belongs_to :user
 
+  def amount_raised
+    #we need to define a method that return the amount of fund raised 
+  end
+
 
     PICK_A_CATEGORY_OPTIONS = [ 
     'Aged',

@@ -3,12 +3,12 @@ this is user info
 <h1>
   <%= current_user.full_name %>
 </h1>
-<span>
-  <%= link_to "create charity", new_charity_path %>	
-</span>
-<span>
+<p>
+  <%= link_to "Set Fundraising Page", new_charity_path %>	
+</p>
+<p>
   <%= link_to "view my profile", current_user %>
-</span>
-<span>
+</p>
+<p>
   <%= pluralize(current_user.microposts.count, "micropost") %>
-</span>
+</p>

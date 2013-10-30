@@ -38,6 +38,7 @@ describe Charity do
    it { should respond_to(:city) }
    it { should respond_to(:goal_amount) }
    it { should respond_to(:raising_ends_on) }
+   it { should respond_to(:amount_raised) }
    its(:user) { should ==user }
 
    it { should be_valid }

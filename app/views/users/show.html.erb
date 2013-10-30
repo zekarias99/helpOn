@@ -16,19 +16,10 @@
 <div class="row">
 	<asside class="span3">
 		<section>
-			<h4>
-				<% if @user.charities.any? %>
-				<div>Charities (<%= @user.charities.count %>)</div>
-                <%= render @charities %>
-
-				<% end %>
-				
-
-				<%= will_paginate @charities %>
-			</h4>
-		</section>
-		<section>
-			<%= render 'shared/stats' %>
+			<h2>user show left side</h2>
+			<div class="shared">
+				<%= render 'shared/stats' %>
+			</div>
 		</section>
     </asside>
 
@@ -37,12 +28,21 @@
 
 
 	<div class="span4">
-				<ol class="charities">
-					<%= render @charities %>
-				</ol>
+		this is user show center
+			<h4>
+				here is user show charity left side
+				<% if @user.charities.any? %>
+				<h3>Charities (<%= @user.charities.count %>)</h3>
+                <%= render @charities %>
+
+				<% end %>
+				
+				<%= will_paginate @charities %>
+			</h4>
 	</div>	
 
 	<div class="span4">
+		this is user show rigth
 		<%= render 'join_form' if signed_in? %>
 		<% if @user.microposts.any? %>
 			<h3>Microposts (<%= @user.microposts.count %>)</h3>

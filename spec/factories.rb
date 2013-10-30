@@ -16,8 +16,9 @@ FactoryGirl.define do
   	user
   end
 
-  factory :album do
-    title  "Haricane Album"
+  factory :picture do
+    caption      "My first cat"
+    description  "Here is my first cat"
     user
   end
 
@@ -34,8 +35,8 @@ FactoryGirl.define do
     website                   "unhcr.org"
     pick_a_category           "International"
     city                      "Seattle"
-    goal_amount               "Fri, 25 Oct 2013"
-    raising_ends_on             
+    goal_amount               2000
+    raising_ends_on           "Fri, 25 Oct 2013"  
     user
   end
   factory :company do

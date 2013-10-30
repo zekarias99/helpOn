@@ -1,5 +1,5 @@
 class CharitiesController < ApplicationController
-  before_action :signed_in_user
+  before_action :signed_in_user, only: [:new, :edit, :create, :update]
   before_action :correct_user,   only: :destroy
 
   def index
@@ -11,7 +11,7 @@ class CharitiesController < ApplicationController
   end
 
   def edit
-   @charity = current_user.charities.find_by(params[:id])
+    @charity = current_user.charities.find_by(params[:id])
   end
   
   def create

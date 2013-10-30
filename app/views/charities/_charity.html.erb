@@ -1,13 +1,13 @@
 
 <span class="charityName">
   <h2><%= charity.charity_name %></h2>
-</span>
+
 <span class="description">
-	this is description
- <h2> <%=raw charity.description %></h2>
-  <h2><%=raw charity.state %></h2>
-  <h2><%=raw charity.city %></h2>
-</span>
+ <p> <%=raw charity.description %></p>
+ <p><strong>Goal Amount:</strong><%=raw charity.goal_amount %></p>
+ <p><strong>Raising Ends On:</strong><%=raw charity.raising_ends_on %></p>
+ <p><strong>Amount Raised: This should be impliment next time</strong></p>
+
 
    <% if current_user?(charity.user) %>
     <%= link_to "delete", charity, method: :delete,

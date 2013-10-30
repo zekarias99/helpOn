@@ -53,136 +53,135 @@ describe "Authentication" do
     describe "for non-signed-in users" do
       let(:user) { FactoryGirl.create(:user) }
 
-      describe "in the Users controller" do
+      describe "when attempting to visit a protected page" do
+        before do
+          visit edit_user_path(user)
+          fill_in "Email",    with: user.email
+          fill_in "Password", with: user.password
+          click_button "Sign in"
+        end
 
-        describe "when attempting to visit a protected page" do
-          before do
-            visit edit_user_path(user)
-            fill_in "Email",    with: user.email
-            fill_in "Password", with: user.password
-            click_button "Sign in"
-          end
+      describe "after signing in" do
+        it "should render the desired protected page" do
+           expect(page).to have_title('Edit user')
+        end
+      end
 
-          describe "after signing in" do
-            it "should render the desired protected page" do
-            expect(page).to have_title('Edit user')
-          end
+      describe "when signing in again" do
+        before do
+          delete signout_path
+          visit signin_path
+          fill_in "Email",    with: user.email
+          fill_in "Password", with: user.password
+          click_button "Sign in"
+        end
 
-          describe "when signing in again" do
-            before do
-              delete signout_path
-              visit signin_path
-              fill_in "Email",    with: user.email
-              fill_in "Password", with: user.password
-              click_button "Sign in"
-            end
-
-            it "should render the default (profile) page" do
-              expect(page).to have_title(user.full_name)
-            end            
-          end
+        it "should render the default (profile) page" do
+          expect(page).to have_title(user.full_name)
+        end            
+      end
+    end
     
-
-          describe "visiting the joining page" do
-            before { visit joining_user_path(user) }
-            it { should have_selector('title', text: 'Sign in') }
-          end
-
-          describe "visiting the joiners page" do
-            before { visit joiners_user_path(user) }
-            it { should have_selector('title', text: 'Sign in') }
-          end        
-        end
+    describe "in the Users controller" do
+  
+      describe "visiting the edit page" do
+        before { visit edit_user_path(user) }
+        it { should have_title('Sign in') }
       end
 
-      describe "in the Charities controller" do
-
-        describe "submiting to the create action" do
-          before { post charities_path }
-          specify { expect(response).to redirect_to(signin_path) }
-        end
-
-        describe "submitting to the destroy action" do
-          before { delete charities_path(FactoryGirl.create(:charity)) }
-          specify { expect(response).to redirect_to(signin_path) }
-        end       
+      describe "submitting to the update action" do
+        before { patch user_path(user) }
+        specify { expect(response).to redirect_to(signin_path) }
       end
 
-      describe "in the micropost controller " do
-
-        describe "submiting to the create action" do
-          before { post microposts_path }
-          specify { expect(response).to redirect_to(signin_path) }
-        end
-
-        describe "submitting to the destroy action" do
-          before { delete microposts_path(FactoryGirl.create(:micropost)) }
-          specify { expect(response).to redirect_to(signin_path) }
-        end        
-       end
-
-        describe "visiting the edit page" do
-          before { visit edit_user_path(user) }
-          it { should have_title('Sign in') }
-        end
-
-        describe "submitting to the update action" do
-          before { patch user_path(user) }
-          specify { expect(response).to redirect_to(signin_path) }
-        end
-
-        describe "visiting the user index" do
-          before { visit users_path }
-          it { should have_title('Sign in') }
-        end
+      describe "visiting the user index" do
+        before { visit users_path }
+        it { should have_title('Sign in') }
       end
 
-      describe "in the Charities controller" do
-
-        describe "submiting to the create action" do
-          before { post charities_path }
-          specify { expect(response).to redirect_to(signin_path) }
-        end
+      describe "visiting the joining page" do
+        before { visit joining_user_path(user) }
+        it { should have_selector('title', text: 'Sign in') }
       end
 
-      describe "in the Relationships controller" do
-        describe "submiting to the create action" do
-          before { post relationships_path }
-          specify { expect(response).to redirect_to(signin_path) }
-        end
+      describe "visiting the joiners page" do
+        before { visit joiners_user_path(user) }
+        it { should have_selector('title', text: 'Sign in') }
+      end        
+    end
 
-        describe "submitting to the destroy action" do
-          before { delete relationship_path(1) }
-          specify { expect(response).to redirect_to(signin_path) }
-        end         
+    describe "in the Charities controller" do
+
+      describe "submiting to the create action" do
+        before { post charities_path }
+        specify { expect(response).to redirect_to(signin_path) }
       end
 
-      describe "as wrong user" do
-        let(:user) { FactoryGirl.create(:user) }
-        let(:wrong_user) { FactoryGirl.create(:user, email: "wrong@example.com") }
-        before { sign_in user, no_capybara: true  }
+      describe "submitting to the destroy action" do
+        before { delete charities_path(FactoryGirl.create(:charity)) }
+        specify { expect(response).to redirect_to(signin_path) }
+      end       
+    end
 
-        describe "visiting Users#edit page" do
-          before { visit edit_user_path(wrong_user) }
-          it { should_not have_title(full_title('Edit user')) }
-        end
+    describe "in the Charities controller" do
 
-        describe "submitting a PATCH request to the Users#update action" do
-          before { patch user_path(wrong_user) }
-          specify { expect(response).to redirect_to(root_url) }
-        end
+      describe "submiting to the create action" do
+        before { post charities_path }
+        specify { expect(response).to redirect_to(signin_path) }
+      end
+    end
+
+    describe "in the micropost controller " do
+
+      describe "submiting to the create action" do
+        before { post microposts_path }
+        specify { expect(response).to redirect_to(signin_path) }
       end
 
-      describe "as non-admin user" do
-        let(:user) { FactoryGirl.create(:user) }
-        let(:non_admin) { FactoryGirl.create(:user) }
+      describe "submitting to the destroy action" do
+        before { delete microposts_path(FactoryGirl.create(:micropost)) }
+        specify { expect(response).to redirect_to(signin_path) }
+      end        
+    end      
 
-       before { sign_in non_admin, no_capybara: true  }
+    describe "in the Relationships controller" do
+      describe "submiting to the create action" do
+        before { post relationships_path }
+        specify { expect(response).to redirect_to(signin_path) }
+      end
 
-        describe "submitting a DELETE request to the Users#destroy action" do
-          before { delete user_path(user) }
-          specify { expect(response).to redirect_to(root_url) }
-        end
+      describe "submitting to the destroy action" do
+        before { delete relationship_path(1) }
+        specify { expect(response).to redirect_to(signin_path) }
+      end         
+    end
+  end
+
+  describe "as wrong user" do
+    let(:user) { FactoryGirl.create(:user) }
+    let(:wrong_user) { FactoryGirl.create(:user, email: "wrong@example.com") }
+      before { sign_in user, no_capybara: true  }
+
+      describe "visiting Users#edit page" do
+        before { visit edit_user_path(wrong_user) }
+        it { should_not have_title(full_title('Edit user')) }
+      end
+
+      describe "submitting a PATCH request to the Users#update action" do
+        before { patch user_path(wrong_user) }
+        specify { expect(response).to redirect_to(root_url) }
+      end
+    end
+
+    describe "as non-admin user" do
+      let(:user) { FactoryGirl.create(:user) }
+      let(:non_admin) { FactoryGirl.create(:user) }
+
+      before { sign_in non_admin, no_capybara: true  }
+
+      describe "submitting a DELETE request to the Users#destroy action" do
+        before { delete user_path(user) }
+        specify { expect(response).to redirect_to(root_url) }
       end
     end
   end

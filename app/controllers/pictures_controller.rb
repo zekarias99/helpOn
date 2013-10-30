@@ -1,5 +1,5 @@
 class PicturesController < ApplicationController
-  before_action :signed_in_user
+  before_action :signed_in_user, only: [:new, :edit, :create, :update]
   before_action :find_user 
   
   before_action :find_picture, only: [:edit, :update, :destroy]
@@ -18,6 +18,7 @@ class PicturesController < ApplicationController
     def show
       @user = User.find(params[:id])
       @picture = Picture.find(params[:id])
+      # redirect_to  user_pictures_path(params[:user_id])
       add_breadcrumb @picture, user_picture_path(@user, @picture)
     end
 

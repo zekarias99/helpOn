@@ -22,4 +22,5 @@ doc/
 .secret
 
 # Ignore note 
-/.some_notes.html.erb
+/some_notes.html.erb
+/public/system

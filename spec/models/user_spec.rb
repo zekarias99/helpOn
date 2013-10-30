@@ -278,30 +278,32 @@ describe User do
     end
   end
 
-  # describe "album association" do
+  describe "picture association" do
   
-  #   # Here we save user to get id of the user
-  #   # let! force to save in the database
+    # Here we save user to get id of the user
+    # let! force to save in the database
 
-  #   before { @user.save }
-  #     let!(:older_album) do 
-  #       FactoryGirl.create(:album, user: @user, created_at: 1.day.ago)
-  #     end
-  #     let!(:newer_album) do
-  #       FactoryGirl.create(:album, user: @user, created_at: 1.hour.ago)
-  #     end  
-  #   it "should have the right albums in the right order" do
-  #      @user.albums.should == [newer_album, older_album]
-  #   end
+    before { @user.save }
+    let!(:older_picture) do
+      FactoryGirl.create(:picture, user: @user, created_at: 1.day.ago)
+    end
+    let!(:newer_picture) do
+      FactoryGirl.create(:picture, user: @user, created_at: 1.hour.ago)
+    end
 
-  #   it "should destroy associated albums" do
-  #     albums = @user.albums
-  #     @user.destroy
-  #     albums.each do |album|
-  #       Album.find_by_id(album.id).should be_nil
-  #     end
-  #   end
-  # end
+    it "should have the right pictures in the right order" do
+      expect(@user.pictures.to_a).to eq [newer_picture, older_picture]
+    end
+
+    it "should destroy associated pictures" do
+      pictures = @user.pictures.to_a
+      @user.destroy
+      expect(pictures).not_to be_empty
+      pictures.each do |picture|
+        expect(Picture.where(id: picture.id)).to be_empty
+      end
+    end
+  end
 end
 
 

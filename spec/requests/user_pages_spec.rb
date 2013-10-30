@@ -50,8 +50,9 @@ describe "User pages" do
 
     before { visit user_path(user) }
 
-    it { should have_title(user.name) }
-    it { should have_content(user.name) }
+    it { should have_title(user.full_name) }
+    it { should have_content(user.full_name) }
+
     
     describe "microposts" do
       it { should have_content(m1.content) }
@@ -59,20 +60,6 @@ describe "User pages" do
       it { should have_content(user.microposts.count) }   
     end
 
-      let(:user) { FactoryGirl.create(:user) }
-      let(:a1) { FactoryGirl.create(:album, user: user, title: "Foo") }
-      let(:a2) { FactoryGirl.create(:album, user: user, title: "Bar") }
-
-    before { visit user_path(user) }
-
-    it { should have_title(user.full_name) }
-    it { should have_content(user.full_name) }
-    it { should have_content('Here Album goes') }
-    
-    describe "albums" do
-      it { should have_content(a1.title) }
-      it { should have_content(a2.title) }   
-    end 
 
     describe "charities" do
 
@@ -89,7 +76,9 @@ describe "User pages" do
                                   country: "USA",
                                   website: "unhcr1.org",
                                   pick_a_category: "International",
-                                  city: "Seattle", 
+                                  city: "Seattle",
+                                  goal_amount: 2000,
+                                  raising_ends_on: "Fri, 25 Oct 2013", 
                                   user_id: user.id) }
     let!(:c2) { FactoryGirl.create(:charity, user: user, 
                                   charity_name: "UNHCR",  
@@ -103,15 +92,23 @@ describe "User pages" do
                                   country: "USA",
                                   website: "unhcr.org",
                                   pick_a_category: "International",
-                                  city: "Seattle", 
+                                  city: "Seattle",
+                                  goal_amount: 2000,
+                                  raising_ends_on: "Fri, 25 Oct 2013", 
                                   user_id: user.id) }
 
     before { visit user_path(user) } 
 
       describe "charities" do
         it { should have_content(c1.charity_name) }
+        it { should have_content(c1.goal_amount) }
+        it { should have_content(c1.raising_ends_on) }
+        it { should have_content('Amount Raised') }
         it { should have_content(c2.charity_name) }
-        it { should have_content(user.charities.count) }   
+        it { should have_content(c2.goal_amount) }
+        it { should have_content(c2.raising_ends_on) }
+        it { should have_content('Amount Raised')}
+        it { should have_content(user.charities.count) }  
       end
     end
 
@@ -187,11 +184,11 @@ describe "User pages" do
 
     describe "with valid information" do
       before do
-        fill_in "Name",         with: "Example"
-        fill_in "Last Name",    with: "User"
-        fill_in "Email",        with: "user@example.com"
-        fill_in "Password",     with: "foobar"
-        fill_in "Confirmation", with: "foobar"
+        fill_in "user[Name]",      with: "Example"
+        fill_in "Last Name",       with: "User"
+        fill_in "Email",           with: "user@example.com"
+        fill_in "Password",        with: "foobar"
+        fill_in "Confirmation",    with: "foobar"
       end
 
       it "should create a user" do
