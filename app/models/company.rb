@@ -11,7 +11,7 @@ class Company < ActiveRecord::Base
   
 
   belongs_to :city
-  belongs_to :deal
+  has_many   :deals
 
   # PICK_A_CATEGORY_OPTIONS = [ 
   #   'Food & Drink',
