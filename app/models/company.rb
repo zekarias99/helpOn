@@ -11,7 +11,6 @@ class Company < ActiveRecord::Base
   
 
   belongs_to :city
-  belongs_to :user
   belongs_to :deal
 
   # PICK_A_CATEGORY_OPTIONS = [ 

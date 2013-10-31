@@ -1,19 +1,22 @@
-<table cellspacing="0" cellpadding="0">
-   <thead>
-   <tr>
-      <th scope="col">Value</th>
-      <th scope="col">Price</th>
-      <th scope="col">Discount</th>
-      <th scope="col">Savings</th>
-    </tr>
-      <%= @deals.each do |deal| %>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= number_to_currency(@deal.regular_price, :precision => 2) %></td>
-      <td><%= number_to_currency(@deal.current_price, :precision => 2) %></td>
-      <td><%= number_to_percentage(@deal.discount_percent, :precision => 2) %></td>
-      <td><%= number_to_currency(@deal.savings, :precision => 2) %></td>
-    </tr>
-  </tbody>
-</table>
+<div class="row">
+  <div class="span12">
+    <div class="span8">
+      <table class="table table-bordered">
+       <tr>
+          <th scope="col">Value</th>
+          <th scope="col">Price</th>
+          <th scope="col">Discount</th>
+          <th scope="col">Savings</th>
+        </tr>
+            <%= @deals.each do |deal| %>
+          <tr>
+            <td><%= number_to_currency(@deal.regular_price, :precision => 2) %></td>
+            <td><%= number_to_currency(@deal.current_price, :precision => 2) %></td>
+            <td><%= number_to_percentage(@deal.discount_percent, :precision => 2) %></td>
+            <td><%= number_to_currency(@deal.savings, :precision => 2) %></td>
+          </tr>
+      </table>
+    </div>
+  </div>
+</div>
+<% end %>

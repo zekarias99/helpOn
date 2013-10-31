@@ -1,7 +1,9 @@
 class DealsController < ApplicationController
+  before_action :admin_user, only: [:index, :edit, :create, :update, :destroy ]
 
   def new
     @deal = Deal.new
+    @companies = Company.all
   end
 
   def index
@@ -13,37 +15,6 @@ class DealsController < ApplicationController
   end
 
   
-  # def show
-  #   if params[:city_name]
-  #     city = City.where(:search_name => params[:city_name])
-  #     @cities = City.includes(:state)
-      
-  #     if city.count == 0
-  #       return render :city_request
-  #     end
-      
-  #     today = Date.current.strftime("%Y-%m-%d").to_s
-      
-  #     @deal = Deal.where('city_id = ?', city).where('deal_date <= ? and end_date >= ?', today, today).where('approved = ?', true).includes(:city).last
-      
-  #     if @deal.nil?
-  #       return render :coming_soon
-  #     end
-
-
-
-  #     else
-  #       redirect_to root_path
-  #     end
-  #   end
-    
-  #   def preview
-  #   if params[:id]
-  #     today = Date.current.strftime("%Y-%m-%d").to_s      
-  #     @deal = Deal.where('id = ?', params[:id]).includes(:city).last
-  #     render :show
-  #   end
-  # end
   
   def edit
     @deal = Deal.find(params[:id])

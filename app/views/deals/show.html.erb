@@ -1,70 +1,51 @@
-<div class="clearfix deal with_tags">
+<% provide(:title, 'Deal show') %>
+<div class="page-header"> 
+ <h1>Deal show</h1>
+</div>
+<div class="page-header"> 
+ <h1><%= @deal.name %></h1>
+</div>
+<div class="row">
+  <div class="span6">
+   <h3><%= @deal.blurb_title %></h3>
+   <%=truncate(@deal.blurb, length: 65, separator: ' ') %>
+  
 
-  <div class="deal_title">
-    <div class="page-header"> 
-      <h2><%= @deal.name %></h2>
-    </div>
-      <% for highlight in @deal.highlights %>
-      <span class="title descriptor"><%= truncate(highlight.description, length: 45, separator: ' ') %></span>
-      <% end %>
+   <p><%= link_to "Edit", edit_deal_path(@deal) %></p>
+   <h4>Price now :
+    <%= number_to_currency(@deal.current_price, :precision => 2) %></h4>
   </div>
-  <div class="secondary">
-    <div class="galaria">
-        <%= image_tag @deal.photo.url %>
-    </div>
-    <% for fine_print in @deal.fine_prints %>
-  <div class="galaria-thumbnails-container">
-    <div class="fine_print"> 
-      <h3 id="fine">The fine print</h3>
-      <%= fine_print.description %>
-    </div>
-    <div class="sumery">
-    <h3 class="fine"><%= @deal.blurb_title %></h3>
-    <%=truncate(@deal.blurb, length: 65, separator: ' ') %>
-    </div>
-    <% end %>
-
-    <p><%= link_to "Edit", edit_deal_path(@deal) %></p> 
-  </div>
-
-  </div>
-     <table cellspacing="0" cellpadding="0">
-        <thead>
-          <tr>
-            <th scope="col">Value</th>
-            <th scope="col">Discount</th>
-            <th scope="col">Save</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><%= number_to_currency(@deal.regular_price, :precision => 2) %></td>
-            <td><%= number_to_percentage(@deal.initial_discount, :precision => 2) %></td>
-            <td><%= number_to_currency(@deal.flat_savings, :precision => 2) %></td>
-          </tr>
-        </tbody>
-      </table>
-        <p id="charity_choise">Your choise of Charity will get</p> 
-          <p id="charity_help">10%</p>
-        <table class="your_charity">
-              <th>Charity Get</th>
-              <th>Charity Get</th>
-            <tr>
-              <td>10%<%= number_to_currency(@deal.current_price, :precision => 2) %></dt>
-              <td><%= number_to_currency(@deal.charity_get, :precision => 2) %></td>
-            </tr>
-        </table>
-
-          <div class="messaging">
-            <div class="bought_message level_1">Over 230 bought</div>
-              <div class="limited_quantity_message level_2">Limited quantity available</div>
-                <div class="tipped_check_mark">
-                  <span>The deal is on!</span>
-                </div>
-          </div>
-      </div>
+  <div class="span6">
+       <%= image_tag @deal.photo.url %>
   </div>
 </div>
+<div class="row">
+  <div class="span6">
+      <table class="table table-bordered">
+        <th>Value</th>
+        <th>Discount</th>
+        <th>Savings</th>
+        <tr>
+          <td><%= number_to_currency(@deal.regular_price, :precision => 2) %></td>          
+          <td><%= number_to_percentage(@deal.discount_percent, :precision => 2) %></td>
+          <td><%= number_to_currency(@deal.savings, :precision => 2) %></td>
+        </tr>
+      </table>
+      <p>Your choise of Charity will get 10%</p> 
+        
+    <table class="table table-bordered">
+          <th>Charity Get</th>
+          <th>Charity Get</th>
+        <tr>
+          <td>10%<%= number_to_currency(@deal.current_price, :precision => 2) %></dt>
+          <td><%= number_to_currency(@deal.charity_get, :precision => 2) %></td>
+        </tr>
+    </table>
+  </div>
+</div>
+
+
+   
 
 
 
