@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131101102951) do
+ActiveRecord::Schema.define(version: 20131101103735) do
 
   create_table "albums", force: true do |t|
     t.string   "title"
@@ -143,6 +143,16 @@ ActiveRecord::Schema.define(version: 20131101102951) do
   end
 
   add_index "highlights", ["deal_id"], name: "index_highlights_on_deal_id"
+
+  create_table "line_items", force: true do |t|
+    t.integer  "deal_id"
+    t.integer  "cart_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "line_items", ["cart_id"], name: "index_line_items_on_cart_id"
+  add_index "line_items", ["deal_id"], name: "index_line_items_on_deal_id"
 
   create_table "locations", force: true do |t|
     t.string   "name"

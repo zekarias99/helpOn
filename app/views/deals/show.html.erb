@@ -14,7 +14,8 @@
    <p><%= link_to "Edit", edit_deal_path(@deal) %></p>
    <h4>Price now :
     <%= number_to_currency(@deal.current_price, :precision => 2) %></h4>
-    <%= link_to "Buy", '#', class: 'btn' %>
+    <%#= link_to "Buy", '#', class: 'btn' %>
+    <%#= link_to 'Buy', line_items_path(deal_id: deal) %>
   </div>
   <div class="span6">
        <%= image_tag @deal.photo.url %>

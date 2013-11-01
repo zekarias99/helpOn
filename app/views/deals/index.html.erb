@@ -58,12 +58,14 @@
 <div class="row">
   <div class="span12">
     <div class="span4">
-      <%= deal.order_count %> purchased
-      <%= deal.ordered_percent %>
+      <p></h5><%= number_to_currency(deal.current_price, :precision => 2) %></h5></p>
+      <%= button_to 'Buy', line_items_path(deal_id: deal) %>
+      <p><%= deal.order_count %> purchased</p>
+      <p><%= deal.ordered_percent %>Deal ordered percent.</p>
       
-      <%= deal.orders_to_go %> more to go...
-      <h5>Your choise of Charity will get 10% </h5>
-      <h5><%= number_to_currency(deal.charity_get, :precision => 2) %></p><br />       
+      </p><%= deal.orders_to_go %> more to go...</p>
+      <p><h5>Your choise of Charity will get 10% </h5><p>
+      <p><h5><%= number_to_currency(deal.charity_get, :precision => 2) %></p>       
     </div>
     <div class="span8">
       <%= image_tag deal.photo.url %>

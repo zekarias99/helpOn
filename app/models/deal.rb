@@ -1,5 +1,7 @@
 class Deal < ActiveRecord::Base
 
+  before_destroy :ensure_not_referenced_by_any_line_item
+
   has_attached_file :photo, 
      :content_type => { :content_type => /\w+.(gif|jpg|png)\z/i },
      :message => { :message => "must reference a GIF, JPG, or PNG image" }
@@ -26,6 +28,7 @@ class Deal < ActiveRecord::Base
   has_many :users, :through => :users_deals
   belongs_to :company
   belongs_to :city
+  has_many :line_items
 
   has_many :fine_prints, :dependent => :destroy
   has_many :highlights, :dependent => :destroy
@@ -96,5 +99,16 @@ class Deal < ActiveRecord::Base
 
   def charity_get
     (current_price.to_f)*0.1
+  end
+
+  private
+      # ensure that there are no line items referencing this product
+  def ensure_not_referenced_by_any_line_item 
+    if line_items.empty?
+      return true 
+     else
+       errors.add(:base, 'Line Items present')
+       return false 
+     end
   end
 end
