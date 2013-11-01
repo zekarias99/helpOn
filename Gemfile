@@ -15,6 +15,7 @@ gem 'simple_form'
 gem 'country_select'
 gem 'twitter-bootstrap-rails'
 
+
 group :development, :test do
   gem 'sqlite3', '1.3.7'
   gem 'rspec-rails', '2.13.1'

@@ -1,6 +1,8 @@
 Helpon::Application.routes.draw do
 
 
+  resources :carts
+
   get "users/index"
   root  'static_pages#home'
   resources :sessions, only: [:new, :create, :destroy]
