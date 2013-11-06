@@ -1,5 +1,8 @@
 class DealsController < ApplicationController
+  include CurrentCart
+
   before_action :admin_user, only: [:index, :edit, :create, :update, :destroy ]
+  before_action :set_cart
 
   def new
     @deal = Deal.new

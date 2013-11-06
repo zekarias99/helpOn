@@ -2,46 +2,54 @@
 <div class="page-header"> 
  <h1>All Deals</h1>
 </div>
+
 <div class="row">
-  <div class="span12">
-    <div class="span6">
-      <table class="table table-bordered">
-        <th>Name</th>
-        <th>Blurb</th>
-        <th>Price</th>
-        <th>Discounts</th>
-        <th>Threshold</th>
-          <% for deal in @deals %>
-        <tr>
-          <td><%= deal.name %></td>
-          <td><%=raw deal.blurb %></td>
-          <td><%= number_to_currency(deal.regular_price) %></td>
-          <td><%= deal.initial_discount %>
-          <% unless deal.max_discount.blank? %>
-             <%= deal.max_discount %>
-           <% end %></td>
-          <td><%= deal.max_threshold %></td>
-        </tr>
-      </table>
-      <div class="span6">
-        <table class="table table-bordered">
-          <th>Value</th>
-          <th>Price now</th>
-          <th>Discount</th>
-          <th>Savings</th>
-          <tr>
-            <td><%= number_to_currency(deal.regular_price, :precision => 2) %></td>
-            <td><%= number_to_currency(deal.current_price, :precision => 2) %></td>
-            <td><%= number_to_percentage(deal.discount_percent, :precision => 2) %></td>
-            <td><%= number_to_currency(deal.savings, :precision => 2) %></td>
-          </tr>
-        </table>
-      </div>
-  </div>
-</div>
-    
-<div class="row">
-  <div class="span8">
+  <div class="span6">
+    <table class="table table-bordered">
+      <th>Name</th>
+      <th>Blurb</th>
+      <th>Price</th>
+      <th>Discounts</th>
+      <th>Threshold</th>
+        <% for deal in @deals %>
+      <tr>
+        <td><%= deal.name %></td>
+        <td><%=raw deal.blurb %></td>
+        <td><%= number_to_currency(deal.regular_price) %></td>
+        <td><%= deal.initial_discount %>
+        <% unless deal.max_discount.blank? %>
+           <%= deal.max_discount %>
+         <% end %></td>
+        <td><%= deal.max_threshold %></td>
+      </tr>
+    </table>
+    <% end %>
+      
+    <table class="table table-bordered">
+      <th>Value</th>
+      <th>Price now</th>
+      <th>Discount</th>
+      <th>Savings</th>
+      <tr>
+        <%= render @deals %>
+
+      </tr>
+    </table>
+
+    <table class="table table-bordered">
+      <th>Value</th>
+      <th>Price now</th>
+      <th>Discount</th>
+      <th>Savings</th>
+      <tr>
+        <td><%= number_to_currency(deal.regular_price, :precision => 2) %></td>
+        <td><%= number_to_currency(deal.current_price, :precision => 2) %></td>
+        <td><%= number_to_percentage(deal.discount_percent, :precision => 2) %></td>
+        <td><%= number_to_currency(deal.savings, :precision => 2) %></td>
+
+      </tr>
+    </table>
+
     <table class="table table-bordered">
       <th>Value</th>
       <th>Discount</th>
@@ -52,27 +60,18 @@
         <td><%= number_to_currency(deal.flat_savings, :precision => 2) %></td>
       </tr>
     </table>
+
+    <p><%= deal.order_count %> purchased</p>
+    <p><%= deal.ordered_percent %>Deal ordered percent.</p>
+    
+    </p><%= deal.orders_to_go %> more to go...</p>
+    <p><h5>Your choise of Charity will get 10% </h5><p>
+    <p><h5><%= number_to_currency(deal.charity_get, :precision => 2) %></p> 
+    <%= image_tag deal.photo.url %>
   </div>
 </div>
 
-<div class="row">
-  <div class="span12">
-    <div class="span4">
-      <p></h5><%= number_to_currency(deal.current_price, :precision => 2) %></h5></p>
-      <%= button_to 'Buy', line_items_path(deal_id: deal) %>
-      <p><%= deal.order_count %> purchased</p>
-      <p><%= deal.ordered_percent %>Deal ordered percent.</p>
-      
-      </p><%= deal.orders_to_go %> more to go...</p>
-      <p><h5>Your choise of Charity will get 10% </h5><p>
-      <p><h5><%= number_to_currency(deal.charity_get, :precision => 2) %></p>       
-    </div>
-    <div class="span8">
-      <%= image_tag deal.photo.url %>
-    </div>
-  </div>
-</div>
-<% end %>
+
 
 <%= link_to "Delete", deal, method: :delete, data: { confirm: 'Are you sure?'} %>
 <%= link_to "Show", deal %>
@@ -80,6 +79,7 @@
 
 
 <p class="links"><%= link_to "New Deal", new_deal_path %></p>
+
 
 
 

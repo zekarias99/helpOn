@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.0.0'
 
-gem 'rails', '4.0.0'
-gem 'bcrypt-ruby', '3.0.1'
+gem 'rails', '4.0.1'
+gem 'bcrypt-ruby', '3.1.2'
 gem 'faker', '1.1.2'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
@@ -14,6 +14,8 @@ gem 'jbuilder', '1.0.2'
 gem 'simple_form'
 gem 'country_select'
 gem 'twitter-bootstrap-rails'
+gem 'jquery-ui-rails'
+gem 'bootstrap-sass', '2.3.2.0'
 
 
 group :development, :test do

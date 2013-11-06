@@ -1,13 +1,38 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+  <p id="notice"><%= notice %></p> 
+<% end %>
+
+<div class="page-header"> 
+  <h1>Your xCart</h1>
+</div>
 <div class="row">
+  <div class="span3">
+		<table class="table table-bordered">
+      <%= render @cart %>
+			<tr>
+			<td></td>
+			<td>Total</td>
+			<td><%= number_to_currency(@cart.total_price) %></td>
+			  </tr>
+		</table>
+    <div class="form-actions">
+        <%= button_to "Cancele", @cart, class: 'btn btn-primary', method: :delete,
+        data: { confirm: 'Are you sure?' } %>
+    </div>
+  </div>
+
   <div class="span6">
-      <h2>Your HelpOn Cart</h2>
-      <ul><% @cart.line_items.each do |item| %> 
-        <li><%= item.deal.blurb_title %></li>
-         <% end %> 
-      </ul>
+    
+    this is from show Carts. 
+  </div>
+
+  <div class="span3">
+  	<table class="table table-bordered">
+  		<tr>
+  			<td></td>
+  			<td>Raised</td>
+  			<td><%= number_to_currency(@cart.charity_get, :precision => 2) %></td>
+  		</tr>
+  	</table>
   </div>
 </div>
-
-<%= link_to 'Edit', edit_cart_path(@cart) %> |
-<%= link_to 'Back', carts_path %>

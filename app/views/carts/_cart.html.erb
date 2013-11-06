@@ -1,0 +1,45 @@
+
+<%#= I just created this depend on the book and take a look on this code %>
+<div class="page-header"> 
+  <h1>Your Cart</h1>
+</div>
+
+<div class="row">
+  <div class="span3">
+  	<table class="table table-bordered">
+  		 <%= render(cart.line_items) %>
+  		<tr>
+    		<td colspan="2">Total</td>
+    		<td><%= number_to_currency(cart.total_price) %></td>
+  		</tr>
+  	</table>
+    <div class="form-actions">
+      <%= button_to "Cancele", @cart, class: 'btn btn-primary', method: :delete,
+      data: { confirm: 'Are you sure?' } %>
+    </div>
+  </div>
+  <!-- <div class="span6">
+  <table class="table table-bordered">
+      <colgroup>
+        <col class="span6" />
+        <col class="span3" />
+        <col class="span3" />
+      </colgroup>
+    <tr>
+      <td>sis</td>
+      <td>tree</td>
+      <td>tree</td>
+    </tr>
+    <tr>
+      <td>61</td>
+      <td>3</td>
+      <td>62</td>
+    </tr>
+      <tr>
+      <td></td>
+      <td>Total</td>
+      <td>3</td>
+    </tr>
+  </table>
+  </div> -->
+</div>
