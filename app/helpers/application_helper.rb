@@ -21,6 +21,13 @@ module ApplicationHelper
     end
   end
 
+  def hidden_div_if(condtion, attributes = {}, &block)
+    if condtion
+      attributes["styel"] = "display: none"
+    end
+    content_tag("div", attributes, &block)
+  end
+
 
   def avatar_profile_link(user, image_options={}, html_options={})
     avatar_url = user.avatar? ? user.avatar.url(:thumb) : nil

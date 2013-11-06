@@ -1,5 +1,7 @@
 Helpon::Application.routes.draw do
 
+  resources :orders
+
   match 'store',         to: 'store#index',         via: 'get'
   resources :line_items
 
