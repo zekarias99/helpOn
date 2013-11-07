@@ -49,6 +49,16 @@ class DealsController < ApplicationController
     redirect_to deals_url, alert: 'Deal successfully deleted!'
   end
 
+  def who_bought
+    @deal = Deal.find(params[:id])
+    @latest_order = @deal.orders.order(:updated_at).last
+    if stale?(@latest_order)
+      respond_to do |format|
+        format.atom
+      end
+    end
+  end
+
   private
   def deal_params 
     params.require(:deal).

@@ -7,8 +7,11 @@
 			<fieldset>
 				<legend>Account Information</legend>
 				<%= f.input :cardholder_name %>
-				<%= f.input :billing_address %>
 				<%= f.input :card_number %>
+				<%= f.label :pay_type %><br>
+                <%= f.select :pay_type, Order::PAYMENT_TYPES,
+                          prompt: 'Select a payment method' %>
+				<%= f.input :billing_address %>
 				<%= f.input :city %>
 				<%= f.input :state %>
 				<%= f.input :security_code %>

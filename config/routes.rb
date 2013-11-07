@@ -2,6 +2,10 @@ Helpon::Application.routes.draw do
 
   resources :orders
 
+  resources :deals do
+    get :who_bought, on: :member
+  end
+
   match 'store',         to: 'store#index',         via: 'get'
   resources :line_items
 

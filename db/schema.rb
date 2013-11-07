@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131106231358) do
+ActiveRecord::Schema.define(version: 20131107031125) do
 
   create_table "albums", force: true do |t|
     t.string   "title"
@@ -184,6 +184,7 @@ ActiveRecord::Schema.define(version: 20131106231358) do
     t.integer  "security_code"
     t.integer  "expiration_date"
     t.integer  "postal_code"
+    t.string   "pay_type"
   end
 
   create_table "pictures", force: true do |t|

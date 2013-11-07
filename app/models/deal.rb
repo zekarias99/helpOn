@@ -32,6 +32,7 @@ class Deal < ActiveRecord::Base
 
   has_many :fine_prints, :dependent => :destroy
   has_many :highlights, :dependent => :destroy
+  has_many :orders, through: :line_items
 
             
   # def self.featured_date
