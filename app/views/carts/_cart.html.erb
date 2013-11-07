@@ -1,7 +1,7 @@
 
 <%#= I just created this depend on the book and take a look on this code %>
 <div class="page-header"> 
-  <h1>Your Cart</h1>
+  <h1>Order Details</h1>
 </div>
 
 <div class="row">
@@ -14,8 +14,10 @@
   		</tr>
   	</table>
     <div class="form-actions">
-      <%= button_to "Empty Cart", @cart, class: 'btn btn-primary', method: :delete,
-      data: { confirm: 'Are you sure?' } %>
+      <%= button_to "Checkout", new_order_path, method: :get %>
+      <!-- this is depend on the book but on groupon there is no such a link 
+      <%#= button_to "Empty Cart", @cart, class: 'btn btn-primary', method: :delete,
+      data: { confirm: 'Are you sure?' } %> -->
     </div>
   </div>
   <!-- <div class="span6">

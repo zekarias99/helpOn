@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131106194514) do
+ActiveRecord::Schema.define(version: 20131106231358) do
 
   create_table "albums", force: true do |t|
     t.string   "title"
@@ -174,12 +174,16 @@ ActiveRecord::Schema.define(version: 20131106194514) do
   add_index "microposts", ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
 
   create_table "orders", force: true do |t|
-    t.string   "name"
-    t.text     "address"
-    t.string   "email"
-    t.string   "pay_type"
+    t.string   "cardholder_name"
+    t.string   "billing_address"
+    t.string   "city"
+    t.string   "state"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "card_number"
+    t.integer  "security_code"
+    t.integer  "expiration_date"
+    t.integer  "postal_code"
   end
 
   create_table "pictures", force: true do |t|
