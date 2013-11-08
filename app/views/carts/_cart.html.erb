@@ -13,12 +13,12 @@
     		<td><%= number_to_currency(cart.total_price) %></td>
   		</tr>
   	</table>
-    <div class="form-actions">
-      <%= button_to "Checkout", new_order_path, method: :get %>
-      <!-- this is depend on the book but on groupon there is no such a link 
-      <%#= button_to "Empty Cart", @cart, class: 'btn btn-primary', method: :delete,
-      data: { confirm: 'Are you sure?' } %> -->
-    </div>
+  
+    <%#= button_to "Choose a Charity", new_order_path, 
+    method: :get, class: "btn btn-large" %>
+    <!-- this is depend on the book but on groupon there is no such a link 
+    <%#= button_to "Empty Cart", @cart, class: 'btn btn-primary', method: :delete,
+    data: { confirm: 'Are you sure?' } %> -->
   </div>
   <!-- <div class="span6">
   <table class="table table-bordered">

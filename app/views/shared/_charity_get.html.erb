@@ -1,0 +1,13 @@
+<table class="table table-bordered">
+  <% @cart.line_items.each do |item| %> 
+	<tr>
+		<td><%= item.quantity %>&times;</td>
+		<td><%= item.deal.blurb_title %></td>
+		<td ><%= number_to_currency(item.charity_get) %></td>
+	</tr>
+  		<% end %>
+	<tr>	
+		<td colspan="2">Raised</td>
+		<td><%= number_to_currency(@cart.charity_get, :precision => 2) %></td>
+	</tr>
+</table>

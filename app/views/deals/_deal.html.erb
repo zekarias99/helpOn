@@ -19,7 +19,7 @@
 </table>
 
 <div>
-  <%= button_to 'Add To Cart!', line_items_path(deal_id: deal), class: "btn btn-large"%>
+  <%= button_to 'BUY!', line_items_path(deal_id: deal), class: "btn btn-large"%>
   <p><%= deal.order_count %> purchased</p> 
   <p><h5>Your choise of Charity will get </h5><p>
   <p><h5><%= number_to_currency(deal.charity_get, :precision => 2) %></p>       
