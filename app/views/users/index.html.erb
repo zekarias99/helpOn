@@ -9,3 +9,5 @@
     <%= render @users %>
   </ul>
 <%= will_paginate %>
+
+<%= select_tag "users", options_from_collection_for_select(@users, "id", "name") %>
