@@ -5,29 +5,28 @@
 
 <div class="row">
   <div class="span6">
-  <% for deal in @deals %>
-  <h4>Name: <%= deal.name %></h4>
-  <div>
-    <p><%=raw deal.blurb %></p>
-    <hr>
-  </div>
-    <table class="table table-bordered">
-      
-      <th>Price</th>
-      <th>Discounts</th>
-      <th>Threshold</th>
-
-      <tr>
-        <td><%= number_to_currency(deal.regular_price) %></td>
-        <td><%= deal.initial_discount %>
-        <% unless deal.max_discount.blank? %>
-           <%= deal.max_discount %>
-         <% end %></td>
-        <td><%= deal.max_threshold %></td>
-      </tr>
-    </table>
-
+  
+    <% for deal in @deals %>
+      <h4>Name: <%= deal.name %></h4>
+      <div>
+        <p><%=raw deal.blurb %></p>
+        <hr>
+      </div>
+      <table class="table table-bordered">          
+        <th>Price</th>
+        <th>Discounts</th>
+        <th>Threshold</th>
+        <tr>
+          <td><%= number_to_currency(deal.regular_price) %></td>
+          <td><%= deal.initial_discount %>
+          <% unless deal.max_discount.blank? %>
+             <%= deal.max_discount %>
+           <% end %></td>
+          <td><%= deal.max_threshold %></td>
+        </tr>
+      </table>
     <% end %>
+
       
     <table class="table table-bordered">
       <th>Value</th>

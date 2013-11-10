@@ -12,7 +12,7 @@ class Deal < ActiveRecord::Base
             :tipping_point, :end_date, presence: true
   validates :name, presence: true, uniqueness: { case_sensitive: false }
   validates :name,  presence: true, length: { maximum: 50 }
-  validates :regular_price, :initial_discount, :max_threshold, :max_discount, 
+  validates :regular_price, :deal_price, :initial_discount, :max_threshold, :max_discount, 
              numericality: { greater_than_or_equal_to: 0.01 }
 
   # validates :photo, allow_blank: true, format: 
@@ -38,6 +38,10 @@ class Deal < ActiveRecord::Base
   # def self.featured_date
   #   where("deal_date >= ?", Time.now).order("deal_date")
   # end
+
+  def self.latest
+    Deal.order(:updated_at).last
+  end
   
   after_update :remove_empty_fine_prints
   after_update :remove_empty_highlights

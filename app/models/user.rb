@@ -27,6 +27,7 @@ class User < ActiveRecord::Base
   has_many :pictures, dependent: :destroy
   has_many :users_deals
   has_many :deals, :through => :users_deals
+  has_many :line_itemes
 
 
   has_attached_file :avatar, styles: {

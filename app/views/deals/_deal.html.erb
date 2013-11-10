@@ -5,7 +5,7 @@
 <%= image_tag deal.photo.url %>
 <%=truncate(deal.blurb, length: 500, separator: ' ') %>
 <h4>Price now :
-<%= number_to_currency(deal.current_price, :precision => 2) %></h4>
+<%= number_to_currency(deal.deal_price, :precision => 2) %></h4>
 
 <table class="table table-bordered">
   <th>Value</th>

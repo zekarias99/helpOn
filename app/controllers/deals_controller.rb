@@ -64,6 +64,6 @@ class DealsController < ApplicationController
     params.require(:deal).
     permit(:name, :blurb_title, :blurb, :deal_type, :photo, 
         :regular_price, :initial_discount, :max_discount, :max_threshold, 
-        :tipping_point, :deal_date, :end_date, :city_id, :approved)
+        :tipping_point, :deal_date, :end_date, :city_id, :deal_price, :approved)
   end
 end

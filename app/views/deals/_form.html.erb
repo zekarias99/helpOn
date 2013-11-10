@@ -10,7 +10,7 @@
     <%= f.text_area :blurb %> 
     <%= f.label :deal_type %>
     <%= f.text_field :deal_type %>
-    <%= f.label :regular_price, :label => 'Price' %>
+    <%= f.label :regular_price %>
     <%= f.number_field :regular_price %>
     <%= f.label :initial_discount, :label => 'Discount' %>
     <%= f.number_field :initial_discount %>
@@ -20,6 +20,8 @@
     <%= f.number_field :max_threshold %>
     <%= f.label :tipping_point, :label => 'Tipping Point' %>
     <%= f.number_field :tipping_point %>
+    <%= f.label :deal_price %>
+    <%= f.number_field :deal_price %>
     <%= f.label :deal_date  %>
     <%= f.date_select :deal_date %>
     <%= f.label :end_date  %>

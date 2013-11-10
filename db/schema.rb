@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131109152636) do
+ActiveRecord::Schema.define(version: 20131109183849) do
 
   create_table "albums", force: true do |t|
     t.string   "title"
@@ -110,6 +110,7 @@ ActiveRecord::Schema.define(version: 20131109152636) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.decimal  "deal_price"
   end
 
   add_index "deals", ["city_id"], name: "index_deals_on_city_id"
